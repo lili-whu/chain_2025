@@ -15,10 +15,6 @@ def reset():
 class NNWorker:
     def __init__(self, X=None, Y=None, tX=None, tY=None, size=0, id="nn0", steps=10):
 
-        ''' 
-        Function to intialize Data and Network parameters
-        '''
-
         self.id = id
         self.train_x = X
         self.train_y = Y
@@ -64,10 +60,6 @@ class NNWorker:
 
     def build_base(self):
 
-        ''' 
-        Function to initialize/build network with random initialization
-        '''
-
         self.X = tf.placeholder("float", [None, self.num_input])
         self.Y = tf.placeholder("float", [None, self.num_classes])
         self.weights = {
@@ -91,9 +83,6 @@ class NNWorker:
         self.sess.run(self.init)
 
     def train(self):
-        """
-        Function to train the data, optimize and calculate loss and accuracy per batch
-        """
 
         self.loss_op = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits_v2(
             logits=self.logits, labels=self.Y))

@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 clear
 
 # 0. 前置准备：删除后台miner监听进程
@@ -34,7 +32,7 @@ NUM_RUNS=50
 #1. 运行区块链挖矿程序，完成创世区块创建及端口监听
 echo "Start federated learning on n clients:"
 # 运行 miner.py 并将输出写入到 miner_output.txt
-# D:/anaconda/envs/BlockchainForFederatedLearning/python.exe miner.py -g 1 -l $NUM_CLIENTS  >> "./output/miner_output.txt" 2>&1 &
+D:/anaconda/envs/BlockchainForFederatedLearning/python.exe miner.py -g 1 -l $NUM_CLIENTS  >> "./output/miner_output.txt" 2>&1 &
 
 sleep 5
 
@@ -61,4 +59,4 @@ done
 sleep 20
 
 # 后台运行 create_csv.py 并将输出写入到 create_csv_output.txt
-D:/anaconda/envs/BlockchainForFederatedLearning/python.exe create_csv.py > ./output/create_csv_output.txt 2>&1 &
+# D:/anaconda/envs/BlockchainForFederatedLearning/python.exe create_csv.py > ./output/create_csv_output.txt 2>&1 &

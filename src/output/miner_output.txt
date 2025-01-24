@@ -1,1 +1,976 @@
-2025-01-23 23:53:11.540932: F tensorflow/core/platform/cpu_feature_guard.cc:37] The TensorFlow library was compiled to use AVX instructions, but these aren't available on your machine.
+2025-01-24 20:46:52.908454: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+[2025-01-24 20:46:52,975] INFO in blockchain: index1, global model accuracy0.054999999701976776
+[2025-01-24 20:46:52,975] INFO in blockchain: index1, global model accuracy0.054999999701976776
+base model accuracy: 0.055
+ * Serving Flask app "miner" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[2025-01-24 20:46:53,223] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2025-01-24 20:47:02,844] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:02] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:02,848] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:02] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:02,878] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:02] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:02,949] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:02] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:02,953] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:02] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:02,984] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:02] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,167] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,171] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,200] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,206] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,210] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,289] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,304] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,311] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,357] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,422] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,431] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,468] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,469] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,474] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,515] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,560] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,568] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,621] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,625] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,630] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,650] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,653] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,696] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,735] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:03,801] INFO in miner: New Transaction Received
+[2025-01-24 20:47:04,015] INFO in miner: New Transaction Received
+[2025-01-24 20:47:04,945] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:04] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:05,154] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:05] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:05,609] INFO in miner: New Transaction Received
+[2025-01-24 20:47:05,660] INFO in miner: New Transaction Received
+[2025-01-24 20:47:05,802] INFO in miner: New Transaction Received
+[2025-01-24 20:47:05,819] INFO in miner: New Transaction Received
+[2025-01-24 20:47:05,845] INFO in miner: New Transaction Received
+[2025-01-24 20:47:05,846] INFO in miner: New Transaction Received
+[2025-01-24 20:47:05,873] INFO in miner: New Transaction Received
+[2025-01-24 20:47:06,030] INFO in miner: New Transaction Received
+[2025-01-24 20:47:06,621] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:06,670] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:06,812] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:06,830] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:06,855] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:06,864] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:06,884] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:07,037] INFO in miner: start mining
+[2025-01-24 20:47:07,038] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:08,897] INFO in blockchain: client:b4db28331ab74f89a080cbe59ef6966f, local.accuracy: 0.77920001745224, base.accuracy:0.054999999701976776, weight: 0.7297000110149383
+[2025-01-24 20:47:08,897] INFO in blockchain: client:ccbbbd7955244eca9c27dfcc59dc559e, local.accuracy: 0.7718999981880188, base.accuracy:0.054999999701976776, weight: 0.7223999917507172
+[2025-01-24 20:47:08,897] INFO in blockchain: client:63ab943301f144b0809f8c595a4b07d5, local.accuracy: 0.7792999744415283, base.accuracy:0.054999999701976776, weight: 0.7297999680042268
+[2025-01-24 20:47:08,897] INFO in blockchain: client:8bb92f3939fc4ea2bba5f553d0b7d2f2, local.accuracy: 0.8061000108718872, base.accuracy:0.054999999701976776, weight: 0.7566000044345856
+[2025-01-24 20:47:08,897] INFO in blockchain: client:0a71d84a24eb4c0f84b08a63d287b4bc, local.accuracy: 0.8299999833106995, base.accuracy:0.054999999701976776, weight: 0.7804999768733979
+[2025-01-24 20:47:08,897] INFO in blockchain: client:50a524988f864f259c915793a311aaa8, local.accuracy: 0.8069000244140625, base.accuracy:0.054999999701976776, weight: 0.7574000179767608
+[2025-01-24 20:47:08,897] INFO in blockchain: client:d8e29617c10f46078423d521da0bb793, local.accuracy: 0.8120999932289124, base.accuracy:0.054999999701976776, weight: 0.7625999867916107
+[2025-01-24 20:47:08,897] INFO in blockchain: client:069e5c363d884eda8ffb91573f396a69, local.accuracy: 0.7874000072479248, base.accuracy:0.054999999701976776, weight: 0.7379000008106232
+[2025-01-24 20:47:08,897] INFO in blockchain: client:d0fac7e09829469db4719122df8355bc, local.accuracy: 0.8057000041007996, base.accuracy:0.054999999701976776, weight: 0.756199997663498
+[2025-01-24 20:47:08,897] INFO in blockchain: client:d024c9c0fbaa4b6e88cc960ae6592fa4, local.accuracy: 0.7839999794960022, base.accuracy:0.054999999701976776, weight: 0.7344999730587005
+[2025-01-24 20:47:08,897] INFO in blockchain: client: b4db28331ab74f89a080cbe59ef6966f, weights[client]: 0.09771546655062027
+[2025-01-24 20:47:08,897] INFO in blockchain: client: ccbbbd7955244eca9c27dfcc59dc559e, weights[client]: 0.096737907584656
+[2025-01-24 20:47:08,898] INFO in blockchain: client: 63ab943301f144b0809f8c595a4b07d5, weights[client]: 0.0977288519743504
+[2025-01-24 20:47:08,898] INFO in blockchain: client: 8bb92f3939fc4ea2bba5f553d0b7d2f2, weights[client]: 0.10131769399687371
+[2025-01-24 20:47:08,898] INFO in blockchain: client: 0a71d84a24eb4c0f84b08a63d287b4bc, weights[client]: 0.10451818313234351
+[2025-01-24 20:47:08,898] INFO in blockchain: client: 50a524988f864f259c915793a311aaa8, weights[client]: 0.1014248252773183
+[2025-01-24 20:47:08,898] INFO in blockchain: client: d8e29617c10f46078423d521da0bb793, weights[client]: 0.10212116263667367
+[2025-01-24 20:47:08,898] INFO in blockchain: client: 069e5c363d884eda8ffb91573f396a69, weights[client]: 0.09881354222075929
+[2025-01-24 20:47:08,898] INFO in blockchain: client: d0fac7e09829469db4719122df8355bc, weights[client]: 0.10126412835665141
+[2025-01-24 20:47:08,898] INFO in blockchain: client: d024c9c0fbaa4b6e88cc960ae6592fa4, weights[client]: 0.09835823826975333
+[2025-01-24 20:47:09,090] INFO in blockchain: index2, global model accuracy0.8374999761581421
+[2025-01-24 20:47:09,090] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+[2025-01-24 20:47:09,287] INFO in miner: mining completed
+[2025-01-24 20:47:23,343] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,348] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,421] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,423] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,428] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,500] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,546] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,551] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,622] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,624] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,625] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,630] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,631] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,704] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,741] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,742] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,769] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,770] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,772] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,774] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,774] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,775] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,777] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,778] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,805] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,823] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,879] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,912] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,964] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:23,991] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:24,586] INFO in miner: New Transaction Received
+[2025-01-24 20:47:24,656] INFO in miner: New Transaction Received
+[2025-01-24 20:47:25,461] INFO in miner: New Transaction Received
+[2025-01-24 20:47:25,714] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:25] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:25,791] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:25] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:26,229] INFO in miner: New Transaction Received
+[2025-01-24 20:47:26,528] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:26,532] INFO in miner: New Transaction Received
+[2025-01-24 20:47:26,555] INFO in miner: New Transaction Received
+[2025-01-24 20:47:26,619] INFO in miner: New Transaction Received
+[2025-01-24 20:47:26,698] INFO in miner: New Transaction Received
+[2025-01-24 20:47:26,771] INFO in miner: New Transaction Received
+[2025-01-24 20:47:26,838] INFO in miner: New Transaction Received
+[2025-01-24 20:47:27,237] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:27,540] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:27,563] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:27,628] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:27,708] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:27,781] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:27,847] INFO in miner: start mining
+[2025-01-24 20:47:27,847] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:29,663] INFO in blockchain: client:8ed2930d11d44fc287d9e87cc55f131c, local.accuracy: 0.7419000267982483, base.accuracy:0.8374999761581421, weight: -0.011849951744079601
+[2025-01-24 20:47:29,663] INFO in blockchain: client:fec2a1af41d440bdaa12a43c378916c6, local.accuracy: 0.7627000212669373, base.accuracy:0.8374999761581421, weight: 0.008950042724609378
+[2025-01-24 20:47:29,663] INFO in blockchain: client:b2ca52c19b3e422a8007a8b726cf87f0, local.accuracy: 0.7882999777793884, base.accuracy:0.8374999761581421, weight: 0.03454999923706056
+[2025-01-24 20:47:29,663] INFO in blockchain: client:ea8e420006fc4d398953901818224324, local.accuracy: 0.8134999871253967, base.accuracy:0.8374999761581421, weight: 0.05975000858306885
+[2025-01-24 20:47:29,663] INFO in blockchain: client:ecee1b3c6ad04134b15984dff785e81f, local.accuracy: 0.7455999851226807, base.accuracy:0.8374999761581421, weight: -0.008149993419647228
+[2025-01-24 20:47:29,663] INFO in blockchain: client:6006e3ece6514325b4207efb7ebe4cbc, local.accuracy: 0.7577000260353088, base.accuracy:0.8374999761581421, weight: 0.00395004749298096
+[2025-01-24 20:47:29,664] INFO in blockchain: client:c90f7e6be35b463baa78e4213183116a, local.accuracy: 0.7932000160217285, base.accuracy:0.8374999761581421, weight: 0.03945003747940064
+[2025-01-24 20:47:29,664] INFO in blockchain: client:ec6466f098094458a05dc49960ebcdc7, local.accuracy: 0.7623999714851379, base.accuracy:0.8374999761581421, weight: 0.008649992942810061
+[2025-01-24 20:47:29,664] INFO in blockchain: client:2f9a82056b424a318f3d88fcec9b84f1, local.accuracy: 0.7723000049591064, base.accuracy:0.8374999761581421, weight: 0.018550026416778574
+[2025-01-24 20:47:29,664] INFO in blockchain: client:41b6e874e0f64c3eb69ece837bf3b958, local.accuracy: 0.7753999829292297, base.accuracy:0.8374999761581421, weight: 0.021650004386901858
+[2025-01-24 20:47:29,664] INFO in blockchain: client: 8ed2930d11d44fc287d9e87cc55f131c, weights[client]: -0.06752101018711765
+[2025-01-24 20:47:29,664] INFO in blockchain: client: fec2a1af41d440bdaa12a43c378916c6, weights[client]: 0.05099733222841287
+[2025-01-24 20:47:29,664] INFO in blockchain: client: b2ca52c19b3e422a8007a8b726cf87f0, weights[client]: 0.19686585235387116
+[2025-01-24 20:47:29,664] INFO in blockchain: client: ea8e420006fc4d398953901818224324, weights[client]: 0.3404554740261614
+[2025-01-24 20:47:29,664] INFO in blockchain: client: ecee1b3c6ad04134b15984dff785e81f, weights[client]: -0.0464386522913798
+[2025-01-24 20:47:29,664] INFO in blockchain: client: 6006e3ece6514325b4207efb7ebe4cbc, weights[client]: 0.022507365664709858
+[2025-01-24 20:47:29,664] INFO in blockchain: client: c90f7e6be35b463baa78e4213183116a, weights[client]: 0.22478626411787775
+[2025-01-24 20:47:29,664] INFO in blockchain: client: ec6466f098094458a05dc49960ebcdc7, weights[client]: 0.049287648947750055
+[2025-01-24 20:47:29,664] INFO in blockchain: client: 2f9a82056b424a318f3d88fcec9b84f1, weights[client]: 0.10569802727545975
+[2025-01-24 20:47:29,664] INFO in blockchain: client: 41b6e874e0f64c3eb69ece837bf3b958, weights[client]: 0.12336169786425438
+[2025-01-24 20:47:29,869] INFO in blockchain: index3, global model accuracy0.7975999712944031
+[2025-01-24 20:47:29,869] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+[2025-01-24 20:47:30,075] INFO in miner: mining completed
+[2025-01-24 20:47:43,397] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,400] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,432] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,492] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,496] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,525] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,590] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,593] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,622] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,647] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,651] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,684] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,711] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,715] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,754] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,907] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,920] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,941] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,962] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,964] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,966] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,972] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:43,983] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,004] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,053] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,054] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,077] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,119] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,125] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,171] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:47:44,302] INFO in miner: New Transaction Received
+[2025-01-24 20:47:44,524] INFO in miner: New Transaction Received
+[2025-01-24 20:47:45,273] INFO in miner: New Transaction Received
+[2025-01-24 20:47:45,465] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:45] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:45,625] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:45] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:45,782] INFO in miner: New Transaction Received
+[2025-01-24 20:47:45,898] INFO in miner: New Transaction Received
+[2025-01-24 20:47:46,243] INFO in miner: New Transaction Received
+[2025-01-24 20:47:46,279] INFO in miner: New Transaction Received
+[2025-01-24 20:47:46,298] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:46,375] INFO in miner: New Transaction Received
+[2025-01-24 20:47:46,390] INFO in miner: New Transaction Received
+[2025-01-24 20:47:46,439] INFO in miner: New Transaction Received
+[2025-01-24 20:47:46,788] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:46,906] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:47,252] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:47,286] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:47,383] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:47,397] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:47,448] INFO in miner: start mining
+[2025-01-24 20:47:47,448] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:47:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:47:49,052] INFO in blockchain: client:055fa6f5947b4a30aa4d60a8982bfd6e, local.accuracy: 0.7705000042915344, base.accuracy:0.7975999712944031, weight: 0.05266003012657165
+[2025-01-24 20:47:49,052] INFO in blockchain: client:346465b9577543c18856be0f432d9dd3, local.accuracy: 0.8241000175476074, base.accuracy:0.7975999712944031, weight: 0.10626004338264466
+[2025-01-24 20:47:49,052] INFO in blockchain: client:b772f8d0c9fe45a88ff1112857055a44, local.accuracy: 0.7718999981880188, base.accuracy:0.7975999712944031, weight: 0.05406002402305603
+[2025-01-24 20:47:49,052] INFO in blockchain: client:8c7e57ced47149d9b90bb6b4a5127d37, local.accuracy: 0.7853000164031982, base.accuracy:0.7975999712944031, weight: 0.06746004223823547
+[2025-01-24 20:47:49,052] INFO in blockchain: client:ef3f0b0c5f2943f49823d2e6da0692f5, local.accuracy: 0.8295000195503235, base.accuracy:0.7975999712944031, weight: 0.11166004538536073
+[2025-01-24 20:47:49,052] INFO in blockchain: client:6305053e2ff348e2b416388ca3791655, local.accuracy: 0.7289999723434448, base.accuracy:0.7975999712944031, weight: 0.011159998178482053
+[2025-01-24 20:47:49,053] INFO in blockchain: client:6160c02add4f4d05bc989beb619ee4cc, local.accuracy: 0.7766000032424927, base.accuracy:0.7975999712944031, weight: 0.05876002907752991
+[2025-01-24 20:47:49,053] INFO in blockchain: client:ba3f07d92a2b41c69cfbe1aed639d5d9, local.accuracy: 0.7717000246047974, base.accuracy:0.7975999712944031, weight: 0.05386005043983459
+[2025-01-24 20:47:49,053] INFO in blockchain: client:d399e7463b6940f1904698f6f33bcef7, local.accuracy: 0.7878000140190125, base.accuracy:0.7975999712944031, weight: 0.0699600398540497
+[2025-01-24 20:47:49,053] INFO in blockchain: client:453b29414195456a9d6e3efbc141fc45, local.accuracy: 0.7444000244140625, base.accuracy:0.7975999712944031, weight: 0.02656005024909973
+[2025-01-24 20:47:49,053] INFO in blockchain: client: 055fa6f5947b4a30aa4d60a8982bfd6e, weights[client]: 0.0859895489486317
+[2025-01-24 20:47:49,053] INFO in blockchain: client: 346465b9577543c18856be0f432d9dd3, weights[client]: 0.17351401394518187
+[2025-01-24 20:47:49,053] INFO in blockchain: client: b772f8d0c9fe45a88ff1112857055a44, weights[client]: 0.0882756251890018
+[2025-01-24 20:47:49,053] INFO in blockchain: client: 8c7e57ced47149d9b90bb6b4a5127d37, weights[client]: 0.11015676577052438
+[2025-01-24 20:47:49,053] INFO in blockchain: client: ef3f0b0c5f2943f49823d2e6da0692f5, weights[client]: 0.18233177829926947
+[2025-01-24 20:47:49,053] INFO in blockchain: client: 6305053e2ff348e2b416388ca3791655, weights[client]: 0.01822336993216033
+[2025-01-24 20:47:49,053] INFO in blockchain: client: 6160c02add4f4d05bc989beb619ee4cc, weights[client]: 0.09595035142290435
+[2025-01-24 20:47:49,053] INFO in blockchain: client: ba3f07d92a2b41c69cfbe1aed639d5d9, weights[client]: 0.08794908458160901
+[2025-01-24 20:47:49,053] INFO in blockchain: client: d399e7463b6940f1904698f6f33bcef7, weights[client]: 0.11423905867540532
+[2025-01-24 20:47:49,053] INFO in blockchain: client: 453b29414195456a9d6e3efbc141fc45, weights[client]: 0.04337040323531178
+[2025-01-24 20:47:49,227] INFO in blockchain: index4, global model accuracy0.8166999816894531
+[2025-01-24 20:47:49,227] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+[2025-01-24 20:47:49,403] INFO in miner: mining completed
+[2025-01-24 20:48:03,427] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,431] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,461] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,515] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,518] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,547] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,715] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,716] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,718] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,720] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,764] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,780] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,781] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,784] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,824] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,891] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,897] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,905] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,925] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,945] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,946] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:03,970] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,061] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,062] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,063] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,076] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,088] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,089] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,161] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,191] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:04,391] INFO in miner: New Transaction Received
+[2025-01-24 20:48:04,478] INFO in miner: New Transaction Received
+[2025-01-24 20:48:05,624] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:05] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:05,717] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:05] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:06,264] INFO in miner: New Transaction Received
+[2025-01-24 20:48:06,272] INFO in miner: New Transaction Received
+[2025-01-24 20:48:06,284] INFO in miner: New Transaction Received
+[2025-01-24 20:48:06,306] INFO in miner: New Transaction Received
+[2025-01-24 20:48:06,378] INFO in miner: New Transaction Received
+[2025-01-24 20:48:06,381] INFO in miner: New Transaction Received
+[2025-01-24 20:48:06,385] INFO in miner: New Transaction Received
+[2025-01-24 20:48:06,398] INFO in miner: New Transaction Received
+[2025-01-24 20:48:07,271] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:07,281] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:07,292] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:07,315] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:07,390] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:07,397] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:07,406] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:07,413] INFO in miner: start mining
+[2025-01-24 20:48:07,414] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:09,042] INFO in blockchain: client:e060ee13a3374b328a3a0f9ba0f55463, local.accuracy: 0.8521000146865845, base.accuracy:0.8166999816894531, weight: 0.11707003116607667
+[2025-01-24 20:48:09,042] INFO in blockchain: client:12c7e30ad942456ba52ab96e88b117c5, local.accuracy: 0.8398000001907349, base.accuracy:0.8166999816894531, weight: 0.10477001667022706
+[2025-01-24 20:48:09,042] INFO in blockchain: client:d02c74489c04437eb4a912eb3460dbeb, local.accuracy: 0.8335000276565552, base.accuracy:0.8166999816894531, weight: 0.09847004413604736
+[2025-01-24 20:48:09,042] INFO in blockchain: client:21d3b43ab35d46a39bb1eb9d9fff3f02, local.accuracy: 0.8353000283241272, base.accuracy:0.8166999816894531, weight: 0.1002700448036194
+[2025-01-24 20:48:09,042] INFO in blockchain: client:597fafba9f314b54b8587bab69e88302, local.accuracy: 0.826200008392334, base.accuracy:0.8166999816894531, weight: 0.09117002487182618
+[2025-01-24 20:48:09,042] INFO in blockchain: client:35937bda9246459697db70dd06a59744, local.accuracy: 0.8399999737739563, base.accuracy:0.8166999816894531, weight: 0.1049699902534485
+[2025-01-24 20:48:09,042] INFO in blockchain: client:7409ddae17594d5ead30804a1e2ababe, local.accuracy: 0.8402000069618225, base.accuracy:0.8166999816894531, weight: 0.10517002344131471
+[2025-01-24 20:48:09,042] INFO in blockchain: client:3553cefce46540fe8a8999c939d7113f, local.accuracy: 0.8413000106811523, base.accuracy:0.8166999816894531, weight: 0.10627002716064454
+[2025-01-24 20:48:09,042] INFO in blockchain: client:a35de26f2f44492190aca8f249169d97, local.accuracy: 0.8240000009536743, base.accuracy:0.8166999816894531, weight: 0.08897001743316652
+[2025-01-24 20:48:09,042] INFO in blockchain: client:cdbf69eeeac94c2687a8e81e4c85fc18, local.accuracy: 0.8324999809265137, base.accuracy:0.8166999816894531, weight: 0.09746999740600587
+[2025-01-24 20:48:09,042] INFO in blockchain: client: e060ee13a3374b328a3a0f9ba0f55463, weights[client]: 0.11538537954656423
+[2025-01-24 20:48:09,042] INFO in blockchain: client: 12c7e30ad942456ba52ab96e88b117c5, weights[client]: 0.10326236371667606
+[2025-01-24 20:48:09,042] INFO in blockchain: client: d02c74489c04437eb4a912eb3460dbeb, weights[client]: 0.09705304853371491
+[2025-01-24 20:48:09,042] INFO in blockchain: client: 21d3b43ab35d46a39bb1eb9d9fff3f02, weights[client]: 0.09882714697840767
+[2025-01-24 20:48:09,042] INFO in blockchain: client: 597fafba9f314b54b8587bab69e88302, weights[client]: 0.08985807741164803
+[2025-01-24 20:48:09,042] INFO in blockchain: client: 35937bda9246459697db70dd06a59744, weights[client]: 0.10345945965634108
+[2025-01-24 20:48:09,042] INFO in blockchain: client: 7409ddae17594d5ead30804a1e2ababe, weights[client]: 0.10365661434293298
+[2025-01-24 20:48:09,042] INFO in blockchain: client: 3553cefce46540fe8a8999c939d7113f, weights[client]: 0.10474078887840782
+[2025-01-24 20:48:09,042] INFO in blockchain: client: a35de26f2f44492190aca8f249169d97, weights[client]: 0.08768972834069837
+[2025-01-24 20:48:09,042] INFO in blockchain: client: cdbf69eeeac94c2687a8e81e4c85fc18, weights[client]: 0.09606739259460917
+[2025-01-24 20:48:09,213] INFO in blockchain: index5, global model accuracy0.8741999864578247
+[2025-01-24 20:48:09,213] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+[2025-01-24 20:48:09,389] INFO in miner: mining completed
+[2025-01-24 20:48:23,690] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,694] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,723] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,742] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,746] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,775] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,835] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,837] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:23,869] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,042] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,053] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,094] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,165] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,182] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,185] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,243] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,247] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,251] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,272] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,296] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,336] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,351] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,362] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,363] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,364] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,366] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,390] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,426] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,507] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,509] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:24,632] INFO in miner: New Transaction Received
+[2025-01-24 20:48:24,768] INFO in miner: New Transaction Received
+[2025-01-24 20:48:25,408] INFO in miner: New Transaction Received
+[2025-01-24 20:48:25,769] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:25] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:25,910] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:25] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:26,383] INFO in miner: New Transaction Received
+[2025-01-24 20:48:26,412] INFO in miner: New Transaction Received
+[2025-01-24 20:48:26,427] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:26,503] INFO in miner: New Transaction Received
+[2025-01-24 20:48:26,570] INFO in miner: New Transaction Received
+[2025-01-24 20:48:26,673] INFO in miner: New Transaction Received
+[2025-01-24 20:48:26,689] INFO in miner: New Transaction Received
+[2025-01-24 20:48:26,738] INFO in miner: New Transaction Received
+[2025-01-24 20:48:27,392] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:27,420] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:27,510] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:27,577] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:27,679] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:27,696] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:27,746] INFO in miner: start mining
+[2025-01-24 20:48:27,747] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:29,352] INFO in blockchain: client:57e7e7f97558466cbdbc9e071e6757d6, local.accuracy: 0.8348000049591064, base.accuracy:0.8741999864578247, weight: 0.048020017147064206
+[2025-01-24 20:48:29,352] INFO in blockchain: client:8d57f7d5ffc74c00b8d1f5bc1fc2fbe9, local.accuracy: 0.8600000143051147, base.accuracy:0.8741999864578247, weight: 0.07322002649307252
+[2025-01-24 20:48:29,352] INFO in blockchain: client:a764993896464a729b2c50fa081c67cf, local.accuracy: 0.8517000079154968, base.accuracy:0.8741999864578247, weight: 0.06492002010345459
+[2025-01-24 20:48:29,352] INFO in blockchain: client:e039c1b0a2e148e88eb204ad108d2ca6, local.accuracy: 0.8259000182151794, base.accuracy:0.8741999864578247, weight: 0.03912003040313721
+[2025-01-24 20:48:29,352] INFO in blockchain: client:c5455670c436460abc947bbe1e3a905c, local.accuracy: 0.8497999906539917, base.accuracy:0.8741999864578247, weight: 0.06302000284194946
+[2025-01-24 20:48:29,352] INFO in blockchain: client:7ff3bfcea4ce4bc5bb0201e7ddd0465e, local.accuracy: 0.8094000220298767, base.accuracy:0.8741999864578247, weight: 0.022620034217834477
+[2025-01-24 20:48:29,352] INFO in blockchain: client:bedd98ee563b494289bfe16fd82a768f, local.accuracy: 0.85589998960495, base.accuracy:0.8741999864578247, weight: 0.06912000179290773
+[2025-01-24 20:48:29,352] INFO in blockchain: client:f56ccdb4b05a495b891c6a604039d39c, local.accuracy: 0.8208000063896179, base.accuracy:0.8741999864578247, weight: 0.03402001857757569
+[2025-01-24 20:48:29,352] INFO in blockchain: client:572d84b2dc43478cab8b3c1f4a83afae, local.accuracy: 0.8374000191688538, base.accuracy:0.8741999864578247, weight: 0.05062003135681153
+[2025-01-24 20:48:29,352] INFO in blockchain: client:22f8c28870aa4ab0a3ca5b77e088a477, local.accuracy: 0.8205000162124634, base.accuracy:0.8741999864578247, weight: 0.03372002840042115
+[2025-01-24 20:48:29,352] INFO in blockchain: client: 57e7e7f97558466cbdbc9e071e6757d6, weights[client]: 0.09634830815683955
+[2025-01-24 20:48:29,352] INFO in blockchain: client: 8d57f7d5ffc74c00b8d1f5bc1fc2fbe9, weights[client]: 0.1469101032221894
+[2025-01-24 20:48:29,352] INFO in blockchain: client: a764993896464a729b2c50fa081c67cf, weights[client]: 0.13025680693365324
+[2025-01-24 20:48:29,352] INFO in blockchain: client: e039c1b0a2e148e88eb204ad108d2ca6, weights[client]: 0.07849119946882047
+[2025-01-24 20:48:29,352] INFO in blockchain: client: c5455670c436460abc947bbe1e3a905c, weights[client]: 0.12644457487937955
+[2025-01-24 20:48:29,353] INFO in blockchain: client: 7ff3bfcea4ce4bc5bb0201e7ddd0465e, weights[client]: 0.04538528215563981
+[2025-01-24 20:48:29,353] INFO in blockchain: client: bedd98ee563b494289bfe16fd82a768f, weights[client]: 0.13868373291390051
+[2025-01-24 20:48:29,353] INFO in blockchain: client: f56ccdb4b05a495b891c6a604039d39c, weights[client]: 0.06825843529741557
+[2025-01-24 20:48:29,353] INFO in blockchain: client: 572d84b2dc43478cab8b3c1f4a83afae, weights[client]: 0.10156502787448779
+[2025-01-24 20:48:29,353] INFO in blockchain: client: 22f8c28870aa4ab0a3ca5b77e088a477, weights[client]: 0.06765652909767408
+[2025-01-24 20:48:29,517] INFO in blockchain: index6, global model accuracy0.8726999759674072
+[2025-01-24 20:48:29,517] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+[2025-01-24 20:48:29,693] INFO in miner: mining completed
+[2025-01-24 20:48:44,126] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,130] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,168] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,193] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,197] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,232] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,336] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,340] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,375] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,442] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,449] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,490] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,517] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,522] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,540] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,564] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,570] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,572] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,582] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,652] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,668] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,669] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,670] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,672] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,675] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,675] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,684] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,746] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,822] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:44,831] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:48:45,275] INFO in miner: New Transaction Received
+[2025-01-24 20:48:45,351] INFO in miner: New Transaction Received
+[2025-01-24 20:48:46,033] INFO in miner: New Transaction Received
+[2025-01-24 20:48:46,391] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:46,404] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:46,930] INFO in miner: New Transaction Received
+[2025-01-24 20:48:47,143] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:47,172] INFO in miner: New Transaction Received
+[2025-01-24 20:48:47,216] INFO in miner: New Transaction Received
+[2025-01-24 20:48:47,294] INFO in miner: New Transaction Received
+[2025-01-24 20:48:47,403] INFO in miner: New Transaction Received
+[2025-01-24 20:48:47,408] INFO in miner: New Transaction Received
+[2025-01-24 20:48:47,433] INFO in miner: New Transaction Received
+[2025-01-24 20:48:47,938] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:48,180] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:48,226] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:48,302] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:48,412] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:48,420] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:48,441] INFO in miner: start mining
+[2025-01-24 20:48:48,442] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:48:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:48:50,181] INFO in blockchain: client:f20beebc62de4613b42ab73367eafc47, local.accuracy: 0.8037999868392944, base.accuracy:0.8726999759674072, weight: 0.018370008468627935
+[2025-01-24 20:48:50,182] INFO in blockchain: client:86cdcf5b05c64c619df744812521fb61, local.accuracy: 0.77920001745224, base.accuracy:0.8726999759674072, weight: -0.006229960918426508
+[2025-01-24 20:48:50,182] INFO in blockchain: client:0a0af222415d4fea9ba5289666a54946, local.accuracy: 0.7983999848365784, base.accuracy:0.8726999759674072, weight: 0.01297000646591187
+[2025-01-24 20:48:50,182] INFO in blockchain: client:83b695bcefc44671afcb41fc7618fd02, local.accuracy: 0.8162000179290771, base.accuracy:0.8726999759674072, weight: 0.03077003955841065
+[2025-01-24 20:48:50,182] INFO in blockchain: client:d15d9d1bda72468eb94fbb3d474bcace, local.accuracy: 0.8016999959945679, base.accuracy:0.8726999759674072, weight: 0.016270017623901373
+[2025-01-24 20:48:50,182] INFO in blockchain: client:9217ed0ff2694e0c953e6e2f9ef8cc1d, local.accuracy: 0.8152999877929688, base.accuracy:0.8726999759674072, weight: 0.02987000942230225
+[2025-01-24 20:48:50,182] INFO in blockchain: client:d3afdbe56b1743cbaa81249f17460412, local.accuracy: 0.7935000061988831, base.accuracy:0.8726999759674072, weight: 0.008070027828216558
+[2025-01-24 20:48:50,182] INFO in blockchain: client:ce24c4fa582c42a4afecc305c6890ef8, local.accuracy: 0.7967000007629395, base.accuracy:0.8726999759674072, weight: 0.011270022392272955
+[2025-01-24 20:48:50,182] INFO in blockchain: client:8adf63875c0844a7bf056a4286b96f49, local.accuracy: 0.8100000023841858, base.accuracy:0.8726999759674072, weight: 0.024570024013519286
+[2025-01-24 20:48:50,182] INFO in blockchain: client:ead3032c7a3f49ac92e3e1f32261937a, local.accuracy: 0.8076000213623047, base.accuracy:0.8726999759674072, weight: 0.022170042991638182
+[2025-01-24 20:48:50,182] INFO in blockchain: client: f20beebc62de4613b42ab73367eafc47, weights[client]: 0.10928008611990267
+[2025-01-24 20:48:50,182] INFO in blockchain: client: 86cdcf5b05c64c619df744812521fb61, weights[client]: -0.037060988123764696
+[2025-01-24 20:48:50,182] INFO in blockchain: client: 0a0af222415d4fea9ba5289666a54946, weights[client]: 0.07715638378670858
+[2025-01-24 20:48:50,182] INFO in blockchain: client: 83b695bcefc44671afcb41fc7618fd02, weights[client]: 0.1830457824011596
+[2025-01-24 20:48:50,182] INFO in blockchain: client: d15d9d1bda72468eb94fbb3d474bcace, weights[client]: 0.0967875943088814
+[2025-01-24 20:48:50,182] INFO in blockchain: client: 9217ed0ff2694e0c953e6e2f9ef8cc1d, weights[client]: 0.17769165472329795
+[2025-01-24 20:48:50,182] INFO in blockchain: client: d3afdbe56b1743cbaa81249f17460412, weights[client]: 0.04800723622765894
+[2025-01-24 20:48:50,182] INFO in blockchain: client: ce24c4fa582c42a4afecc305c6890ef8, weights[client]: 0.06704346487940449
+[2025-01-24 20:48:50,182] INFO in blockchain: client: 8adf63875c0844a7bf056a4286b96f49, weights[client]: 0.1461629342605311
+[2025-01-24 20:48:50,182] INFO in blockchain: client: ead3032c7a3f49ac92e3e1f32261937a, weights[client]: 0.13188585141621992
+[2025-01-24 20:48:50,348] INFO in blockchain: index7, global model accuracy0.8438000082969666
+[2025-01-24 20:48:50,348] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+index7, global model accuracy0.8438000082969666
+[2025-01-24 20:48:50,516] INFO in miner: mining completed
+[2025-01-24 20:49:04,223] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,226] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,254] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,254] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,257] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,284] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,376] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,378] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,410] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,476] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,482] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,515] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,518] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,525] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,540] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,563] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,564] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,611] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,614] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,624] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,625] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,644] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,663] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,702] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,743] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,745] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,749] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,760] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,826] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:04,855] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:05,165] INFO in miner: New Transaction Received
+[2025-01-24 20:49:05,215] INFO in miner: New Transaction Received
+[2025-01-24 20:49:06,326] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:06,452] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:06,753] INFO in miner: New Transaction Received
+[2025-01-24 20:49:06,861] INFO in miner: New Transaction Received
+[2025-01-24 20:49:06,880] INFO in miner: New Transaction Received
+[2025-01-24 20:49:06,958] INFO in miner: New Transaction Received
+[2025-01-24 20:49:06,962] INFO in miner: New Transaction Received
+[2025-01-24 20:49:07,008] INFO in miner: New Transaction Received
+[2025-01-24 20:49:07,036] INFO in miner: New Transaction Received
+[2025-01-24 20:49:07,137] INFO in miner: New Transaction Received
+[2025-01-24 20:49:07,760] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:07,868] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:07,886] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:07,965] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:07,975] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:08,015] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:08,046] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:08,144] INFO in miner: start mining
+[2025-01-24 20:49:08,145] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:09,726] INFO in blockchain: client:368f4c563a02480291770429c73ed38f, local.accuracy: 0.8273000121116638, base.accuracy:0.8438000082969666, weight: 0.06788000464439392
+[2025-01-24 20:49:09,726] INFO in blockchain: client:af0876f019d6461fa6feb7dc117205e5, local.accuracy: 0.8373000025749207, base.accuracy:0.8438000082969666, weight: 0.07787999510765076
+[2025-01-24 20:49:09,726] INFO in blockchain: client:3fc78d2f46654e1794a3416b02ba0b73, local.accuracy: 0.8284000158309937, base.accuracy:0.8438000082969666, weight: 0.06898000836372375
+[2025-01-24 20:49:09,726] INFO in blockchain: client:41d134734f3f44aabd5fe28ceebdf928, local.accuracy: 0.8183000087738037, base.accuracy:0.8438000082969666, weight: 0.058880001306533813
+[2025-01-24 20:49:09,726] INFO in blockchain: client:71cac85c81824ff9aec96fc7cc2bdaa2, local.accuracy: 0.8361999988555908, base.accuracy:0.8438000082969666, weight: 0.07677999138832092
+[2025-01-24 20:49:09,726] INFO in blockchain: client:1069b5746b9b406d83960c534b9c1713, local.accuracy: 0.8296999931335449, base.accuracy:0.8438000082969666, weight: 0.07027998566627502
+[2025-01-24 20:49:09,726] INFO in blockchain: client:e218c1520f10481680a8e3b02ceda8d0, local.accuracy: 0.8424000144004822, base.accuracy:0.8438000082969666, weight: 0.0829800069332123
+[2025-01-24 20:49:09,726] INFO in blockchain: client:5be8e5cba2d54b09b70070215db5090b, local.accuracy: 0.8191999793052673, base.accuracy:0.8438000082969666, weight: 0.059779971837997437
+[2025-01-24 20:49:09,726] INFO in blockchain: client:563ae617d5db49729d7047312fcca9ea, local.accuracy: 0.8131999969482422, base.accuracy:0.8438000082969666, weight: 0.053779989480972304
+[2025-01-24 20:49:09,726] INFO in blockchain: client:0ac02bd317aa4a5f94409cbc14b5064d, local.accuracy: 0.8356000185012817, base.accuracy:0.8438000082969666, weight: 0.07618001103401185
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 368f4c563a02480291770429c73ed38f, weights[client]: 0.09789444475915347
+[2025-01-24 20:49:09,726] INFO in blockchain: client: af0876f019d6461fa6feb7dc117205e5, weights[client]: 0.11231612193972813
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 3fc78d2f46654e1794a3416b02ba0b73, weights[client]: 0.0994808361258148
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 41d134734f3f44aabd5fe28ceebdf928, weights[client]: 0.08491491810464097
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 71cac85c81824ff9aec96fc7cc2bdaa2, weights[client]: 0.1107297305730668
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 1069b5746b9b406d83960c534b9c1713, weights[client]: 0.10135562321369797
+[2025-01-24 20:49:09,726] INFO in blockchain: client: e218c1520f10481680a8e3b02ceda8d0, weights[client]: 0.11967120137061465
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 5be8e5cba2d54b09b70070215db5090b, weights[client]: 0.08621282779010396
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 563ae617d5db49729d7047312fcca9ea, weights[client]: 0.07755983867375449
+[2025-01-24 20:49:09,726] INFO in blockchain: client: 0ac02bd317aa4a5f94409cbc14b5064d, weights[client]: 0.10986445744942483
+[2025-01-24 20:49:09,894] INFO in blockchain: index8, global model accuracy0.8575999736785889
+[2025-01-24 20:49:09,894] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+index7, global model accuracy0.8438000082969666
+index8, global model accuracy0.8575999736785889
+[2025-01-24 20:49:10,069] INFO in miner: mining completed
+[2025-01-24 20:49:24,345] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,348] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,372] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,414] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,417] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,444] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,705] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,718] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,757] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,758] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,763] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,814] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,890] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,914] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:24,957] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,007] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,024] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,078] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,164] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,171] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,197] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,221] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,222] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,224] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,271] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,282] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,283] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,300] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,314] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,321] INFO in miner: New Transaction Received
+[2025-01-24 20:49:25,361] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:25,362] INFO in miner: New Transaction Received
+[2025-01-24 20:49:26,370] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:26,389] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:26,446] INFO in miner: New Transaction Received
+[2025-01-24 20:49:26,470] INFO in miner: New Transaction Received
+[2025-01-24 20:49:26,550] INFO in miner: New Transaction Received
+[2025-01-24 20:49:26,552] INFO in miner: New Transaction Received
+[2025-01-24 20:49:27,167] INFO in miner: New Transaction Received
+[2025-01-24 20:49:27,274] INFO in miner: New Transaction Received
+[2025-01-24 20:49:27,290] INFO in miner: New Transaction Received
+[2025-01-24 20:49:27,472] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:27,478] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:27,542] INFO in miner: New Transaction Received
+[2025-01-24 20:49:27,559] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:27,567] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:28,176] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:28,282] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:28,297] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:28,550] INFO in miner: start mining
+[2025-01-24 20:49:28,551] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:30,128] INFO in blockchain: client:c1759c23d69d4951b57bbdce40273cc1, local.accuracy: 0.8361999988555908, base.accuracy:0.8575999736785889, weight: 0.06436002254486084
+[2025-01-24 20:49:30,128] INFO in blockchain: client:03f190b8553f4d9592ee5df176396bd9, local.accuracy: 0.8325999975204468, base.accuracy:0.8575999736785889, weight: 0.0607600212097168
+[2025-01-24 20:49:30,128] INFO in blockchain: client:44a5dd418c7848d08fb0058c89a780c0, local.accuracy: 0.8554999828338623, base.accuracy:0.8575999736785889, weight: 0.08366000652313232
+[2025-01-24 20:49:30,128] INFO in blockchain: client:faaf29808b574ad382e00a9803e3ac69, local.accuracy: 0.8181999921798706, base.accuracy:0.8575999736785889, weight: 0.046360015869140625
+[2025-01-24 20:49:30,128] INFO in blockchain: client:86333fb3afe24e6ea9b52a9a065ef849, local.accuracy: 0.8526999950408936, base.accuracy:0.8575999736785889, weight: 0.08086001873016359
+[2025-01-24 20:49:30,128] INFO in blockchain: client:9ae53d0e2e14480690a70993684a721f, local.accuracy: 0.8402000069618225, base.accuracy:0.8575999736785889, weight: 0.06836003065109254
+[2025-01-24 20:49:30,128] INFO in blockchain: client:d2ca86d81fab411eb62b410562b25558, local.accuracy: 0.828000009059906, base.accuracy:0.8575999736785889, weight: 0.056160032749176025
+[2025-01-24 20:49:30,128] INFO in blockchain: client:4ecf00d94a0d4daf94809d224df3f314, local.accuracy: 0.8662999868392944, base.accuracy:0.8575999736785889, weight: 0.09446001052856447
+[2025-01-24 20:49:30,128] INFO in blockchain: client:1832378fea8944398f95d6cac9734fff, local.accuracy: 0.8345999717712402, base.accuracy:0.8575999736785889, weight: 0.06275999546051025
+[2025-01-24 20:49:30,128] INFO in blockchain: client:1728170a36104f238d5ea31d6665ee5c, local.accuracy: 0.8629999756813049, base.accuracy:0.8575999736785889, weight: 0.09115999937057497
+[2025-01-24 20:49:30,128] INFO in blockchain: client: c1759c23d69d4951b57bbdce40273cc1, weights[client]: 0.09078855776045328
+[2025-01-24 20:49:30,128] INFO in blockchain: client: 03f190b8553f4d9592ee5df176396bd9, weights[client]: 0.08571026666871823
+[2025-01-24 20:49:30,128] INFO in blockchain: client: 44a5dd418c7848d08fb0058c89a780c0, weights[client]: 0.11801380785985739
+[2025-01-24 20:49:30,128] INFO in blockchain: client: faaf29808b574ad382e00a9803e3ac69, weights[client]: 0.06539710230177802
+[2025-01-24 20:49:30,128] INFO in blockchain: client: 86333fb3afe24e6ea9b52a9a065ef849, weights[client]: 0.11406404458416375
+[2025-01-24 20:49:30,128] INFO in blockchain: client: 9ae53d0e2e14480690a70993684a721f, weights[client]: 0.09643111276020905
+[2025-01-24 20:49:30,128] INFO in blockchain: client: d2ca86d81fab411eb62b410562b25558, weights[client]: 0.07922135784715705
+[2025-01-24 20:49:30,128] INFO in blockchain: client: 4ecf00d94a0d4daf94809d224df3f314, weights[client]: 0.13324868113506258
+[2025-01-24 20:49:30,128] INFO in blockchain: client: 1832378fea8944398f95d6cac9734fff, weights[client]: 0.0885315021283705
+[2025-01-24 20:49:30,128] INFO in blockchain: client: 1728170a36104f238d5ea31d6665ee5c, weights[client]: 0.12859356695423024
+[2025-01-24 20:49:30,290] INFO in blockchain: index9, global model accuracy0.8754000067710876
+[2025-01-24 20:49:30,290] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+index7, global model accuracy0.8438000082969666
+index8, global model accuracy0.8575999736785889
+index9, global model accuracy0.8754000067710876
+[2025-01-24 20:49:30,458] INFO in miner: mining completed
+[2025-01-24 20:49:44,704] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:44,706] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:44,734] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:44,896] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:44,899] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:44,929] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:44,971] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:44,975] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,009] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,011] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,016] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,050] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,229] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,235] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,281] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,282] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,284] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,295] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,302] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,362] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,364] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,388] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,389] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,393] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,395] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,397] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,404] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,452] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,507] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,515] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:49:45,613] INFO in miner: New Transaction Received
+[2025-01-24 20:49:46,562] INFO in miner: New Transaction Received
+[2025-01-24 20:49:46,672] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:46,673] INFO in miner: New Transaction Received
+[2025-01-24 20:49:46,702] INFO in miner: New Transaction Received
+[2025-01-24 20:49:46,974] INFO in miner: New Transaction Received
+[2025-01-24 20:49:47,658] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:47,699] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:47,725] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:47,829] INFO in miner: New Transaction Received
+[2025-01-24 20:49:47,906] INFO in miner: New Transaction Received
+[2025-01-24 20:49:47,914] INFO in miner: New Transaction Received
+[2025-01-24 20:49:47,982] INFO in miner: New Transaction Received
+[2025-01-24 20:49:48,003] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:48,049] INFO in miner: New Transaction Received
+[2025-01-24 20:49:48,836] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:48,916] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:48,923] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:48,991] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:49,055] INFO in miner: start mining
+[2025-01-24 20:49:49,056] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:49:49] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:49:50,643] INFO in blockchain: client:46715ad578e94e3f814c7f82791d3f98, local.accuracy: 0.8327999711036682, base.accuracy:0.8754000067710876, weight: 0.04493996500968933
+[2025-01-24 20:49:50,643] INFO in blockchain: client:a7652be130cb4375ad9bbdd91df93738, local.accuracy: 0.7975000143051147, base.accuracy:0.8754000067710876, weight: 0.009640008211135864
+[2025-01-24 20:49:50,643] INFO in blockchain: client:0ad0028f83db4a3db63eac1b541391f3, local.accuracy: 0.8215000033378601, base.accuracy:0.8754000067710876, weight: 0.033639997243881226
+[2025-01-24 20:49:50,643] INFO in blockchain: client:3d634c52f1724df3882fa7d455736198, local.accuracy: 0.7940000295639038, base.accuracy:0.8754000067710876, weight: 0.006140023469924927
+[2025-01-24 20:49:50,643] INFO in blockchain: client:70fe070bbbea47a0b89f15f8bd2a8dfc, local.accuracy: 0.8309999704360962, base.accuracy:0.8754000067710876, weight: 0.043139964342117317
+[2025-01-24 20:49:50,643] INFO in blockchain: client:8cfa4ba4be674213ae36d97fa149a5f8, local.accuracy: 0.8122000098228455, base.accuracy:0.8754000067710876, weight: 0.024340003728866577
+[2025-01-24 20:49:50,643] INFO in blockchain: client:b4fd886c16b243d2928f7a108227dd7c, local.accuracy: 0.8138999938964844, base.accuracy:0.8754000067710876, weight: 0.0260399878025055
+[2025-01-24 20:49:50,643] INFO in blockchain: client:b0402ef13830401c924eaeb0bb051014, local.accuracy: 0.7972000241279602, base.accuracy:0.8754000067710876, weight: 0.009340018033981337
+[2025-01-24 20:49:50,643] INFO in blockchain: client:6051edf26f3c490cad26ce821a377180, local.accuracy: 0.8105000257492065, base.accuracy:0.8754000067710876, weight: 0.022640019655227668
+[2025-01-24 20:49:50,643] INFO in blockchain: client:b8520a0bd7bd4976931771b774f3b8ac, local.accuracy: 0.7993000149726868, base.accuracy:0.8754000067710876, weight: 0.011440008878707886
+[2025-01-24 20:49:50,643] INFO in blockchain: client: 46715ad578e94e3f814c7f82791d3f98, weights[client]: 0.1942929775780362
+[2025-01-24 20:49:50,643] INFO in blockchain: client: a7652be130cb4375ad9bbdd91df93738, weights[client]: 0.041677511293444006
+[2025-01-24 20:49:50,643] INFO in blockchain: client: 0ad0028f83db4a3db63eac1b541391f3, weights[client]: 0.14543881440097717
+[2025-01-24 20:49:50,643] INFO in blockchain: client: 3d634c52f1724df3882fa7d455736198, weights[client]: 0.026545713645160375
+[2025-01-24 20:49:50,643] INFO in blockchain: client: 70fe070bbbea47a0b89f15f8bd2a8dfc, weights[client]: 0.1865108734026187
+[2025-01-24 20:49:50,643] INFO in blockchain: client: 8cfa4ba4be674213ae36d97fa149a5f8, weights[client]: 0.10523131911033688
+[2025-01-24 20:49:50,643] INFO in blockchain: client: b4fd886c16b243d2928f7a108227dd7c, weights[client]: 0.11258101258320301
+[2025-01-24 20:49:50,643] INFO in blockchain: client: b0402ef13830401c924eaeb0bb051014, weights[client]: 0.04038053687989142
+[2025-01-24 20:49:50,643] INFO in blockchain: client: 6051edf26f3c490cad26ce821a377180, weights[client]: 0.09788162563747081
+[2025-01-24 20:49:50,643] INFO in blockchain: client: b8520a0bd7bd4976931771b774f3b8ac, weights[client]: 0.04945961546886153
+[2025-01-24 20:49:50,803] INFO in blockchain: index10, global model accuracy0.847000002861023
+[2025-01-24 20:49:50,803] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+index7, global model accuracy0.8438000082969666
+index8, global model accuracy0.8575999736785889
+index9, global model accuracy0.8754000067710876
+index10, global model accuracy0.847000002861023
+[2025-01-24 20:49:50,967] INFO in miner: mining completed
+[2025-01-24 20:50:04,999] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,004] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,032] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,130] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,133] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,161] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,309] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,315] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,334] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,354] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,357] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,423] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,471] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,483] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,486] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,530] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,531] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,532] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,557] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,590] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,632] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,642] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,644] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,648] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,649] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,719] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,720] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,739] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,748] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,795] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:05,912] INFO in miner: New Transaction Received
+[2025-01-24 20:50:06,492] INFO in miner: New Transaction Received
+[2025-01-24 20:50:06,997] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:07,153] INFO in miner: New Transaction Received
+[2025-01-24 20:50:07,446] INFO in miner: New Transaction Received
+[2025-01-24 20:50:07,648] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:07,692] INFO in miner: New Transaction Received
+[2025-01-24 20:50:07,992] INFO in miner: New Transaction Received
+[2025-01-24 20:50:08,139] INFO in miner: New Transaction Received
+[2025-01-24 20:50:08,162] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:08,163] INFO in miner: New Transaction Received
+[2025-01-24 20:50:08,168] INFO in miner: New Transaction Received
+[2025-01-24 20:50:08,222] INFO in miner: New Transaction Received
+[2025-01-24 20:50:08,454] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:08,707] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:08,998] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:09,146] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:09] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:09,171] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:09] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:09,178] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:09] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:09,231] INFO in miner: start mining
+[2025-01-24 20:50:09,232] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:09] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:10,817] INFO in blockchain: client:60f9e93270fb4cca96f842121d4a12d4, local.accuracy: 0.8587999939918518, base.accuracy:0.847000002861023, weight: 0.09649999141693115
+[2025-01-24 20:50:10,817] INFO in blockchain: client:ab4389b67362420999f4a6b95080b650, local.accuracy: 0.8730000257492065, base.accuracy:0.847000002861023, weight: 0.11070002317428589
+[2025-01-24 20:50:10,817] INFO in blockchain: client:d433375f92904667b2c02bf5b7ca14de, local.accuracy: 0.8799999952316284, base.accuracy:0.847000002861023, weight: 0.11769999265670776
+[2025-01-24 20:50:10,817] INFO in blockchain: client:16fa8e9d34034f4caf95865161f8a832, local.accuracy: 0.8748000264167786, base.accuracy:0.847000002861023, weight: 0.11250002384185792
+[2025-01-24 20:50:10,817] INFO in blockchain: client:22fe14f4f9f0496cb50b4574884e57c9, local.accuracy: 0.8702999949455261, base.accuracy:0.847000002861023, weight: 0.10799999237060548
+[2025-01-24 20:50:10,817] INFO in blockchain: client:8adf32d63d644b13b2209f1227aebc79, local.accuracy: 0.8694000244140625, base.accuracy:0.847000002861023, weight: 0.10710002183914186
+[2025-01-24 20:50:10,817] INFO in blockchain: client:3a5b6158160142cfa2f0cc96035628bc, local.accuracy: 0.8779000043869019, base.accuracy:0.847000002861023, weight: 0.11560000181198121
+[2025-01-24 20:50:10,817] INFO in blockchain: client:8071ea4b5ab84205b5eb67daf1dbb1e0, local.accuracy: 0.871399998664856, base.accuracy:0.847000002861023, weight: 0.10909999608993531
+[2025-01-24 20:50:10,817] INFO in blockchain: client:a0a5d1457e0c45b6a0401334d4f9c708, local.accuracy: 0.8557000160217285, base.accuracy:0.847000002861023, weight: 0.09340001344680787
+[2025-01-24 20:50:10,817] INFO in blockchain: client:cb15357b48e44ab1a83421462d7ada9d, local.accuracy: 0.8543000221252441, base.accuracy:0.847000002861023, weight: 0.0920000195503235
+[2025-01-24 20:50:10,817] INFO in blockchain: client: 60f9e93270fb4cca96f842121d4a12d4, weights[client]: 0.09081496752960642
+[2025-01-24 20:50:10,817] INFO in blockchain: client: ab4389b67362420999f4a6b95080b650, weights[client]: 0.10417844460383642
+[2025-01-24 20:50:10,817] INFO in blockchain: client: d433375f92904667b2c02bf5b7ca14de, weights[client]: 0.11076603069498756
+[2025-01-24 20:50:10,817] INFO in blockchain: client: 16fa8e9d34034f4caf95865161f8a832, weights[client]: 0.1058724033263047
+[2025-01-24 20:50:10,817] INFO in blockchain: client: 22fe14f4f9f0496cb50b4574884e57c9, weights[client]: 0.10163747847353113
+[2025-01-24 20:50:10,817] INFO in blockchain: client: 8adf32d63d644b13b2209f1227aebc79, weights[client]: 0.10079052715889991
+[2025-01-24 20:50:10,817] INFO in blockchain: client: 3a5b6158160142cfa2f0cc96035628bc, weights[client]: 0.10878975486764222
+[2025-01-24 20:50:10,817] INFO in blockchain: client: 8071ea4b5ab84205b5eb67daf1dbb1e0, weights[client]: 0.10267267858688428
+[2025-01-24 20:50:10,817] INFO in blockchain: client: a0a5d1457e0c45b6a0401334d4f9c708, weights[client]: 0.08789761598826892
+[2025-01-24 20:50:10,817] INFO in blockchain: client: cb15357b48e44ab1a83421462d7ada9d, weights[client]: 0.0865800987700387
+[2025-01-24 20:50:10,985] INFO in blockchain: index11, global model accuracy0.8841999769210815
+[2025-01-24 20:50:10,985] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+index7, global model accuracy0.8438000082969666
+index8, global model accuracy0.8575999736785889
+index9, global model accuracy0.8754000067710876
+index10, global model accuracy0.847000002861023
+index11, global model accuracy0.8841999769210815
+[2025-01-24 20:50:11,155] INFO in miner: mining completed
+[2025-01-24 20:50:25,182] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,184] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,212] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,241] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,244] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,272] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,284] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,287] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,316] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,610] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,620] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,651] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,676] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,677] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,740] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,897] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,911] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,918] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,955] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,960] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:25,961] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,043] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,094] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,114] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,114] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,143] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,229] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,265] INFO in miner: New Transaction Received
+[2025-01-24 20:50:26,267] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,271] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,316] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:26] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:26,393] INFO in miner: New Transaction Received
+[2025-01-24 20:50:26,531] INFO in miner: New Transaction Received
+[2025-01-24 20:50:27,464] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:27,567] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:27,756] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:28,144] INFO in miner: New Transaction Received
+[2025-01-24 20:50:28,224] INFO in miner: New Transaction Received
+[2025-01-24 20:50:28,227] INFO in miner: New Transaction Received
+[2025-01-24 20:50:28,262] INFO in miner: New Transaction Received
+[2025-01-24 20:50:28,334] INFO in miner: New Transaction Received
+[2025-01-24 20:50:28,350] INFO in miner: New Transaction Received
+[2025-01-24 20:50:28,387] INFO in miner: New Transaction Received
+[2025-01-24 20:50:29,156] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:29,237] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:29,247] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:29,283] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:29,346] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:29,365] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:29,403] INFO in miner: start mining
+[2025-01-24 20:50:29,404] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:31,045] INFO in blockchain: client:b9c0f63457b04c7eb71787d0c29f743a, local.accuracy: 0.8730000257492065, base.accuracy:0.8841999769210815, weight: 0.07722004652023315
+[2025-01-24 20:50:31,046] INFO in blockchain: client:8e78f650c947403b8af2f7694736a066, local.accuracy: 0.8702999949455261, base.accuracy:0.8841999769210815, weight: 0.07452001571655274
+[2025-01-24 20:50:31,046] INFO in blockchain: client:09fc91fe6f254221823416f62d522d1a, local.accuracy: 0.8467000126838684, base.accuracy:0.8841999769210815, weight: 0.05092003345489503
+[2025-01-24 20:50:31,046] INFO in blockchain: client:d4b599c64fdc4ad7b4fa0c5f22f2f3e6, local.accuracy: 0.8654999732971191, base.accuracy:0.8841999769210815, weight: 0.06971999406814575
+[2025-01-24 20:50:31,046] INFO in blockchain: client:30c79236d6bb494bb577721458721da0, local.accuracy: 0.8255000114440918, base.accuracy:0.8841999769210815, weight: 0.029720032215118417
+[2025-01-24 20:50:31,046] INFO in blockchain: client:a3a0df6bc47e4bf69bf1f8b45947d4f5, local.accuracy: 0.8011999726295471, base.accuracy:0.8841999769210815, weight: 0.005419993400573725
+[2025-01-24 20:50:31,046] INFO in blockchain: client:eee7c840d394476fb0592aa740a26216, local.accuracy: 0.8256000280380249, base.accuracy:0.8841999769210815, weight: 0.029820048809051515
+[2025-01-24 20:50:31,046] INFO in blockchain: client:de12ea5ba250493fa45371a1d4eb69bb, local.accuracy: 0.8413000106811523, base.accuracy:0.8841999769210815, weight: 0.04552003145217896
+[2025-01-24 20:50:31,046] INFO in blockchain: client:0e20d23878b642d89e7b803c1bd6c08c, local.accuracy: 0.8070999979972839, base.accuracy:0.8841999769210815, weight: 0.011320018768310555
+[2025-01-24 20:50:31,046] INFO in blockchain: client:81d315edef934afcaae7c94fcf6c672c, local.accuracy: 0.8712999820709229, base.accuracy:0.8841999769210815, weight: 0.07552000284194947
+[2025-01-24 20:50:31,046] INFO in blockchain: client: b9c0f63457b04c7eb71787d0c29f743a, weights[client]: 0.16440283330681132
+[2025-01-24 20:50:31,046] INFO in blockchain: client: 8e78f650c947403b8af2f7694736a066, weights[client]: 0.15865442037333274
+[2025-01-24 20:50:31,046] INFO in blockchain: client: 09fc91fe6f254221823416f62d522d1a, weights[client]: 0.1084096442478689
+[2025-01-24 20:50:31,046] INFO in blockchain: client: d4b599c64fdc4ad7b4fa0c5f22f2f3e6, weights[client]: 0.1484350901023341
+[2025-01-24 20:50:31,046] INFO in blockchain: client: 30c79236d6bb494bb577721458721da0, weights[client]: 0.06327446980823734
+[2025-01-24 20:50:31,046] INFO in blockchain: client: a3a0df6bc47e4bf69bf1f8b45947d4f5, weights[client]: 0.011539261004266088
+[2025-01-24 20:50:31,046] INFO in blockchain: client: eee7c840d394476fb0592aa740a26216, weights[client]: 0.06348740689078611
+[2025-01-24 20:50:31,046] INFO in blockchain: client: de12ea5ba250493fa45371a1d4eb69bb, weights[client]: 0.09691294528024576
+[2025-01-24 20:50:31,046] INFO in blockchain: client: 0e20d23878b642d89e7b803c1bd6c08c, weights[client]: 0.024100518485299104
+[2025-01-24 20:50:31,046] INFO in blockchain: client: 81d315edef934afcaae7c94fcf6c672c, weights[client]: 0.16078341050081835
+[2025-01-24 20:50:31,223] INFO in blockchain: index12, global model accuracy0.8938000202178955
+[2025-01-24 20:50:31,223] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+index7, global model accuracy0.8438000082969666
+index8, global model accuracy0.8575999736785889
+index9, global model accuracy0.8754000067710876
+index10, global model accuracy0.847000002861023
+index11, global model accuracy0.8841999769210815
+index12, global model accuracy0.8938000202178955
+[2025-01-24 20:50:31,398] INFO in miner: mining completed
+[2025-01-24 20:50:45,488] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,492] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,493] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,495] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,535] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,550] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,644] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,648] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,681] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,746] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,750] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,785] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,786] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,791] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,828] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,829] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,834] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,851] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,875] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,892] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:45,929] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,115] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,136] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,203] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,212] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,214] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,235] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,248] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,343] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,374] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:46] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-24 20:50:46,474] INFO in miner: New Transaction Received
+[2025-01-24 20:50:46,492] INFO in miner: New Transaction Received
+[2025-01-24 20:50:47,531] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:47,544] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:47,599] INFO in miner: New Transaction Received
+[2025-01-24 20:50:47,752] INFO in miner: New Transaction Received
+[2025-01-24 20:50:47,868] INFO in miner: New Transaction Received
+[2025-01-24 20:50:47,876] INFO in miner: New Transaction Received
+[2025-01-24 20:50:47,886] INFO in miner: New Transaction Received
+[2025-01-24 20:50:48,482] INFO in miner: New Transaction Received
+[2025-01-24 20:50:48,590] INFO in miner: New Transaction Received
+[2025-01-24 20:50:48,609] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:48,664] INFO in miner: New Transaction Received
+[2025-01-24 20:50:48,763] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:48,880] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:48,893] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:48,901] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:49,491] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:49] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:49,601] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:49] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:49,672] INFO in miner: start mining
+[2025-01-24 20:50:49,673] INFO in _internal: 127.0.0.1 - - [24/Jan/2025 20:50:49] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-24 20:50:51,438] INFO in blockchain: client:c19f749b1c04483b805a3dff16ac51de, local.accuracy: 0.8339999914169312, base.accuracy:0.8938000202178955, weight: 0.029579973220825194
+[2025-01-24 20:50:51,438] INFO in blockchain: client:e5376cf5b57544b29c3d98c6b4df9c31, local.accuracy: 0.8658000230789185, base.accuracy:0.8938000202178955, weight: 0.061380004882812506
+[2025-01-24 20:50:51,438] INFO in blockchain: client:02227be7fc554b0fa85d6f4090dafd7c, local.accuracy: 0.8740000128746033, base.accuracy:0.8938000202178955, weight: 0.06957999467849732
+[2025-01-24 20:50:51,438] INFO in blockchain: client:f911191c148948fda25df710282dfec8, local.accuracy: 0.8889999985694885, base.accuracy:0.8938000202178955, weight: 0.08457998037338257
+[2025-01-24 20:50:51,438] INFO in blockchain: client:4a172a43d8894989a35d2814c722bc3a, local.accuracy: 0.8644000291824341, base.accuracy:0.8938000202178955, weight: 0.05998001098632813
+[2025-01-24 20:50:51,438] INFO in blockchain: client:5adc3dd1fcb340ccb76741fd0b316e07, local.accuracy: 0.8586000204086304, base.accuracy:0.8938000202178955, weight: 0.05418000221252441
+[2025-01-24 20:50:51,438] INFO in blockchain: client:b9e4daf16a1d415bb93e9d1eec38f2ed, local.accuracy: 0.8252999782562256, base.accuracy:0.8938000202178955, weight: 0.020879960060119634
+[2025-01-24 20:50:51,438] INFO in blockchain: client:bbae6c04c9fb4bdfa2db3ca29f5df24d, local.accuracy: 0.8668000102043152, base.accuracy:0.8938000202178955, weight: 0.062379992008209234
+[2025-01-24 20:50:51,438] INFO in blockchain: client:6c9ab60c006c48ee8b282b94420f7f9b, local.accuracy: 0.8762999773025513, base.accuracy:0.8938000202178955, weight: 0.07187995910644532
+[2025-01-24 20:50:51,438] INFO in blockchain: client:2ebd87b0c2204b749cd217b55587ea1b, local.accuracy: 0.8644000291824341, base.accuracy:0.8938000202178955, weight: 0.05998001098632813
+[2025-01-24 20:50:51,438] INFO in blockchain: client: c19f749b1c04483b805a3dff16ac51de, weights[client]: 0.05149717785857198
+[2025-01-24 20:50:51,440] INFO in blockchain: client: e5376cf5b57544b29c3d98c6b4df9c31, weights[client]: 0.10685936071723166
+[2025-01-24 20:50:51,440] INFO in blockchain: client: 02227be7fc554b0fa85d6f4090dafd7c, weights[client]: 0.1211351117395335
+[2025-01-24 20:50:51,440] INFO in blockchain: client: f911191c148948fda25df710282dfec8, weights[client]: 0.14724929803168701
+[2025-01-24 20:50:51,440] INFO in blockchain: client: 4a172a43d8894989a35d2814c722bc3a, weights[client]: 0.1044220449647815
+[2025-01-24 20:50:51,440] INFO in blockchain: client: 5adc3dd1fcb340ccb76741fd0b316e07, weights[client]: 0.09432453469402961
+[2025-01-24 20:50:51,440] INFO in blockchain: client: b9e4daf16a1d415bb93e9d1eec38f2ed, weights[client]: 0.036350912452444185
+[2025-01-24 20:50:51,440] INFO in blockchain: client: bbae6c04c9fb4bdfa2db3ca29f5df24d, weights[client]: 0.10860028571633147
+[2025-01-24 20:50:51,440] INFO in blockchain: client: 6c9ab60c006c48ee8b282b94420f7f9b, weights[client]: 0.12513922886060785
+[2025-01-24 20:50:51,440] INFO in blockchain: client: 2ebd87b0c2204b749cd217b55587ea1b, weights[client]: 0.1044220449647815
+[2025-01-24 20:50:51,609] INFO in blockchain: index13, global model accuracy0.8877999782562256
+[2025-01-24 20:50:51,610] INFO in blockchain: index1, global model accuracy0.054999999701976776
+index2, global model accuracy0.8374999761581421
+index3, global model accuracy0.7975999712944031
+index4, global model accuracy0.8166999816894531
+index5, global model accuracy0.8741999864578247
+index6, global model accuracy0.8726999759674072
+index7, global model accuracy0.8438000082969666
+index8, global model accuracy0.8575999736785889
+index9, global model accuracy0.8754000067710876
+index10, global model accuracy0.847000002861023
+index11, global model accuracy0.8841999769210815
+index12, global model accuracy0.8938000202178955
+index13, global model accuracy0.8877999782562256
+[2025-01-24 20:50:51,811] INFO in miner: mining completed

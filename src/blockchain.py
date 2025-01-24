@@ -10,7 +10,7 @@ from urllib.parse import urlparse
 import requests
 import random
 import codecs
-import src.federated_data_extractor as dataext
+import federated_data_extractor as dataext
 from federatedlearner import *
 from miner import app
 

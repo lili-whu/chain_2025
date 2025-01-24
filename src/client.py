@@ -5,7 +5,7 @@
 from blockchain import *
 from uuid import uuid4
 import requests
-import src.federated_data_extractor as dataext
+import federated_data_extractor as dataext
 import time
 
 class Client:
@@ -133,7 +133,7 @@ if __name__ == '__main__':
     dataext.get_dataset_details(client.dataset)
     # Data_size, Number_of_classes = dataext.get_dataset_details(client.dataset) # 返回值有bug
     print("--------------")
-    device_id = client.id[:2]
+    device_id = client.id[:4]
     print(device_id,"device_id")
     print("--------------")
     client.work(device_id, args.epochs,args.train_round)

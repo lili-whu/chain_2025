@@ -1,1 +1,264 @@
-2025-01-23 23:53:11.529039: F tensorflow/core/platform/cpu_feature_guard.cc:37] The TensorFlow library was compiled to use AVX instructions, but these aren't available on your machine.
+2025-01-24 20:47:02.906375: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+b4db device_id
+--------------
+Accuracy global model 0.055
+Step 1, Minibatch Loss= 3765.5127, Training Accuracy= 0.062
+Step 2, Minibatch Loss= 9323.9971, Training Accuracy= 0.359
+Step 3, Minibatch Loss= 5921.7798, Training Accuracy= 0.505
+Step 4, Minibatch Loss= 5779.3301, Training Accuracy= 0.518
+Step 5, Minibatch Loss= 3272.3186, Training Accuracy= 0.628
+Step 6, Minibatch Loss= 2006.1327, Training Accuracy= 0.706
+Step 7, Minibatch Loss= 1772.5337, Training Accuracy= 0.735
+Step 8, Minibatch Loss= 2660.7493, Training Accuracy= 0.658
+Step 9, Minibatch Loss= 1237.5172, Training Accuracy= 0.808
+Step 10, Minibatch Loss= 1272.2523, Training Accuracy= 0.818
+Accuracy local update---------b4db--------------: 0.7792
+2025-01-24 20:47:23.477731: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+8ed2 device_id
+--------------
+Accuracy global model 0.8375
+Step 1, Minibatch Loss= 1151.2474, Training Accuracy= 0.838
+Step 2, Minibatch Loss= 13751.7998, Training Accuracy= 0.401
+Step 3, Minibatch Loss= 7417.1699, Training Accuracy= 0.560
+Step 4, Minibatch Loss= 3178.8181, Training Accuracy= 0.689
+Step 5, Minibatch Loss= 4049.7314, Training Accuracy= 0.603
+Step 6, Minibatch Loss= 1686.3896, Training Accuracy= 0.751
+Step 7, Minibatch Loss= 3430.1899, Training Accuracy= 0.638
+Step 8, Minibatch Loss= 2413.6506, Training Accuracy= 0.763
+Step 9, Minibatch Loss= 1588.2107, Training Accuracy= 0.813
+Step 10, Minibatch Loss= 1590.8289, Training Accuracy= 0.811
+Accuracy local update---------8ed2--------------: 0.7419
+2025-01-24 20:47:43.460551: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+055f device_id
+--------------
+Accuracy global model 0.7976
+Step 1, Minibatch Loss= 1660.3066, Training Accuracy= 0.810
+Step 2, Minibatch Loss= 17375.9492, Training Accuracy= 0.354
+Step 3, Minibatch Loss= 6585.4375, Training Accuracy= 0.653
+Step 4, Minibatch Loss= 4059.2427, Training Accuracy= 0.709
+Step 5, Minibatch Loss= 2258.1887, Training Accuracy= 0.767
+Step 6, Minibatch Loss= 3573.1873, Training Accuracy= 0.687
+Step 7, Minibatch Loss= 1938.1913, Training Accuracy= 0.792
+Step 8, Minibatch Loss= 1233.2889, Training Accuracy= 0.840
+Step 9, Minibatch Loss= 2009.1493, Training Accuracy= 0.777
+Step 10, Minibatch Loss= 2217.6074, Training Accuracy= 0.771
+Accuracy local update---------055f--------------: 0.7705
+2025-01-24 20:48:03.489643: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+e060 device_id
+--------------
+Accuracy global model 0.8167
+Step 1, Minibatch Loss= 1558.6287, Training Accuracy= 0.816
+Step 2, Minibatch Loss= 17092.3730, Training Accuracy= 0.439
+Step 3, Minibatch Loss= 2764.3127, Training Accuracy= 0.714
+Step 4, Minibatch Loss= 2284.6970, Training Accuracy= 0.766
+Step 5, Minibatch Loss= 2892.0613, Training Accuracy= 0.737
+Step 6, Minibatch Loss= 1854.1100, Training Accuracy= 0.813
+Step 7, Minibatch Loss= 1208.6488, Training Accuracy= 0.867
+Step 8, Minibatch Loss= 1632.8568, Training Accuracy= 0.815
+Step 9, Minibatch Loss= 1280.8958, Training Accuracy= 0.859
+Step 10, Minibatch Loss= 1508.1687, Training Accuracy= 0.847
+Accuracy local update---------e060--------------: 0.8521
+2025-01-24 20:48:23.752264: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+57e7 device_id
+--------------
+Accuracy global model 0.8742
+Step 1, Minibatch Loss= 1126.8153, Training Accuracy= 0.880
+Step 2, Minibatch Loss= 34066.5664, Training Accuracy= 0.261
+Step 3, Minibatch Loss= 6266.8335, Training Accuracy= 0.555
+Step 4, Minibatch Loss= 2849.2188, Training Accuracy= 0.752
+Step 5, Minibatch Loss= 3586.9277, Training Accuracy= 0.671
+Step 6, Minibatch Loss= 2225.0720, Training Accuracy= 0.763
+Step 7, Minibatch Loss= 2306.2917, Training Accuracy= 0.766
+Step 8, Minibatch Loss= 1958.6697, Training Accuracy= 0.803
+Step 9, Minibatch Loss= 1966.7803, Training Accuracy= 0.810
+Step 10, Minibatch Loss= 1987.1810, Training Accuracy= 0.817
+Accuracy local update---------57e7--------------: 0.8348
+2025-01-24 20:48:44.197797: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+f20b device_id
+--------------
+Accuracy global model 0.8727
+Step 1, Minibatch Loss= 1215.8162, Training Accuracy= 0.883
+Step 2, Minibatch Loss= 36755.6211, Training Accuracy= 0.305
+Step 3, Minibatch Loss= 10653.5889, Training Accuracy= 0.501
+Step 4, Minibatch Loss= 3114.3586, Training Accuracy= 0.750
+Step 5, Minibatch Loss= 4663.0112, Training Accuracy= 0.686
+Step 6, Minibatch Loss= 4003.5149, Training Accuracy= 0.764
+Step 7, Minibatch Loss= 2635.3071, Training Accuracy= 0.806
+Step 8, Minibatch Loss= 2866.4268, Training Accuracy= 0.787
+Step 9, Minibatch Loss= 2460.0979, Training Accuracy= 0.807
+Step 10, Minibatch Loss= 2140.9456, Training Accuracy= 0.821
+Accuracy local update---------f20b--------------: 0.8038
+2025-01-24 20:49:04.281581: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+368f device_id
+--------------
+Accuracy global model 0.8438
+Step 1, Minibatch Loss= 1973.7273, Training Accuracy= 0.840
+Step 2, Minibatch Loss= 13105.8506, Training Accuracy= 0.465
+Step 3, Minibatch Loss= 8060.2368, Training Accuracy= 0.589
+Step 4, Minibatch Loss= 4057.6897, Training Accuracy= 0.758
+Step 5, Minibatch Loss= 2926.5532, Training Accuracy= 0.800
+Step 6, Minibatch Loss= 2703.4897, Training Accuracy= 0.794
+Step 7, Minibatch Loss= 3022.7371, Training Accuracy= 0.762
+Step 8, Minibatch Loss= 2513.1863, Training Accuracy= 0.804
+Step 9, Minibatch Loss= 1649.7614, Training Accuracy= 0.873
+Step 10, Minibatch Loss= 1564.1121, Training Accuracy= 0.872
+Accuracy local update---------368f--------------: 0.8273
+2025-01-24 20:49:24.398004: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+c175 device_id
+--------------
+Accuracy global model 0.8576
+Step 1, Minibatch Loss= 1518.8918, Training Accuracy= 0.870
+Step 2, Minibatch Loss= 18264.7969, Training Accuracy= 0.380
+Step 3, Minibatch Loss= 3255.2117, Training Accuracy= 0.741
+Step 4, Minibatch Loss= 3068.1267, Training Accuracy= 0.814
+Step 5, Minibatch Loss= 2906.1960, Training Accuracy= 0.824
+Step 6, Minibatch Loss= 2563.2402, Training Accuracy= 0.822
+Step 7, Minibatch Loss= 2169.2166, Training Accuracy= 0.832
+Step 8, Minibatch Loss= 1868.9547, Training Accuracy= 0.838
+Step 9, Minibatch Loss= 1785.2065, Training Accuracy= 0.828
+Step 10, Minibatch Loss= 1273.7090, Training Accuracy= 0.874
+Accuracy local update---------c175--------------: 0.8362
+2025-01-24 20:49:44.761931: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+4671 device_id
+--------------
+Accuracy global model 0.8754
+Step 1, Minibatch Loss= 1356.7567, Training Accuracy= 0.876
+Step 2, Minibatch Loss= 27258.9062, Training Accuracy= 0.307
+Step 3, Minibatch Loss= 7024.4819, Training Accuracy= 0.605
+Step 4, Minibatch Loss= 6997.0132, Training Accuracy= 0.634
+Step 5, Minibatch Loss= 4054.9470, Training Accuracy= 0.737
+Step 6, Minibatch Loss= 3348.0557, Training Accuracy= 0.746
+Step 7, Minibatch Loss= 2744.6694, Training Accuracy= 0.756
+Step 8, Minibatch Loss= 2881.9314, Training Accuracy= 0.767
+Step 9, Minibatch Loss= 3038.4316, Training Accuracy= 0.748
+Step 10, Minibatch Loss= 2141.0764, Training Accuracy= 0.808
+Accuracy local update---------4671--------------: 0.8328
+2025-01-24 20:50:05.060052: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+60f9 device_id
+--------------
+Accuracy global model 0.847
+Step 1, Minibatch Loss= 1651.4908, Training Accuracy= 0.852
+Step 2, Minibatch Loss= 15710.5391, Training Accuracy= 0.533
+Step 3, Minibatch Loss= 5491.3789, Training Accuracy= 0.712
+Step 4, Minibatch Loss= 1866.9077, Training Accuracy= 0.813
+Step 5, Minibatch Loss= 2003.6454, Training Accuracy= 0.806
+Step 6, Minibatch Loss= 2365.4583, Training Accuracy= 0.791
+Step 7, Minibatch Loss= 1657.0557, Training Accuracy= 0.861
+Step 8, Minibatch Loss= 1255.9497, Training Accuracy= 0.888
+Step 9, Minibatch Loss= 1688.4503, Training Accuracy= 0.844
+Step 10, Minibatch Loss= 1795.2683, Training Accuracy= 0.829
+Accuracy local update---------60f9--------------: 0.8588
+2025-01-24 20:50:25.237193: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+b9c0 device_id
+--------------
+Accuracy global model 0.8842
+Step 1, Minibatch Loss= 1138.8525, Training Accuracy= 0.888
+Step 2, Minibatch Loss= 13062.1416, Training Accuracy= 0.556
+Step 3, Minibatch Loss= 4425.0093, Training Accuracy= 0.740
+Step 4, Minibatch Loss= 2798.0320, Training Accuracy= 0.813
+Step 5, Minibatch Loss= 2663.9871, Training Accuracy= 0.782
+Step 6, Minibatch Loss= 1782.9700, Training Accuracy= 0.813
+Step 7, Minibatch Loss= 1004.3052, Training Accuracy= 0.893
+Step 8, Minibatch Loss= 1221.6338, Training Accuracy= 0.872
+Step 9, Minibatch Loss= 1453.6067, Training Accuracy= 0.826
+Step 10, Minibatch Loss= 959.5273, Training Accuracy= 0.885
+Accuracy local update---------b9c0--------------: 0.873
+2025-01-24 20:50:45.577409: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+get_dataset_details return
+--------------
+e537 device_id
+--------------
+Accuracy global model 0.8938
+Step 1, Minibatch Loss= 1092.6746, Training Accuracy= 0.898
+Step 2, Minibatch Loss= 18880.9512, Training Accuracy= 0.423
+Step 3, Minibatch Loss= 3043.9939, Training Accuracy= 0.738
+Step 4, Minibatch Loss= 2474.6101, Training Accuracy= 0.787
+Step 5, Minibatch Loss= 2973.4172, Training Accuracy= 0.753
+Step 6, Minibatch Loss= 1665.3376, Training Accuracy= 0.841
+Step 7, Minibatch Loss= 1285.1023, Training Accuracy= 0.865
+Step 8, Minibatch Loss= 1758.0972, Training Accuracy= 0.839
+Step 9, Minibatch Loss= 1805.9449, Training Accuracy= 0.827
+Step 10, Minibatch Loss= 1154.0371, Training Accuracy= 0.890
+Accuracy local update---------e537--------------: 0.8658

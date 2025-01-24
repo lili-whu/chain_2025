@@ -1,5 +1,5 @@
 import tensorflow as tf
-import numpy as np
+
 import pickle
 
 
@@ -49,7 +49,6 @@ def get_dataset_details(dataset):
     for k in dataset.keys():
         print(k, dataset[k].shape)
     print("get_dataset_details return")
-
 
 def split_dataset(dataset, split_count):
     '''

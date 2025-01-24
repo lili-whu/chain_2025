@@ -1,0 +1,1 @@
+2025-01-23 23:53:11.546138: F tensorflow/core/platform/cpu_feature_guard.cc:37] The TensorFlow library was compiled to use AVX instructions, but these aren't available on your machine.

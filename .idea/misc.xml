@@ -3,5 +3,5 @@
   <component name="Black">
     <option name="sdkName" value="BlockchainForFederatedLearning" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Remote Python 3.7.10 Docker (tensorflow:1.11.0)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.9 (BlockchainForFederatedLearning-master)" project-jdk-type="Python SDK" />
 </project>

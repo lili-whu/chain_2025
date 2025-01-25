@@ -25,7 +25,7 @@ updates 包含各客户端的模型更新。函数根据学习率 (lrate) 和客
 # todo 直接进行参数聚合更新操作，可修改为基于准确率/信誉积分/训练数据量等
 # lrate 1
 
-# 直接以第一个局部模型作为结果，相当于不使用聚合 todo 测试非联邦学习
+# todo 测试非联邦学习 直接以第一个局部模型作为结果（此时不分割数据集），相当于不使用聚合
 def compute_upd_1(weights, base, updates, lrate):
     # 计算聚合更新操作
     upd = dict()
@@ -63,8 +63,45 @@ def compute_upd_2(weights, base, updates, lrate):
     return upd
 
 
-# 在FedAvg基础之上，添加了上一轮全局模型的影响（应该是不对的，参数会变为原来二倍，导致参数无法收敛）
+# 基于准确率进行聚合 || 基于准确率和准确率变化值进行聚合（计算weight）
 def compute_upd_3(weights, base, updates, lrate):
+    lrate = 1
+    # 计算聚合更新操作
+    upd = dict()
+    for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
+        upd[x] = np.array(base[x], copy=False)
+        upd[x].fill(0)
+
+    for client in updates.keys():
+        for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
+            model = updates[client].update
+            # 计算参数聚合结果
+            upd[x] += (lrate * weights[client]) * (model[x])
+
+    upd["size"] = 0
+    return upd
+
+# 基于准确率进行聚合 || 基于准确率和准确率变化值进行聚合（外层负责计算）
+def compute_upd_3(weights, base, updates, lrate):
+    lrate = 1
+    # 计算聚合更新操作
+    upd = dict()
+    for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
+        upd[x] = np.array(base[x], copy=False)
+        upd[x].fill(0)
+
+    for client in updates.keys():
+        for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
+            model = updates[client].update
+            # 计算参数聚合结果
+            upd[x] += (lrate * weights[client]) * (model[x])
+
+    upd["size"] = 0
+    return upd
+
+
+# 废弃: 在FedAvg基础之上，添加了上一轮全局模型的影响（这里不对，参数会变为原来二倍，导致参数无法收敛
+def compute_upd_n1(weights, base, updates, lrate):
     lrate = 1
     # 计算聚合更新操作
     upd = dict()
@@ -79,25 +116,6 @@ def compute_upd_3(weights, base, updates, lrate):
             model = updates[client].update
             # 计算参数聚合结果
             upd[x] += (lrate * weights[client]) * (model[x] + base[x])
-
-    upd["size"] = 0
-    return upd
-
-
-# 基于准确率进行聚合 || 基于准确率和准确率变化值进行聚合（计算weight）
-def compute_upd_4(weights, base, updates, lrate):
-    lrate = 1
-    # 计算聚合更新操作
-    upd = dict()
-    for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
-        upd[x] = np.array(base[x], copy=False)
-        upd[x].fill(0)
-
-    for client in updates.keys():
-        for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
-            model = updates[client].update
-            # 计算参数聚合结果
-            upd[x] += (lrate * weights[client]) * (model[x])
 
     upd["size"] = 0
     return upd
@@ -146,6 +164,7 @@ def compute_global_model(base_block, updates, lrate):
         weights[client] = weights[client] / total_weight
         app.logger.info("client: {}, weights[client]: {}".format(client, weights[client]))
 
+    # todo 在这个位置更改计算方式
     upd = compute_upd_2(weights, base, updates, lrate)
 
     tf.reset_default_graph()

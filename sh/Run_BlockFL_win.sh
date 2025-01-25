@@ -57,6 +57,3 @@ done
 
 
 sleep 20
-
-# 后台运行 create_csv.py 并将输出写入到 create_csv_output.txt
-# D:/anaconda/envs/BlockchainForFederatedLearning/python.exe create_csv.py > ./output/create_csv_output.txt 2>&1 &

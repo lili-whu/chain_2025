@@ -3,19 +3,11 @@
            Mining script 
 """
 
-import hashlib
-import json
-import math
-import time
 from flask import Flask,jsonify,request
 from uuid import uuid4
-import requests
-import random
-import pickle
 from blockchain import *
 from threading import Thread, Event
 from federatedlearner import *
-import numpy as np
 import codecs
 import os
 import glob
@@ -139,9 +131,8 @@ def new_transaction():
     
 
     # 接受模型的条件
-
     # 接收状态且时间允许，运行mining
-    if (status['s']=='receiving' and (
+    if (status['s'] == 'receiving' and (
         len(status["blockchain"].current_updates)>=status['blockchain'].last_block['update_limit']
         or time.time()-status['blockchain'].last_block['timestamp']>status['blockchain'].last_block['time_limit'])):
         app.logger.info("start mining")

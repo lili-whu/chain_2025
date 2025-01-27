@@ -71,7 +71,8 @@ def split_iid_with_malicious(dataset, split_sizes=[12000, 12000, 6000, 6000, 300
             "test_images": dataset["test_images"],
             "test_labels": dataset["test_labels"],
             "train_images": dataset["train_images"][indices],
-            "train_labels": dataset["train_labels"][indices]
+            "train_labels": dataset["train_labels"][indices],
+            "original_indices": indices  # 新增字段，保存原始索引
         }
         # 如果是恶意节点，污染所有标签
         if i in malicious_indices:
@@ -116,7 +117,8 @@ if __name__ == '__main__':
 
         # 验证恶意节点标签污染
         if idx in malicious_indices:
-            original_labels = np.argmax(dataset["train_labels"][client_data["train_images"].astype(int)], axis=1)
+            # 使用保存的原始索引获取原始标签
+            original_labels = np.argmax(dataset["train_labels"][client_data["original_indices"]], axis=1)
             poisoned_labels = np.argmax(client_data["train_labels"], axis=1)
             # 计算标签匹配率（应该接近10%随机概率）
             match_rate = np.mean(original_labels == poisoned_labels)

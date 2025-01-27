@@ -93,6 +93,15 @@ def load_data(name="mnist.d"):
     with open(name, "rb") as f:
         return pickle.load(f)
 
+def get_dataset_details(dataset):
+    '''
+    Func to display information on data
+    '''
+    # print(dataset)
+    for k in dataset.keys():
+        print(k, dataset[k].shape)
+    print("get_dataset_details return")
+
 if __name__ == '__main__':
     # 加载完整MNIST数据集
     dataset = get_mnist()

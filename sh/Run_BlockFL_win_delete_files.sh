@@ -23,3 +23,4 @@ TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\
 rm -rf "${TARGET_DIR:?}"/*
 TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\output"
 rm -rf "${TARGET_DIR:?}"/*
+

@@ -105,7 +105,7 @@ if __name__ == '__main__':
     client_datasets = split_iid_with_malicious(dataset, split_sizes, malicious_indices)
 
     # 保存分片数据
-    output_dir = "federated_data_iid_corrected"
+    output_dir = "data"
     os.makedirs(output_dir, exist_ok=True)
 
     for idx, client_data in enumerate(client_datasets):

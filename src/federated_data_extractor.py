@@ -3,11 +3,6 @@ import numpy as np
 import pickle
 import os
 
-# 设置随机种子保证可复现性
-SEED = 42
-np.random.seed(SEED)
-tf.random.set_seed(SEED)
-
 def get_mnist():
     """
     加载MNIST数据集并预处理
@@ -107,7 +102,8 @@ if __name__ == '__main__':
     os.makedirs(output_dir, exist_ok=True)
 
     for idx, client_data in enumerate(client_datasets):
-        filename = os.path.join(output_dir, f"client_{idx}.pkl")
+        filename = os.path.join(output_dir, f"federated_data_{idx}.d")
+
         save_data(client_data, filename)
 
         # 打印客户端信息

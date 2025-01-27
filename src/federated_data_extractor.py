@@ -86,6 +86,13 @@ def save_data(data, filename):
     with open(filename, "wb") as f:
         pickle.dump(data, f)
 
+def load_data(name="mnist.d"):
+    '''
+    Func to load mnist data in binary mode(for reading also binary mode is important)
+    '''
+    with open(name, "rb") as f:
+        return pickle.load(f)
+
 if __name__ == '__main__':
     # 加载完整MNIST数据集
     dataset = get_mnist()

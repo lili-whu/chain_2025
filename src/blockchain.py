@@ -284,7 +284,6 @@ class Blockchain(object):
         if base_model is not None:
             accuracy = base_model['accuracy']
             basemodel = base_model['model']
-            print("here")
         elif len(self.current_updates) > 0:
             # -----------------------
             # 关键：调用 compute_global_model 时传入 self.aggregator
@@ -294,7 +293,6 @@ class Blockchain(object):
                                                        self.current_updates,
                                                        lrate=1,
                                                        aggregator=self.aggregator)
-            print("here")
 
         index = len(self.hashchain) + 1
         block = Block(
@@ -306,9 +304,6 @@ class Blockchain(object):
         )
         # 将accuracy存到accuracy_history
         self.accuracy_history.append(accuracy)
-        # 打印当次和所有历史
-        print(f"[make_block] index={index}, global model accuracy={accuracy}")
-        print(f"accuracy_history={self.accuracy_history}")
 
         hashblock = {
             'index': index,
@@ -322,7 +317,7 @@ class Blockchain(object):
             'update_limit': update_limit,
             'model_hash': self.hash(codecs.encode(pickle.dumps(sorted(block.basemodel.items())), "base64").decode())
         }
-        return block, hashblock
+        return block, hashblock, accuracy_history
 
     def store_block(self, block, hashblock):
         if self.curblock:
@@ -352,7 +347,7 @@ class Blockchain(object):
         return self.hashchain[-1]
 
     def proof_of_work(self, stop_event):
-        block, hblock = self.make_block()
+        block, hblock, accuracy_history = self.make_block()
         stopped = False
         while self.valid_proof(str(sorted(hblock.items()))) is False:
             if stop_event.is_set():
@@ -361,7 +356,7 @@ class Blockchain(object):
             hblock['proof'] += 1
         if not stopped:
             self.store_block(block, hblock)
-        return hblock, stopped
+        return hblock, stopped, accuracy_history
 
     @staticmethod
     def valid_proof(block_data):

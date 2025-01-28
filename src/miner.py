@@ -67,7 +67,9 @@ class PoWThread(Thread):
         self.response = None
 
     def run(self):
-        block, stopped = self.blockchain.proof_of_work(self.stop_event)
+        block, stopped, accuracy_history = self.blockchain.proof_of_work(self.stop_event)
+
+        app.logger.info("accuracy_history: ", accuracy_history)
         self.response = {
             'message': "End mining",
             'stopped': stopped,

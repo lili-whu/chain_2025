@@ -1,70 +1,33 @@
-"""
- - Blockchain for Federated Learning -
-           Mining script 
-"""
+# miner.py
+# - Blockchain for Federated Learning -
+#   Mining script
 
-from flask import Flask,jsonify,request
+import os
+import time
+import pickle
+import requests
+import glob
+
+from flask import Flask, jsonify, request
 from uuid import uuid4
-from blockchain import *
+from blockchain import Blockchain, Block  # 这里的blockchain.py里包含了Blockchain类
 from threading import Thread, Event
 from federatedlearner import *
 import codecs
-import os
-import glob
 from logging.config import dictConfig
+from argparse import ArgumentParser
 
+############################################################
+#                Flask 应用和全局状态
+############################################################
 
-def make_base():
-# 通过一部分训练数据训练初始模型，作为创世区块
-    ''' 
-    Function to do the base level training on the first set of client data 
-    for the genesis block
-    '''
-    reset()
-    dataset = None
-    with open("data/federated_data_0.d",'rb') as f:
-        dataset = pickle.load(f)
-    worker = NNWorker(dataset["train_images"],
-        dataset["train_labels"],
-        dataset["test_images"],
-        dataset["test_labels"],
-        0,
-        "base0")
-    worker.build_base()
-    model = dict()
-    model['model'] = worker.get_model()
-    model['accuracy'] = worker.evaluate()
-    worker.close()
-    return model
-
-
-# 异步执行工作量证明（PoW）的线程类， 在调用 run() 方法时，开始挖矿，生成一个区块，并在挖矿结束后调用 on_end_mining() 函数。
-class PoWThread(Thread):
-    def __init__(self, stop_event,blockchain,node_identifier):
-        self.stop_event = stop_event
-        Thread.__init__(self)
-        self.blockchain = blockchain
-        self.node_identifier = node_identifier
-        self.response = None
-
-    def run(self):
-        block,stopped = self.blockchain.proof_of_work(self.stop_event)
-        self.response = {
-            'message':"End mining",
-            'stopped': stopped,
-            'block': str(block)
-        }
-        on_end_mining(stopped)
-        app.logger.info("mining completed")
-
-
-STOP_EVENT = Event()
-count = 0
 dictConfig({
     'version': 1,
-    'formatters': {'default': {
-        'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
-    }},
+    'formatters': {
+        'default': {
+            'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
+        }
+    },
     'handlers': {'wsgi': {
         'class': 'logging.StreamHandler',
         'stream': 'ext://flask.logging.wsgi_errors_stream',
@@ -77,24 +40,95 @@ dictConfig({
 })
 
 app = Flask(__name__)
-status = {
-    's':"receiving",
-    'id':str(uuid4()).replace('-',''),
-    # 区块链Node
-    'blockchain': None,
-    'address' : ""
-    }
 
-# mine() 函数用于启动挖矿线程，设置系统状态为 mining，表示当前正在挖矿。
+status = {
+    's': "receiving",          # 当前状态：receiving or mining
+    'id': str(uuid4()).replace('-', ''),  # 矿工节点 ID
+    'blockchain': None,        # Blockchain 对象
+    'address': ""              # 当前节点的地址 "host:port"
+}
+
+STOP_EVENT = Event()
+
+
+############################################################
+#                    工作量证明线程
+############################################################
+
+class PoWThread(Thread):
+    """
+    异步挖矿线程：启动后执行 proof_of_work()，结束后回调 on_end_mining()
+    """
+    def __init__(self, stop_event, blockchain, node_identifier):
+        super().__init__()
+        self.stop_event = stop_event
+        self.blockchain = blockchain
+        self.node_identifier = node_identifier
+        self.response = None
+
+    def run(self):
+        block, stopped = self.blockchain.proof_of_work(self.stop_event)
+        self.response = {
+            'message': "End mining",
+            'stopped': stopped,
+            'block': str(block)
+        }
+        on_end_mining(stopped)
+        app.logger.info("mining completed")
+
+
+############################################################
+#                      工具函数
+############################################################
+
+def delete_prev_blocks():
+    """
+    删除之前存储在本地的所有区块文件，通常在启动时调用，以清理旧数据
+    """
+    files = glob.glob('blocks/*.block')
+    for f in files:
+        os.remove(f)
+
+
+def make_base():
+    """
+    用一部分训练数据训练初始模型，作为创世区块的模型
+    也可以直接用随机初始化/空模型，这里只是示例
+    """
+    reset()
+    dataset = None
+    with open("data/federated_data_0.d", 'rb') as f:
+        dataset = pickle.load(f)
+    worker = NNWorker(
+        dataset["train_images"],
+        dataset["train_labels"],
+        dataset["test_images"],
+        dataset["test_labels"],
+        0,
+        "base0"
+    )
+    worker.build_base()
+    model = dict()
+    model['model'] = worker.get_model()
+    model['accuracy'] = worker.evaluate()
+    worker.close()
+    return model
+
+
 def mine():
+    """
+    启动挖矿线程
+    """
     STOP_EVENT.clear()
-    thread = PoWThread(STOP_EVENT,status["blockchain"],status["id"])
+    thread = PoWThread(STOP_EVENT, status["blockchain"], status["id"])
     status['s'] = "mining"
     thread.start()
 
 
-# 挖矿结束时会调用这个函数。如果挖矿成功并停止，它会调用 resolve_conflicts 进行冲突解决，并通知所有其他节点停止挖矿。
 def on_end_mining(stopped):
+    """
+    挖矿结束时的回调
+    """
     if status['s'] == "receiving":
         return
     if stopped:
@@ -103,161 +137,174 @@ def on_end_mining(stopped):
     for node in status["blockchain"].nodes:
         requests.get('http://{node}/stopmining'.format(node=node))
 
-@app.route('/transactions/new',methods=['POST'])
+
+############################################################
+#                   Flask 路由接口
+############################################################
+
+@app.route('/transactions/new', methods=['POST'])
 def new_transaction():
+    """
+    客户端提交训练完成后的本地模型更新
+    """
     app.logger.info("New Transaction Received")
     time.sleep(1)
     if status['s'] != "receiving":
         return 'Miner not receiving', 400
+
     values = request.get_json()
-    # 客户端，
-    required = ['client','baseindex','update','datasize','computing_time']
-    # 校验参数是否齐全
+    required = ['client', 'baseindex', 'update', 'datasize', 'computing_time']
     if not all(k in values for k in required):
         return 'Missing values', 400
+
     if values['client'] in status['blockchain'].current_updates:
         return 'Model already stored', 400
-    
-    index = status['blockchain'].new_update(values['client'],
+
+    index = status['blockchain'].new_update(
+        values['client'],
         values['baseindex'],
         dict(pickle.loads(codecs.decode(values['update'].encode(), "base64"))),
         values['datasize'],
-        values['computing_time'])
-    
-    # 通知其他节点
+        values['computing_time']
+    )
+
+    # 将收到的更新再转发给其他节点，以达成同步
     for node in status["blockchain"].nodes:
         requests.post('http://{node}/transactions/new'.format(node=node),
-            json=request.get_json())
-    
+                      json=request.get_json())
 
-    # 接受模型的条件
-    # 接收状态且时间允许，运行mining
+    # 当累计到一定数量的 updates 或达到时间限制，就启动挖矿
     if (status['s'] == 'receiving' and (
-        len(status["blockchain"].current_updates)>=status['blockchain'].last_block['update_limit']
-        or time.time()-status['blockchain'].last_block['timestamp']>status['blockchain'].last_block['time_limit'])):
+            len(status["blockchain"].current_updates) >= status['blockchain'].last_block['update_limit']
+            or time.time() - status['blockchain'].last_block['timestamp'] > status['blockchain'].last_block['time_limit'])):
         app.logger.info("start mining")
         mine()
-    
-    response = {'message': "Update will be added to block {index}".format(index=index)}
-    return jsonify(response),201
 
-@app.route('/status',methods=['GET'])
+    response = {'message': f"Update will be added to block {index}"}
+    return jsonify(response), 201
+
+
+@app.route('/status', methods=['GET'])
 def get_status():
+    """
+    查看当前矿工状态
+    """
     response = {
         'status': status['s'],
         'last_model_index': status['blockchain'].last_block['index']
-        }
-    return jsonify(response),200
+    }
+    return jsonify(response), 200
 
-# 返回完整的区块链和区块数量
-@app.route('/chain',methods=['GET'])
+
+@app.route('/chain', methods=['GET'])
 def full_chain():
+    """
+    返回完整的区块链和区块数量
+    """
     response = {
         'chain': status['blockchain'].hashchain,
-        'length':len(status['blockchain'].hashchain)
+        'length': len(status['blockchain'].hashchain)
     }
-    return jsonify(response),200
+    return jsonify(response), 200
 
-# 注册新节点到区块链网络中，并将该节点信息广播给其他已注册节点
-@app.route('/nodes/register',methods=['POST'])
+
+@app.route('/nodes/register', methods=['POST'])
 def register_nodes():
+    """
+    注册新节点到区块链网络中，并将该节点信息广播给其他已注册节点
+    """
     values = request.get_json()
     nodes = values.get('nodes')
     if nodes is None:
         return "Error: Enter valid nodes in the list ", 400
-    for node in nodes:
-        if node!=status['address'] and not node in status['blockchain'].nodes:
-            status['blockchain'].register_node(node)
-            for miner in status['blockchain'].nodes:
-                if miner!=node:
-                    print("node",node,"miner",miner)
-                    requests.post('http://{miner}/nodes/register'.format(miner=miner),
-                        json={'nodes': [node]})
-    response = {
-        'message':"New nodes have been added",
-        'total_nodes':list(status['blockchain'].nodes)
-    }
-    return jsonify(response),201
 
-'''
-    解释
-    功能：这个端点用于获取指定的区块。
-    流程：
-    接受请求数据 hblock，其中包含了区块的基本信息，如索引 index 和哈希 hash。
-    首先检查当前区块是否就是目标区块，如果是则直接返回。
-    如果当前区块不是目标区块，则检查本地存储的区块文件是否包含该区块。如果有，读取并返回。
-    如果本地也没有该区块，向其他节点发送请求以获取该区块并保存到本地文件系统。
-    验证获取的区块的哈希值是否匹配。
-    最后返回区块数据和其验证状态（有效或无效）。
-'''
-@app.route('/block',methods=['POST'])
+    for node in nodes:
+        if node != status['address'] and node not in status['blockchain'].nodes:
+            status['blockchain'].register_node(node)
+            # 将这个新节点也广播给其他节点
+            for miner in status['blockchain'].nodes:
+                if miner != node:
+                    requests.post(f'http://{miner}/nodes/register',
+                                  json={'nodes': [node]})
+    response = {
+        'message': "New nodes have been added",
+        'total_nodes': list(status['blockchain'].nodes)
+    }
+    return jsonify(response), 201
+
+
+@app.route('/block', methods=['POST'])
 def get_block():
+    """
+    获取指定区块
+    """
     values = request.get_json()
     hblock = values['hblock']
     block = None
-    if status['blockchain'].curblock.index == hblock['index']:
+    if status['blockchain'].curblock and status['blockchain'].curblock.index == hblock['index']:
         block = status['blockchain'].curblock
-    elif os.path.isfile("./blocks/federated_model"+str(hblock['index'])+".block"):
-        with open("./blocks/federated_model"+str(hblock['index'])+".block","rb") as f:
+    elif os.path.isfile(f"./blocks/federated_model{hblock['index']}.block"):
+        with open(f"./blocks/federated_model{hblock['index']}.block", "rb") as f:
             block = pickle.load(f)
     else:
         resp = requests.post('http://{node}/block'.format(node=hblock['miner']),
-            json={'hblock': hblock})
+                             json={'hblock': hblock})
         if resp.status_code == 200:
             raw_block = resp.json()['block']
             if raw_block:
                 block = Block.from_string(raw_block)
-                with open("./blocks/federated_model"+str(hblock['index'])+".block","wb") as f:
-                    pickle.dump(block,f)
+                with open(f"./blocks/federated_model{hblock['index']}.block", "wb") as f:
+                    pickle.dump(block, f)
+
     valid = False
-    # 校验区块合法性
-    if Blockchain.hash(str(block))==hblock['hash']:
+    if block and status['blockchain'].hash(str(block)) == hblock['hash']:
         valid = True
     response = {
         'block': str(block),
         'valid': valid
     }
-    return jsonify(response),200
+    return jsonify(response), 200
 
-# 获取某个特定区块中的联邦学习模型
-@app.route('/model',methods=['POST'])
+
+@app.route('/model', methods=['POST'])
 def get_model():
+    """
+    从指定区块中获取模型参数
+    """
     values = request.get_json()
     hblock = values['hblock']
     block = None
-    if status['blockchain'].curblock.index == hblock['index']:
+    if status['blockchain'].curblock and status['blockchain'].curblock.index == hblock['index']:
         block = status['blockchain'].curblock
-    elif os.path.isfile("./blocks/federated_model"+str(hblock['index'])+".block"):
-        with open("./blocks/federated_model"+str(hblock['index'])+".block","rb") as f:
+    elif os.path.isfile(f"./blocks/federated_model{hblock['index']}.block"):
+        with open(f"./blocks/federated_model{hblock['index']}.block", "rb") as f:
             block = pickle.load(f)
     else:
         resp = requests.post('http://{node}/block'.format(node=hblock['miner']),
-            json={'hblock': hblock})
+                             json={'hblock': hblock})
         if resp.status_code == 200:
             raw_block = resp.json()['block']
             if raw_block:
                 block = Block.from_string(raw_block)
-                with open("./blocks/federated_model"+str(hblock['index'])+".block","wb") as f:
-                    pickle.dump(block,f)
-    valid = False
-    model = block.basemodel
-    if Blockchain.hash(codecs.encode(pickle.dumps(sorted(model.items())), "base64").decode())==hblock['model_hash']:
-        valid = True
-    response = {
-        'model': codecs.encode(pickle.dumps(sorted(model.items())), "base64").decode(),
-        'valid': valid
-    }
-    return jsonify(response),200
+                with open(f"./blocks/federated_model{hblock['index']}.block", "wb") as f:
+                    pickle.dump(block, f)
 
-'''
-    解释
-    功能：这个端点用于处理共识机制。
-    流程：
-    调用 resolve_conflicts 函数来解决冲突。
-    如果本节点的链被其他节点的链取代，则返回新的链。
-    如果本节点的链仍然是权威链，则返回当前链。
-'''
-@app.route('/nodes/resolve',methods=["GET"])
+    valid = False
+    if block:
+        model = block.basemodel
+        # 校验model哈希
+        if status['blockchain'].hash(codecs.encode(pickle.dumps(sorted(model.items())), "base64").decode()) == hblock['model_hash']:
+            valid = True
+        response = {
+            'model': codecs.encode(pickle.dumps(sorted(model.items())), "base64").decode(),
+            'valid': valid
+        }
+        return jsonify(response), 200
+    else:
+        return jsonify({'model': None, 'valid': False}), 200
+
+
+@app.route('/nodes/resolve', methods=["GET"])
 def consensus():
     replaced = status['blockchain'].resolve_conflicts(STOP_EVENT)
     if replaced:
@@ -272,45 +319,63 @@ def consensus():
         }
     return jsonify(response), 200
 
-# 用于停止当前节点的挖矿操作，并进行冲突解决
-@app.route('/stopmining',methods=['GET'])
+
+@app.route('/stopmining', methods=['GET'])
 def stop_mining():
     status['blockchain'].resolve_conflicts(STOP_EVENT)
     response = {
-        'mex':"stopped!"
+        'mex': "stopped!"
     }
-    return jsonify(response),200
-
-# 删除之前存储在本地的所有区块文件，通常在启动时调用，以清理旧数据
-def delete_prev_blocks():
-    files = glob.glob('blocks/*.block')
-    for f in files:
-        os.remove(f)
+    return jsonify(response), 200
 
 
-# 生成创世区块，运行监听程序
+############################################################
+#                   主函数入口
+############################################################
+
 if __name__ == '__main__':
-    from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument('-p', '--port', default=5000, type=int, help='port to listen on')
     parser.add_argument('-i', '--host', default='127.0.0.1', help='IP address of this miner')
-    parser.add_argument('-g', '--genesis', default=0, type=int, help='instantiate genesis block')
+    parser.add_argument('-g', '--genesis', default=0, type=int, help='instantiate genesis block (0 or 1)')
     parser.add_argument('-l', '--ulimit', default=10, type=int, help='number of updates stored in one block')
     parser.add_argument('-ma', '--maddress', help='other miner IP:port')
+    # 新增 aggregator 参数
+    parser.add_argument('--aggregator', default='FedAvg', help='aggregation method: FedAvg or AccWeight')
+
     args = parser.parse_args()
-    address = "{host}:{port}".format(host=args.host,port=args.port)
+    address = f"{args.host}:{args.port}"
     status['address'] = address
-    if args.genesis==0 and args.maddress==None:
-        raise ValueError("Must set genesis=1 or specify maddress")
+
+    # 删除旧区块文件
     delete_prev_blocks()
-    if args.genesis==1:
-        model = make_base()
-        print("base model accuracy:",model['accuracy'])
-        status['blockchain'] = Blockchain(address,model,True,args.ulimit)
+
+    if args.genesis == 1:
+        # 创世区块：使用 make_base() 生成初始模型
+        base_model = make_base()
+        print("base model accuracy:", base_model['accuracy'])
+        status['blockchain'] = Blockchain(
+            miner_id=address,
+            base_model=base_model,
+            gen=True,
+            update_limit=args.ulimit,
+            aggregator=args.aggregator  # 把聚合方式传入
+        )
     else:
-        status['blockchain'] = Blockchain(address)
-        status['blockchain'].register_node(args.maddress)
-        requests.post('http://{node}/nodes/register'.format(node=args.maddress),
-            json={'nodes': [address]})
-        status['blockchain'].resolve_conflicts(STOP_EVENT)
-    app.run(host=args.host,port=args.port)
+        # 非创世：加入已有矿工节点
+        status['blockchain'] = Blockchain(
+            miner_id=address,
+            base_model=None,
+            gen=False,
+            update_limit=args.ulimit,
+            aggregator=args.aggregator
+        )
+        if args.maddress:
+            status['blockchain'].register_node(args.maddress)
+            requests.post(f'http://{args.maddress}/nodes/register', json={'nodes': [address]})
+            status['blockchain'].resolve_conflicts(STOP_EVENT)
+        else:
+            # 如果既没有genesis，也没指定其他矿工地址，则可能报错
+            print("Warning: no genesis, no maddress, chain might be empty...")
+
+    app.run(host=args.host, port=args.port)

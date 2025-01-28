@@ -284,6 +284,7 @@ class Blockchain(object):
         if base_model is not None:
             accuracy = base_model['accuracy']
             basemodel = base_model['model']
+            print("here")
         elif len(self.current_updates) > 0:
             # -----------------------
             # 关键：调用 compute_global_model 时传入 self.aggregator
@@ -293,6 +294,7 @@ class Blockchain(object):
                                                        self.current_updates,
                                                        lrate=1,
                                                        aggregator=self.aggregator)
+            print("here")
 
         index = len(self.hashchain) + 1
         block = Block(

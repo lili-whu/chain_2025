@@ -16,7 +16,7 @@ from federatedlearner import *
 import codecs
 from logging.config import dictConfig
 from argparse import ArgumentParser
-
+from app import app
 ############################################################
 #                Flask 应用和全局状态
 ############################################################
@@ -39,7 +39,7 @@ dictConfig({
     }
 })
 
-app = Flask(__name__)
+
 
 status = {
     's': "receiving",          # 当前状态：receiving or mining

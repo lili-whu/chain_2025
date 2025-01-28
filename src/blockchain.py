@@ -10,7 +10,7 @@ import pickle
 import logging
 import numpy as np
 import tensorflow as tf
-
+from app import app
 import federated_data_extractor as dataext
 from federatedlearner import NNWorker, reset
 logger = logging.getLogger(__name__)
@@ -29,6 +29,8 @@ def compute_upd_2(weights, base, updates, lrate):
     for client in weights.keys():
         weights[client] = 1.0 / len(weights)
 
+    for client in weights.keys():
+        app.logger.info("client:", client, "weight:", weights[client])
     upd = dict()
     for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
         upd[x] = np.array(base[x], copy=False)
@@ -48,6 +50,10 @@ def compute_upd_3(weights, base, updates, lrate):
     基于准确率与准确率变化 (Acc + ΔAcc) 的加权聚合 (AccWeight)。
     要求外部已计算出 weights[client]。
     """
+
+    for client in weights.keys():
+        app.logger.info("client:", client, "weight:", weights[client])
+    
     upd = dict()
     for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
         upd[x] = np.array(base[x], copy=False)
@@ -99,11 +105,13 @@ def compute_global_model(base_block, updates, lrate, aggregator="FedAvg"):
         # MQI = alpha * Acc + beta * (Acc - Acc_global_prev)
         weight = alpha * acc_i_t + beta * acc_change_i_t
         weights[client] = weight
+        # 避免除0
+        if weights[client] <= 0:
+            weights[client] = 1e-8
         total_weight += weight
-
-    # 避免除0
-    if total_weight <= 0:
-        total_weight = 1e-8
+        
+    
+    
 
     for client in updates.keys():
         weights[client] = weights[client] / total_weight

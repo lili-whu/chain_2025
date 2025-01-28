@@ -13,14 +13,6 @@ AGGREGATORS=("FedAvg" "AccWeight")
 ##############################################
 for EXP_NAME in "${EXPERIMENTS[@]}"; do
   for AGG in "${AGGREGATORS[@]}"; do
-
-    # 清空上一次运行得到的所有数据
-    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\clients"
-    rm -rf "${TARGET_DIR:?}"/*
-    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\blocks"
-    rm -rf "${TARGET_DIR:?}"/*
-    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\output"
-    rm -rf "${TARGET_DIR:?}"/*
     
     echo -e "\n\n===== 开始实验: ${EXP_NAME}, 聚合方式: ${AGG} =====\n"
 
@@ -32,15 +24,13 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
       CLIENT_COUNT=10
     fi
 
-    # （2）清理旧区块、旧输出，以免干扰本次实验
-    if [ -d "blocks" ]; then
-      rm -rf blocks/*.block
-    fi
-    if [ -d "output" ]; then
-      rm -rf output/*.txt
-    else
-      mkdir output
-    fi
+    # (2) 清空上一次运行得到的所有数据
+    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\clients"
+    rm -rf "${TARGET_DIR:?}"/*
+    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\blocks"
+    rm -rf "${TARGET_DIR:?}"/*
+    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\output"
+    rm -rf "${TARGET_DIR:?}"/*
 
     # （3）启动矿工：-g 1 表示创建创世区块，-l 设置 update_limit，可与 CLIENT_COUNT 相同
     echo ">> 启动 miner.py, aggregator=${AGG}, update_limit=${CLIENT_COUNT}"

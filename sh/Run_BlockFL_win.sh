@@ -13,6 +13,14 @@ AGGREGATORS=("FedAvg" "AccWeight")
 ##############################################
 for EXP_NAME in "${EXPERIMENTS[@]}"; do
   for AGG in "${AGGREGATORS[@]}"; do
+
+    # 清空上一次运行得到的所有数据
+    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\clients"
+    rm -rf "${TARGET_DIR:?}"/*
+    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\blocks"
+    rm -rf "${TARGET_DIR:?}"/*
+    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\output"
+    rm -rf "${TARGET_DIR:?}"/*
     
     echo -e "\n\n===== 开始实验: ${EXP_NAME}, 聚合方式: ${AGG} =====\n"
 
@@ -36,7 +44,7 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
 
     # （3）启动矿工：-g 1 表示创建创世区块，-l 设置 update_limit，可与 CLIENT_COUNT 相同
     echo ">> 启动 miner.py, aggregator=${AGG}, update_limit=${CLIENT_COUNT}"
-    python miner.py \
+    D:/anaconda/envs/BlockchainForFederatedLearning/python.exe miner.py \
       -g 1 \
       -l ${CLIENT_COUNT} \
       --aggregator ${AGG} \
@@ -50,7 +58,7 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
     echo ">> 启动 ${CLIENT_COUNT} 个 client.py..."
     for (( i=0; i<${CLIENT_COUNT}; i++ ))
     do
-       python client.py \
+       D:/anaconda/envs/BlockchainForFederatedLearning/python.exe client.py \
          -d "./experiments/${EXP_NAME}/client_${i}.pkl" \
          -e 1 \
          >> "output/client_${i}_${EXP_NAME}_${AGG}.txt" 2>&1 &

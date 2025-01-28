@@ -29,8 +29,8 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
     rm -rf "${TARGET_DIR:?}"/*
     TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\blocks"
     rm -rf "${TARGET_DIR:?}"/*
-    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\output"
-    rm -rf "${TARGET_DIR:?}"/*
+#    TARGET_DIR="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\output"
+#    rm -rf "${TARGET_DIR:?}"/*
 
     # （3）启动矿工：-g 1 表示创建创世区块，-l 设置 update_limit，可与 CLIENT_COUNT 相同
     echo ">> 启动 miner.py, aggregator=${AGG}, update_limit=${CLIENT_COUNT}"

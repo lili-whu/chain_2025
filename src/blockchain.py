@@ -7,14 +7,13 @@ import requests
 import random
 import codecs
 import pickle
-
+import logging
 import numpy as np
 import tensorflow as tf
 
 import federated_data_extractor as dataext
 from federatedlearner import NNWorker, reset
-from miner import app
-
+logger = logging.getLogger(__name__)
 accuracy_list = []
 
 ##########################################################
@@ -267,7 +266,7 @@ class Blockchain(object):
             address = "http://" + address
         parsed_url = urlparse(address)
         self.nodes.add(parsed_url.netloc)
-        app.logger.info("Registered node: {}".format(address))
+        chcp 65001("Registered node: {}".format(address))
 
     def make_block(self, previous_hash=None, base_model=None):
         accuracy = 0
@@ -303,11 +302,11 @@ class Blockchain(object):
             accuracy=accuracy,
             updates=self.current_updates
         )
-        app.logger.info("index {}, global model accuracy {}".format(index, accuracy))
+        logger.info("index {}, global model accuracy {}".format(index, accuracy))
 
         global accuracy_list
         accuracy_list.append("index {}, global model accuracy {}".format(index, accuracy))
-        app.logger.info("\n".join(accuracy_list))
+        logger.info("\n".join(accuracy_list))
 
         hashblock = {
             'index': index,

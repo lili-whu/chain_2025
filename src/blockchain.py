@@ -317,7 +317,7 @@ class Blockchain(object):
             'update_limit': update_limit,
             'model_hash': self.hash(codecs.encode(pickle.dumps(sorted(block.basemodel.items())), "base64").decode())
         }
-        return block, hashblock, accuracy_history
+        return block, hashblock, self.accuracy_history
 
     def store_block(self, block, hashblock):
         if self.curblock:

@@ -255,6 +255,7 @@ class Blockchain(object):
         self.update_limit = update_limit
         self.time_limit = time_limit
         self.aggregator = aggregator  # 新增：决定使用何种聚合方式
+        self.accuracy_history = []
 
         if gen:
             genesis, hgenesis = self.make_block(base_model=base_model, previous_hash=1)
@@ -266,7 +267,6 @@ class Blockchain(object):
             address = "http://" + address
         parsed_url = urlparse(address)
         self.nodes.add(parsed_url.netloc)
-        logging.info("Registered node: {}".format(address))
 
     def make_block(self, previous_hash=None, base_model=None):
         accuracy = 0
@@ -302,11 +302,12 @@ class Blockchain(object):
             accuracy=accuracy,
             updates=self.current_updates
         )
-        logger.info("index {}, global model accuracy {}".format(index, accuracy))
 
-        global accuracy_list
-        accuracy_list.append("index {}, global model accuracy {}".format(index, accuracy))
-        logger.info("\n".join(accuracy_list))
+        # 将accuracy存到accuracy_history
+        self.accuracy_history.append(accuracy)
+        # 打印当次和所有历史
+        logger.info(f"[make_block] index={index}, global model accuracy={accuracy}")
+        logger.info(f"accuracy_history={self.accuracy_history}")
 
         hashblock = {
             'index': index,

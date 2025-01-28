@@ -99,10 +99,6 @@ for exp_name, config in experiments.items():
     print(f"已保存到: experiments/{exp_name}")
     print(f"客户端数量: {len(clients)}")
     print(f"恶意节点索引: {config['malicious_indices']}")
-    print("前3个客户端的数据量:")
-    for i in range(3):
-        print(f"  Client {i}: {len(clients[i]['train_images'])} samples")
-
     # 验证恶意节点标签
     if config["malicious_indices"]:
         mal_client = clients[config["malicious_indices"][0]]

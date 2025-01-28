@@ -1,32 +1,28 @@
-2025-01-28 14:48:12.023840: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-
-=== 正在生成实验组: centralized ===
-已保存到: experiments/centralized
-客户端数量: 1
-恶意节点索引: []
-
-=== 正在生成实验组: federated_normal ===
-已保存到: experiments/federated_normal
-客户端数量: 10
-恶意节点索引: []
-
-=== 正在生成实验组: federated_20malicious ===
-已保存到: experiments/federated_20malicious
-客户端数量: 10
-恶意节点索引: [8, 9]
-恶意节点标签匹配率: 0.1058 (应接近0.1)
-
-=== 正在生成实验组: federated_50malicious ===
-已保存到: experiments/federated_50malicious
-客户端数量: 10
-恶意节点索引: [5, 6, 7, 8, 9]
-恶意节点标签匹配率: 0.0945 (应接近0.1)
-
-=== 所有实验数据生成完成 ===
-base model accuracy: 0.1634
+2025-01-28 15:48:28.306670: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+base model accuracy: 0.1436
+[make_block] index=1, global model accuracy=0.1436000019311905
+accuracy_history=[0.1436]
  * Serving Flask app "miner" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
  * Debug mode: off
-[2025-01-28 14:48:12,343] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2025-01-28 15:48:28,600] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2025-01-28 15:48:31,391] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:31] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 15:48:31,394] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:31] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 15:48:31,414] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:31] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 15:48:33,579] INFO in miner: start mining
+[2025-01-28 15:48:33,580] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:33] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 15:48:33,945] INFO in miner: mining completed
+[2025-01-28 15:48:53,443] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:53] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 15:48:53,446] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:53] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 15:48:53,469] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:53] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 15:48:55,581] INFO in miner: start mining
+[2025-01-28 15:48:55,582] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:55] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 15:48:55,967] INFO in miner: mining completed
+[2025-01-28 15:49:05,232] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 15:49:05,234] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 15:49:05,255] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 15:49:07,413] INFO in miner: start mining
+[2025-01-28 15:49:07,414] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 15:49:07,823] INFO in miner: mining completed

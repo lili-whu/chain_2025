@@ -11,7 +11,6 @@ import logging
 import numpy as np
 import tensorflow as tf
 
-from miner import app
 import federated_data_extractor as dataext
 from federatedlearner import NNWorker, reset
 logger = logging.getLogger(__name__)
@@ -306,8 +305,8 @@ class Blockchain(object):
         # 将accuracy存到accuracy_history
         self.accuracy_history.append(accuracy)
         # 打印当次和所有历史
-        app.logger.info(f"[make_block] index={index}, global model accuracy={accuracy}")
-        app.logger.info(f"accuracy_history={self.accuracy_history}")
+        print(f"[make_block] index={index}, global model accuracy={accuracy}")
+        print(f"accuracy_history={self.accuracy_history}")
 
         hashblock = {
             'index': index,

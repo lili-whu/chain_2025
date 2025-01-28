@@ -129,7 +129,7 @@ class NNWorker:
 
         num_samples = self.train_x.shape[0]
 
-        for epoch in range(1, self.num_steps + 1):
+        for epoch in range(1, 2):
             # 1. 打乱索引
             perm = np.random.permutation(num_samples)
             train_x_shuff = self.train_x[perm]

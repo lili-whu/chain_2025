@@ -2,6 +2,7 @@
 
 chcp 65001  # Windows下切换到UTF-8，避免中文乱码
 
+
 ##############################################
 # 1. 定义实验场景 与 聚合方式
 ##############################################
@@ -16,7 +17,7 @@ AGGREGATORS=("FedAvg" "AccWeight")
 # 或者你可以直接写死10，也行
 ROUND_UPDATES=10
 
-FED_ROUNDS = 10
+FED_ROUNDS=10
 
 # 每轮客户端本地训练的 epoch
 LOCAL_EPOCH=1
@@ -30,6 +31,7 @@ PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
 # 路径
 BASE_PATH="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src"
 
+rm -rf "${BASE_PATH}/output"/*
 ##############################################
 # 3. 循环 4(分布)*2(聚合)=8种组合
 ##############################################

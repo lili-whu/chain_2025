@@ -147,7 +147,6 @@ def new_transaction():
     """
     客户端提交训练完成后的本地模型更新
     """
-    app.logger.info("New Transaction Received")
     time.sleep(1)
     if status['s'] != "receiving":
         return 'Miner not receiving', 400

@@ -1,28 +1,4 @@
-2025-01-28 14:33:13.512991: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-
-=== 正在生成实验组: centralized ===
-已保存到: experiments/centralized
-客户端数量: 1
-恶意节点索引: []
-
-=== 正在生成实验组: federated_normal ===
-已保存到: experiments/federated_normal
-客户端数量: 10
-恶意节点索引: []
-
-=== 正在生成实验组: federated_20malicious ===
-已保存到: experiments/federated_20malicious
-客户端数量: 10
-恶意节点索引: [8, 9]
-恶意节点标签匹配率: 0.0988 (应接近0.1)
-
-=== 正在生成实验组: federated_50malicious ===
-已保存到: experiments/federated_50malicious
-客户端数量: 10
-恶意节点索引: [5, 6, 7, 8, 9]
-恶意节点标签匹配率: 0.0997 (应接近0.1)
-
-=== 所有实验数据生成完成 ===
+2025-01-28 15:48:31.432530: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
 --------------
 test_images (10000, 784)
 test_labels (10000, 10)
@@ -31,45 +7,12 @@ train_labels (60000, 10)
 original_indices (60000,)
 get_dataset_details return
 --------------
-38c3 device_id
+23ae device_id
 --------------
-Accuracy global model 0.853
-Step 1, Minibatch Loss= 1329.8976, Training Accuracy= 0.848
-Step 2, Minibatch Loss= 18615.2734, Training Accuracy= 0.437
-Step 3, Minibatch Loss= 5201.4902, Training Accuracy= 0.622
-Step 4, Minibatch Loss= 2431.0859, Training Accuracy= 0.792
-Step 5, Minibatch Loss= 1793.1967, Training Accuracy= 0.844
-Step 6, Minibatch Loss= 1878.9680, Training Accuracy= 0.827
-Step 7, Minibatch Loss= 2053.0076, Training Accuracy= 0.824
-Step 8, Minibatch Loss= 1888.0640, Training Accuracy= 0.841
-Step 9, Minibatch Loss= 1566.2859, Training Accuracy= 0.865
-Step 10, Minibatch Loss= 1525.2458, Training Accuracy= 0.858
-Accuracy local update---------38c3--------------: 0.8613
-2025-01-28 14:48:17.025462: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-
-
-已保存到: experiments/centralized
-客户端数量: 1
-恶意节点索引: []
-
-=== 正在生成实验组: federated_normal ===
-已保存到: experiments/federated_normal
-客户端数量: 10
-恶意节点索引: []
-
-=== 正在生成实验组: federated_20malicious ===
-已保存到: experiments/federated_20malicious
-客户端数量: 10
-恶意节点索引: [8, 9]
-恶意节点标签匹配率: 0.0942 (应接近0.1)
-
-=== 正在生成实验组: federated_50malicious ===
-已保存到: experiments/federated_50malicious
-客户端数量: 10
-恶意节点索引: [5, 6, 7, 8, 9]
-恶意节点标签匹配率: 0.1002 (应接近0.1)
-
-=== 所有实验数据生成完成 ===
+Accuracy global model 0.1436
+Epoch 1, Loss= 182.9377, Train_Accuracy= 0.866
+Accuracy local update---------23ae--------------: 0.867
+2025-01-28 15:48:53.487898: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
 --------------
 test_images (10000, 784)
 test_labels (10000, 10)
@@ -78,17 +21,22 @@ train_labels (60000, 10)
 original_indices (60000,)
 get_dataset_details return
 --------------
-7d1d device_id
+d9ce device_id
 --------------
-Accuracy global model 0.8745
-Step 1, Minibatch Loss= 1435.2917, Training Accuracy= 0.874
-Step 2, Minibatch Loss= 16636.9297, Training Accuracy= 0.394
-Step 3, Minibatch Loss= 2514.2764, Training Accuracy= 0.815
-Step 4, Minibatch Loss= 1891.8197, Training Accuracy= 0.842
-Step 5, Minibatch Loss= 2956.4065, Training Accuracy= 0.758
-Step 6, Minibatch Loss= 2602.8433, Training Accuracy= 0.796
-Step 7, Minibatch Loss= 1812.7192, Training Accuracy= 0.851
-Step 8, Minibatch Loss= 1482.3376, Training Accuracy= 0.871
-Step 9, Minibatch Loss= 1859.2101, Training Accuracy= 0.846
-Step 10, Minibatch Loss= 1874.3370, Training Accuracy= 0.849
-Accuracy local update---------7d1d--------------: 0.882
+Accuracy global model 0.867
+Epoch 1, Loss= 92.7275, Train_Accuracy= 0.883
+Accuracy local update---------d9ce--------------: 0.8826
+2025-01-28 15:49:05.274129: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+0d91 device_id
+--------------
+Accuracy global model 0.8826
+Epoch 1, Loss= 54.9967, Train_Accuracy= 0.852
+Accuracy local update---------0d91--------------: 0.8447

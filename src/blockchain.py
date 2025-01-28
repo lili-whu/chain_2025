@@ -266,7 +266,7 @@ class Blockchain(object):
             address = "http://" + address
         parsed_url = urlparse(address)
         self.nodes.add(parsed_url.netloc)
-        chcp 65001("Registered node: {}".format(address))
+        logging.info("Registered node: {}".format(address))
 
     def make_block(self, previous_hash=None, base_model=None):
         accuracy = 0

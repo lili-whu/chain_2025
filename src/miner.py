@@ -170,11 +170,12 @@ def new_transaction():
     for node in status["blockchain"].nodes:
         requests.post('http://{node}/transactions/new'.format(node=node),
                       json=request.get_json())
-
+    app.logger.info("here")
     # 当累计到一定数量的 updates 或达到时间限制，就启动挖矿
     if (status['s'] == 'receiving' and (
             len(status["blockchain"].current_updates) >= status['blockchain'].last_block['update_limit']
             or time.time() - status['blockchain'].last_block['timestamp'] > status['blockchain'].last_block['time_limit'])):
+        app.logger.info("here")
         mine()
 
     response = {'message': f"Update will be added to block {index}"}

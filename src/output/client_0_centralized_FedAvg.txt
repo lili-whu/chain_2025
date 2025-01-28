@@ -1,4 +1,4 @@
-2025-01-28 15:48:31.432530: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-28 16:01:02.330087: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
 --------------
 test_images (10000, 784)
 test_labels (10000, 10)
@@ -7,26 +7,12 @@ train_labels (60000, 10)
 original_indices (60000,)
 get_dataset_details return
 --------------
-23ae device_id
+a222 device_id
 --------------
-Accuracy global model 0.1436
-Epoch 1, Loss= 182.9377, Train_Accuracy= 0.866
-Accuracy local update---------23ae--------------: 0.867
-2025-01-28 15:48:53.487898: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
---------------
-test_images (10000, 784)
-test_labels (10000, 10)
-train_images (60000, 784)
-train_labels (60000, 10)
-original_indices (60000,)
-get_dataset_details return
---------------
-d9ce device_id
---------------
-Accuracy global model 0.867
-Epoch 1, Loss= 92.7275, Train_Accuracy= 0.883
-Accuracy local update---------d9ce--------------: 0.8826
-2025-01-28 15:49:05.274129: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+Accuracy global model 0.0864
+Epoch 1, Loss= 182.6271, Train_Accuracy= 0.866
+Accuracy local update---------a222--------------: 0.866
+2025-01-28 16:01:36.267487: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
 --------------
 test_images (10000, 784)
 test_labels (10000, 10)
@@ -35,8 +21,106 @@ train_labels (60000, 10)
 original_indices (60000,)
 get_dataset_details return
 --------------
-0d91 device_id
+0f9d device_id
 --------------
-Accuracy global model 0.8826
-Epoch 1, Loss= 54.9967, Train_Accuracy= 0.852
-Accuracy local update---------0d91--------------: 0.8447
+Accuracy global model 0.866
+Epoch 1, Loss= 94.3303, Train_Accuracy= 0.877
+Accuracy local update---------0f9d--------------: 0.8754
+2025-01-28 16:02:10.133029: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+021b device_id
+--------------
+Accuracy global model 0.8754
+Epoch 1, Loss= 55.1776, Train_Accuracy= 0.867
+Accuracy local update---------021b--------------: 0.8635
+2025-01-28 16:02:44.029685: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+f3c0 device_id
+--------------
+Accuracy global model 0.8635
+Epoch 1, Loss= 31.5950, Train_Accuracy= 0.846
+Accuracy local update---------f3c0--------------: 0.8445
+2025-01-28 16:03:17.931592: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+e0ce device_id
+--------------
+Accuracy global model 0.8445
+Epoch 1, Loss= 19.1407, Train_Accuracy= 0.879
+Accuracy local update---------e0ce--------------: 0.877
+2025-01-28 16:03:51.767823: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+1abb device_id
+--------------
+Accuracy global model 0.877
+Epoch 1, Loss= 14.0136, Train_Accuracy= 0.874
+Accuracy local update---------1abb--------------: 0.8687
+2025-01-28 16:04:25.687910: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+7320 device_id
+--------------
+Accuracy global model 0.8687
+Epoch 1, Loss= 11.3291, Train_Accuracy= 0.867
+Accuracy local update---------7320--------------: 0.8699
+2025-01-28 16:04:59.616402: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+c136 device_id
+--------------
+Accuracy global model 0.8699
+Epoch 1, Loss= 9.5689, Train_Accuracy= 0.881
+Accuracy local update---------c136--------------: 0.875
+2025-01-28 16:05:33.524863: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (60000, 784)
+train_labels (60000, 10)
+original_indices (60000,)
+get_dataset_details return
+--------------
+6370 device_id
+--------------
+Accuracy global model 0.875
+Epoch 1, Loss= 8.3031, Train_Accuracy= 0.871
+Accuracy local update---------6370--------------: 0.8733

@@ -1,28 +1,58 @@
-2025-01-28 15:48:28.306670: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-base model accuracy: 0.1436
-[make_block] index=1, global model accuracy=0.1436000019311905
-accuracy_history=[0.1436]
+2025-01-28 16:00:59.261453: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+base model accuracy: 0.0864
+[make_block] index=1, global model accuracy=0.08640000224113464
+accuracy_history=[0.0864]
  * Serving Flask app "miner" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
    Use a production WSGI server instead.
  * Debug mode: off
-[2025-01-28 15:48:28,600] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-[2025-01-28 15:48:31,391] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:31] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-28 15:48:31,394] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:31] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-28 15:48:31,414] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:31] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-28 15:48:33,579] INFO in miner: start mining
-[2025-01-28 15:48:33,580] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:33] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-28 15:48:33,945] INFO in miner: mining completed
-[2025-01-28 15:48:53,443] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:53] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-28 15:48:53,446] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:53] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-28 15:48:53,469] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:53] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-28 15:48:55,581] INFO in miner: start mining
-[2025-01-28 15:48:55,582] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:48:55] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-28 15:48:55,967] INFO in miner: mining completed
-[2025-01-28 15:49:05,232] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:05] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-28 15:49:05,234] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:05] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-28 15:49:05,255] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:05] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-28 15:49:07,413] INFO in miner: start mining
-[2025-01-28 15:49:07,414] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 15:49:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-28 15:49:07,823] INFO in miner: mining completed
+[2025-01-28 16:00:59,556] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2025-01-28 16:01:02,288] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:02] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:01:02,290] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:02] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:01:02,310] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:02] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:01:04,456] INFO in miner: here
+[2025-01-28 16:01:04,456] INFO in miner: here
+[2025-01-28 16:01:04,457] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:04] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 16:01:36,225] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:36] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:01:36,227] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:36] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:01:36,247] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:36] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:01:38,419] INFO in miner: here
+[2025-01-28 16:01:38,419] INFO in miner: here
+[2025-01-28 16:01:38,420] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:01:38] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 16:02:10,092] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:10] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:02:10,094] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:10] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:02:10,115] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:10] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:02:12,222] INFO in miner: here
+[2025-01-28 16:02:12,222] INFO in miner: here
+[2025-01-28 16:02:12,222] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:12] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 16:02:43,987] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:02:43,989] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:02:44,010] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:02:46,123] INFO in miner: here
+[2025-01-28 16:02:46,123] INFO in miner: here
+[2025-01-28 16:02:46,123] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:02:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 16:03:17,890] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:17] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:03:17,892] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:17] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:03:17,912] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:17] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:03:20,032] INFO in miner: here
+[2025-01-28 16:03:20,032] INFO in miner: here
+[2025-01-28 16:03:20,032] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:20] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 16:03:51,726] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:51] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:03:51,728] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:51] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:03:51,749] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:51] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:03:53,857] INFO in miner: here
+[2025-01-28 16:03:53,857] INFO in miner: here
+[2025-01-28 16:03:53,857] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:03:53] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 16:04:25,646] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:04:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:04:25,649] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:04:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:04:25,669] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:04:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:04:27,765] INFO in miner: here
+[2025-01-28 16:04:27,765] INFO in miner: here
+[2025-01-28 16:04:27,765] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:04:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-28 16:04:59,575] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:04:59] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-28 16:04:59,577] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:04:59] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-28 16:04:59,597] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:04:59] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-28 16:05:01,727] INFO in miner: here
+[2025-01-28 16:05:01,728] INFO in miner: here
+[2025-01-28 16:05:01,728] INFO in _internal: 127.0.0.1 - - [28/Jan/2025 16:05:01] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -

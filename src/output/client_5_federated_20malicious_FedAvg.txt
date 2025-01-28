@@ -1,0 +1,23 @@
+
+=== 正在生成实验组: centralized ===
+已保存到: experiments/centralized
+客户端数量: 1
+恶意节点索引: []
+
+=== 正在生成实验组: federated_normal ===
+Traceback (most recent call last):
+  File "client.py", line 5, in <module>
+    from blockchain import *
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\blockchain.py", line 14, in <module>
+    import federated_data_extractor as dataext
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\federated_data_extractor.py", line 106, in <module>
+    save_experiment_data(clients, os.path.join("experiments", exp_name))
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\federated_data_extractor.py", line 67, in save_experiment_data
+    shutil.rmtree(output_dir)
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\shutil.py", line 500, in rmtree
+    return _rmtree_unsafe(path, onerror)
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\shutil.py", line 395, in _rmtree_unsafe
+    onerror(os.unlink, fullname, sys.exc_info())
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\shutil.py", line 393, in _rmtree_unsafe
+    os.unlink(fullname)
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'experiments\\federated_normal\\client_2.pkl'

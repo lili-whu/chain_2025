@@ -1,0 +1,27 @@
+usage: miner.py [-h] [-p PORT] [-i HOST] [-g GENESIS] [-l ULIMIT]
+                [-ma MADDRESS]
+miner.py: error: unrecognized arguments: --aggregator FedAvg
+
+=== 正在生成实验组: centralized ===
+已保存到: experiments/centralized
+客户端数量: 1
+恶意节点索引: []
+
+=== 正在生成实验组: federated_normal ===
+已保存到: experiments/federated_normal
+客户端数量: 10
+恶意节点索引: []
+
+=== 正在生成实验组: federated_20malicious ===
+已保存到: experiments/federated_20malicious
+客户端数量: 10
+恶意节点索引: [8, 9]
+恶意节点标签匹配率: 0.0997 (应接近0.1)
+
+=== 正在生成实验组: federated_50malicious ===
+已保存到: experiments/federated_50malicious
+客户端数量: 10
+恶意节点索引: [5, 6, 7, 8, 9]
+恶意节点标签匹配率: 0.1005 (应接近0.1)
+
+=== 所有实验数据生成完成 ===

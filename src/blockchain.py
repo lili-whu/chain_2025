@@ -258,7 +258,7 @@ class Blockchain(object):
         self.accuracy_history = []
 
         if gen:
-            genesis, hgenesis = self.make_block(base_model=base_model, previous_hash=1)
+            genesis, hgenesis, _ = self.make_block(base_model=base_model, previous_hash=1)
             self.store_block(genesis, hgenesis)
         self.nodes = set()
 

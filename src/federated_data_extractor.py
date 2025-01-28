@@ -51,6 +51,16 @@ def split_iid_with_malicious(dataset, split_sizes, malicious_indices):
 
     return client_datasets
 
+def load_data(name="mnist.d"):
+    with open(name, "rb") as f:
+        return pickle.load(f)
+
+def get_dataset_details(dataset):
+    # print(dataset)
+    for k in dataset.keys():
+        print(k, dataset[k].shape)
+    print("get_dataset_details return")
+
 def save_experiment_data(client_datasets, output_dir):
     """保存实验数据到指定文件夹"""
     if os.path.exists(output_dir):

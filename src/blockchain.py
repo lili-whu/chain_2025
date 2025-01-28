@@ -30,7 +30,7 @@ def compute_upd_2(weights, base, updates, lrate):
         weights[client] = 1.0 / len(weights)
 
     for client in weights.keys():
-        app.logger.info("client:", client, "weight:", weights[client])
+        app.logger.info("client:", ", ".join(str(x) for x in client), "weight:", ", ".join(str(x) for x in weights[client]))
     upd = dict()
     for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:
         upd[x] = np.array(base[x], copy=False)
@@ -52,7 +52,7 @@ def compute_upd_3(weights, base, updates, lrate):
     """
 
     for client in weights.keys():
-        app.logger.info("client:", client, "weight:", weights[client])
+        app.logger.info("client:", ", ".join(str(x) for x in client), "weight:", ", ".join(str(x) for x in weights[client]))
     
     upd = dict()
     for x in ['w1', 'w2', 'wo', 'b1', 'b2', 'bo']:

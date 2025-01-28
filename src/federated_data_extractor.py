@@ -71,50 +71,52 @@ def save_experiment_data(client_datasets, output_dir):
         with open(os.path.join(output_dir, f"client_{idx}.pkl"), "wb") as f:
             pickle.dump(data, f)
 
-# 实验配置
-experiments = {
-    "centralized": {
-        "split_sizes": [60000],  # 单节点包含全部数据
-        "malicious_indices": []
-    },
-    "federated_normal": {
-        "split_sizes": [6000]*10,  # 10个均等节点
-        "malicious_indices": []
-    },
-    "federated_20malicious": {
-        "split_sizes": [6000]*10,
-        "malicious_indices": [8, 9]  # 最后2个为恶意节点
-    },
-    "federated_50malicious": {
-        "split_sizes": [6000]*10,
-        "malicious_indices": [5,6,7,8,9]  # 最后5个为恶意节点
+if "__main__" == __name__:
+
+    # 实验配置
+    experiments = {
+        "centralized": {
+            "split_sizes": [60000],  # 单节点包含全部数据
+            "malicious_indices": []
+        },
+        "federated_normal": {
+            "split_sizes": [6000]*10,  # 10个均等节点
+            "malicious_indices": []
+        },
+        "federated_20malicious": {
+            "split_sizes": [6000]*10,
+            "malicious_indices": [8, 9]  # 最后2个为恶意节点
+        },
+        "federated_50malicious": {
+            "split_sizes": [6000]*10,
+            "malicious_indices": [5,6,7,8,9]  # 最后5个为恶意节点
+        }
     }
-}
 
-# 主流程
-dataset = get_mnist()
+    # 主流程
+    dataset = get_mnist()
 
-for exp_name, config in experiments.items():
-    print(f"\n=== 正在生成实验组: {exp_name} ===")
-    clients = split_iid_with_malicious(
-        dataset,
-        split_sizes=config["split_sizes"],
-        malicious_indices=config["malicious_indices"]
-    )
+    for exp_name, config in experiments.items():
+        print(f"\n=== 正在生成实验组: {exp_name} ===")
+        clients = split_iid_with_malicious(
+            dataset,
+            split_sizes=config["split_sizes"],
+            malicious_indices=config["malicious_indices"]
+        )
 
-    # 保存数据
-    save_experiment_data(clients, os.path.join("experiments", exp_name))
+        # 保存数据
+        save_experiment_data(clients, os.path.join("experiments", exp_name))
 
-    # 验证输出
-    print(f"已保存到: experiments/{exp_name}")
-    print(f"客户端数量: {len(clients)}")
-    print(f"恶意节点索引: {config['malicious_indices']}")
-    # 验证恶意节点标签
-    if config["malicious_indices"]:
-        mal_client = clients[config["malicious_indices"][0]]
-        original_labels = np.argmax(dataset["train_labels"][mal_client["original_indices"]], axis=1)
-        poisoned_labels = np.argmax(mal_client["train_labels"], axis=1)
-        match_rate = np.mean(original_labels == poisoned_labels)
-        print(f"恶意节点标签匹配率: {match_rate:.4f} (应接近0.1)")
+        # 验证输出
+        print(f"已保存到: experiments/{exp_name}")
+        print(f"客户端数量: {len(clients)}")
+        print(f"恶意节点索引: {config['malicious_indices']}")
+        # 验证恶意节点标签
+        if config["malicious_indices"]:
+            mal_client = clients[config["malicious_indices"][0]]
+            original_labels = np.argmax(dataset["train_labels"][mal_client["original_indices"]], axis=1)
+            poisoned_labels = np.argmax(mal_client["train_labels"], axis=1)
+            match_rate = np.mean(original_labels == poisoned_labels)
+            print(f"恶意节点标签匹配率: {match_rate:.4f} (应接近0.1)")
 
-print("\n=== 所有实验数据生成完成 ===")
+    print("\n=== 所有实验数据生成完成 ===")

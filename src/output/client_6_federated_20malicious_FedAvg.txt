@@ -1,0 +1,12 @@
+
+=== 正在生成实验组: centralized ===
+Traceback (most recent call last):
+  File "client.py", line 5, in <module>
+    from blockchain import *
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\blockchain.py", line 14, in <module>
+    import federated_data_extractor as dataext
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\federated_data_extractor.py", line 106, in <module>
+    save_experiment_data(clients, os.path.join("experiments", exp_name))
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src\federated_data_extractor.py", line 71, in save_experiment_data
+    with open(os.path.join(output_dir, f"client_{idx}.pkl"), "wb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'experiments\\centralized\\client_0.pkl'

@@ -1,0 +1,32 @@
+2025-01-28 14:48:12.023840: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+
+=== 正在生成实验组: centralized ===
+已保存到: experiments/centralized
+客户端数量: 1
+恶意节点索引: []
+
+=== 正在生成实验组: federated_normal ===
+已保存到: experiments/federated_normal
+客户端数量: 10
+恶意节点索引: []
+
+=== 正在生成实验组: federated_20malicious ===
+已保存到: experiments/federated_20malicious
+客户端数量: 10
+恶意节点索引: [8, 9]
+恶意节点标签匹配率: 0.1058 (应接近0.1)
+
+=== 正在生成实验组: federated_50malicious ===
+已保存到: experiments/federated_50malicious
+客户端数量: 10
+恶意节点索引: [5, 6, 7, 8, 9]
+恶意节点标签匹配率: 0.0945 (应接近0.1)
+
+=== 所有实验数据生成完成 ===
+base model accuracy: 0.1634
+ * Serving Flask app "miner" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[2025-01-28 14:48:12,343] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)

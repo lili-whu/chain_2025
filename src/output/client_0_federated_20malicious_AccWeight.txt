@@ -1,0 +1,47 @@
+2025-01-28 14:36:12.161454: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+
+=== 正在生成实验组: centralized ===
+已保存到: experiments/centralized
+客户端数量: 1
+恶意节点索引: []
+
+=== 正在生成实验组: federated_normal ===
+已保存到: experiments/federated_normal
+客户端数量: 10
+恶意节点索引: []
+
+=== 正在生成实验组: federated_20malicious ===
+已保存到: experiments/federated_20malicious
+客户端数量: 10
+恶意节点索引: [8, 9]
+恶意节点标签匹配率: 0.1020 (应接近0.1)
+
+=== 正在生成实验组: federated_50malicious ===
+已保存到: experiments/federated_50malicious
+客户端数量: 10
+恶意节点索引: [5, 6, 7, 8, 9]
+恶意节点标签匹配率: 0.1028 (应接近0.1)
+
+=== 所有实验数据生成完成 ===
+--------------
+test_images (10000, 784)
+test_labels (10000, 10)
+train_images (6000, 784)
+train_labels (6000, 10)
+original_indices (6000,)
+get_dataset_details return
+--------------
+231f device_id
+--------------
+Accuracy global model 0.8665
+Step 1, Minibatch Loss= 1565.5195, Training Accuracy= 0.869
+Step 2, Minibatch Loss= 9988.9160, Training Accuracy= 0.589
+Step 3, Minibatch Loss= 4587.3062, Training Accuracy= 0.768
+Step 4, Minibatch Loss= 3221.0259, Training Accuracy= 0.757
+Step 5, Minibatch Loss= 1414.8276, Training Accuracy= 0.872
+Step 6, Minibatch Loss= 2273.8301, Training Accuracy= 0.824
+Step 7, Minibatch Loss= 1782.4963, Training Accuracy= 0.850
+Step 8, Minibatch Loss= 1681.0984, Training Accuracy= 0.856
+Step 9, Minibatch Loss= 1648.6757, Training Accuracy= 0.850
+Step 10, Minibatch Loss= 1357.4863, Training Accuracy= 0.868
+Accuracy local update---------231f--------------: 0.8745

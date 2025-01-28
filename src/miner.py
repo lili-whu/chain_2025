@@ -74,7 +74,6 @@ class PoWThread(Thread):
             'block': str(block)
         }
         on_end_mining(stopped)
-        app.logger.info("mining completed")
 
 
 ############################################################
@@ -176,7 +175,6 @@ def new_transaction():
     if (status['s'] == 'receiving' and (
             len(status["blockchain"].current_updates) >= status['blockchain'].last_block['update_limit']
             or time.time() - status['blockchain'].last_block['timestamp'] > status['blockchain'].last_block['time_limit'])):
-        app.logger.info("start mining")
         mine()
 
     response = {'message': f"Update will be added to block {index}"}

@@ -47,7 +47,7 @@ Step 10, Minibatch Loss= 1525.2458, Training Accuracy= 0.858
 Accuracy local update---------38c3--------------: 0.8613
 2025-01-28 14:48:17.025462: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
 
-=== 正在生成实验组: centralized ===
+
 已保存到: experiments/centralized
 客户端数量: 1
 恶意节点索引: []

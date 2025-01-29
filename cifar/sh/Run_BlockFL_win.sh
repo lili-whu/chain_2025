@@ -74,6 +74,7 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
          "${PYEXE}" client.py \
            -d "./experiments/${EXP_NAME}/client_${i}.pkl" \
            -e ${LOCAL_EPOCH} \
+           -gr 1 \
            >> "${BASE_PATH}/output/client_${i}_${EXP_NAME}_${AGG}.txt" 2>&1
       done
 

@@ -47,7 +47,7 @@ def split_cifar_iid(train_x, train_y, test_x, test_y, split_sizes, malicious_ind
         client_datasets.append(c_data)
     return client_datasets
 
-def load_data(name="mnist.d"):
+def load_data(name=""):
     with open(name, "rb") as f:
         return pickle.load(f)
 

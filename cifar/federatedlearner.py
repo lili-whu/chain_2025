@@ -16,7 +16,7 @@ class NNWorker:
 
         self.learning_rate = 0.001
         self.num_steps     = steps  # epoch
-        self.batch_size    = 64
+        self.batch_size    = 16
 
         # CIFAR-10: shape=(32,32,3)
         self.image_height  = 32

@@ -1,52 +1,13 @@
-2025-01-29 13:41:19.189844: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-29 13:41:19.249927: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
-base model accuracy: 0.0998
- * Serving Flask app "app" (lazy loading)
- * Environment: production
-   WARNING: Do not use the development server in a production environment.
-   Use a production WSGI server instead.
- * Debug mode: off
-[2025-01-29 13:41:21,380] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-[2025-01-29 13:41:22,456] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:22] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:22,458] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:22] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:22,465] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:22] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:36,839] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:36] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:41:38,592] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:38] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:38,594] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:38] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:38,601] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:38] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:53,257] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:53] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:41:55,028] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:55] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:55,031] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:55] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:41:55,037] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:41:55] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:03,779] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:03] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:42:05,534] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:05] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:05,537] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:05] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:05,543] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:05] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:13,996] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:13] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:42:15,683] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:15] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:15,685] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:15] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:15,692] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:15] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:21,482] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:21] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:42:23,187] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:23] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:23,189] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:23] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:23,195] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:23] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:28,960] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:42:30,636] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:30] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:30,638] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:30] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:30,645] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:30] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:36,411] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:36] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:42:38,135] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:38] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:38,137] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:38] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:38,144] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:38] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:43,785] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:43] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:42:45,482] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:45] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:45,485] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:45] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:45,491] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:45] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:54,242] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:54] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-[2025-01-29 13:42:56,027] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:56] "[37mGET /status HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:56,029] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:56] "[37mGET /chain HTTP/1.1[0m" 200 -
-[2025-01-29 13:42:56,038] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:42:56] "[37mPOST /model HTTP/1.1[0m" 200 -
-[2025-01-29 13:43:04,663] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:43:04] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
-2025-01-29 13:43:04.904972: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
-2025-01-29 13:43:06.921828: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
-2025-01-29 13:43:09.152816: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+2025-01-29 14:11:48.704959: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+Traceback (most recent call last):
+  File "miner.py", line 367, in <module>
+    base_model = make_base()
+  File "miner.py", line 127, in make_base
+    model['accuracy'] = worker.evaluate()
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\cifar\federatedlearner.py", line 168, in evaluate
+    self.Y: self.test_y
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\client\session.py", line 887, in run
+    run_metadata_pt r)
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\client\session.py", line 1086, in _run
+    str(subfeed_t.get_shape())))
+ValueError: Cannot feed value of shape () for Tensor 'X:0', which has shape '(?, 32, 32, 3)'

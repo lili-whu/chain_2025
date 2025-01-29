@@ -116,8 +116,6 @@ def make_base():
     dataset = None
     dataset = get_cifar_test_online()
     worker = NNWorker(
-        dataset["train_images"],
-        dataset["train_labels"],
         dataset["test_images"],
         dataset["test_labels"],
         0,

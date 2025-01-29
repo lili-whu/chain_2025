@@ -10,7 +10,7 @@ import pickle
 import codecs
 
 import cifar_data_extractor as dataext  # 改为你放置 'get_dataset_details','load_data'的脚本
-from NNWorker import NNWorker, reset
+from federatedlearner import NNWorker, reset
 
 class Client:
     def __init__(self, miner, dataset_path):
@@ -105,8 +105,8 @@ class Client:
             new_params, local_acc, ctime = self.update_model(model, local_epochs)
 
             # 保存一下
-            with open(f"clients/device{device_id}_model_v{i}.pkl","wb") as f:
-                pickle.dump(new_params,f)
+            # with open(f"clients/device{device_id}_model_v{i}.pkl","wb") as f:
+            #     pickle.dump(new_params,f)
 
             print(f"[{device_id}] local update round{i}, local_acc={local_acc:.3f}")
             self.send_update(new_params, ctime, baseindex)
@@ -117,6 +117,7 @@ if __name__=="__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('-m','--miner',default='127.0.0.1:5000')
     parser.add_argument('-d','--dataset',default='')
+    parser.add_argument('-e','--epoch',default='')
     parser.add_argument('-gr','--global_rounds',default=5,type=int)
     parser.add_argument('-le','--local_epochs',default=1,type=int)
     args = parser.parse_args()

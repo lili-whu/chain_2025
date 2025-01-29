@@ -32,7 +32,7 @@ SLEEP_TIME=10
 PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
 
 # 工程 src 目录 (请按实际路径修改)
-BASE_PATH="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\src"
+BASE_PATH="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\cifar"
 
 ##############################################
 # 3. 清理 output 文件夹 (可选)

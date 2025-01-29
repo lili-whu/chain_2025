@@ -1,0 +1,75 @@
+2025-01-29 13:19:47.391386: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-29 13:19:47.450932: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+base model accuracy: 0.1001
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[2025-01-29 13:19:50,038] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2025-01-29 13:19:51,104] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:19:51] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:19:51,107] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:19:51] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-01-29 13:19:51,113] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:19:51] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:03,022] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:03] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-01-29 13:20:03,025] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:05,029] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:07,031] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:07] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:09,033] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:09] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:11,036] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:11] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:13,039] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:13] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:15,042] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:15] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:17,044] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:17] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:19,046] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:19] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:21,048] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:21] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:23,051] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:25,053] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:27,055] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:27] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:29,058] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:29] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:31,060] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:31] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:33,063] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:33] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:35,065] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:35] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:37,068] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:37] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:39,070] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:39] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:41,074] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:41] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:43,079] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:45,081] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:47,084] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:47] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:49,089] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:49] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:51,090] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:51] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:53,093] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:53] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:55,098] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:55] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:57,101] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:57] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:20:59,102] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:20:59] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:01,105] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:01] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:03,108] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:05,111] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:07,112] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:07] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:09,116] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:09] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:11,117] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:11] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:13,121] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:13] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:15,123] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:15] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:17,125] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:17] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:19,128] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:19] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:21,129] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:21] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:23,132] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:25,135] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:27,137] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:27] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:29,140] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:29] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:31,143] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:31] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:33,145] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:33] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:35,149] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:35] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:37,151] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:37] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:39,153] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:39] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:41,156] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:41] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:43,162] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:45,166] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:47,168] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:47] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:49,172] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:49] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:51,174] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:51] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:53,176] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:53] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:55,179] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:55] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:57,182] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:57] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:21:59,187] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:21:59] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:22:01,189] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:22:01] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:22:03,192] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:22:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-01-29 13:22:05,194] INFO in _internal: 127.0.0.1 - - [29/Jan/2025 13:22:05] "[37mGET /status HTTP/1.1[0m" 200 -

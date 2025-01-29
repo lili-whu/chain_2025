@@ -11,7 +11,7 @@ import logging
 import numpy as np
 import tensorflow as tf
 from app import app
-import federated_data_extractor as dataext
+import cifar_data_extractor as dataext
 from federatedlearner import NNWorker, reset
 logger = logging.getLogger(__name__)
 accuracy_list = []

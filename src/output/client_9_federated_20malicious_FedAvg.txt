@@ -1,0 +1,37 @@
+Traceback (most recent call last):
+  File "client.py", line 5, in <module>
+    from blockchain import *
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\cifar\blockchain.py", line 14, in <module>
+    import federated_data_extractor as dataext
+ModuleNotFoundError: No module named 'federated_data_extractor'
+Traceback (most recent call last):
+  File "client.py", line 5, in <module>
+    from blockchain import *
+  File "C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\cifar\blockchain.py", line 12, in <module>
+    import tensorflow as tf
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\__init__.py", line 22, in <module>
+    from tensorflow.python import pywrap_tensorflow  # pylint: disable=unused-import
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\__init__.py", line 81, in <module>
+    from tensorflow.python import keras
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\keras\__init__.py", line 30, in <module>
+    from tensorflow.python.keras import estimator
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\keras\estimator\__init__.py", line 28, in <module>
+    from tensorflow.python.estimator import keras as keras_lib  # pylint: disable=g-import-not-at-top
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\estimator\__init__.py", line 25, in <module>
+    import tensorflow.python.estimator.estimator_lib
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\estimator\estimator_lib.py", line 22, in <module>
+    from tensorflow.python.estimator.canned.baseline import BaselineClassifier
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\estimator\canned\baseline.py", line 50, in <module>
+    from tensorflow.python.estimator import estimator
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\estimator\estimator.py", line 52, in <module>
+    from tensorflow.python.saved_model import builder as saved_model_builder
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\saved_model\builder.py", line 27, in <module>
+    from tensorflow.python.saved_model.builder_impl import SavedModelBuilder
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 951, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 894, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1157, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1129, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1241, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 82, in _path_stat
+KeyboardInterrupt

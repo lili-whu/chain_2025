@@ -47,6 +47,16 @@ def split_cifar_iid(train_x, train_y, test_x, test_y, split_sizes, malicious_ind
         client_datasets.append(c_data)
     return client_datasets
 
+def load_data(name="mnist.d"):
+    with open(name, "rb") as f:
+        return pickle.load(f)
+
+def get_dataset_details(dataset):
+    # print(dataset)
+    for k in dataset.keys():
+        print(k, dataset[k].shape)
+    print("get_dataset_details return")
+
 def save_experiment_data(client_datasets, outdir):
     if os.path.exists(outdir):
         shutil.rmtree(outdir)
@@ -69,5 +79,5 @@ if __name__=="__main__":
                               test_x, test_y,
                               split_sizes=split_sizes,
                               malicious_indices=malicious_indices)
-    save_experiment_data(clients, "experiments/cifar_custom")
-    print("已生成 10 个客户端, 存储在 experiments/cifar_custom 下.")
+    save_experiment_data(clients, "experiments/federated_20malicious")
+    print("已生成 10 个客户端, 存储在 experiments/federated_20malicious 下.")

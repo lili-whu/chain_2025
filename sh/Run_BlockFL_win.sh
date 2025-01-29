@@ -15,15 +15,13 @@ AGGREGATORS=("FedAvg" "AccWeight")
 ##############################################
 # 2. 其他参数
 ##############################################
-
-
 FED_ROUNDS=10
 
 # 每轮客户端本地训练的 epoch
 LOCAL_EPOCH=1
 
 # 等待时间: 用于等矿工挖矿
-SLEEP_TIME=360  # 每轮提交后等待180秒看是否打包完成
+SLEEP_TIME=360  # 每轮提交后等待360秒看是否打包完成
 
 # Python解释器路径
 PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
@@ -71,11 +69,11 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
       # 每个客户端提交1次更新
       for (( i=0; i<${CLIENT_COUNT}; i++ ))
       do
+        # 顺序执行, 避免内存溢出, 执行超时
          "${PYEXE}" client.py \
            -d "./experiments/${EXP_NAME}/client_${i}.pkl" \
            -e ${LOCAL_EPOCH} \
            >> "${BASE_PATH}/output/client_${i}_${EXP_NAME}_${AGG}.txt" 2>&1
-         # 注意这里不再后台 & 了，而是顺序执行；也可并发执行，然后 sleep
       done
 
       # 等待矿工完成本轮区块

@@ -26,7 +26,7 @@ FED_ROUNDS=10
 LOCAL_EPOCH=1
 
 # 每轮结束后等待 (秒)
-SLEEP_TIME=10
+SLEEP_TIME=360  # 每轮提交后等待360秒看是否打包完成
 
 # Python解释器
 PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"

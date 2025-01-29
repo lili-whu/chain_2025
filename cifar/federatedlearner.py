@@ -16,7 +16,7 @@ class NNWorker:
 
         self.learning_rate = 0.001
         self.num_steps     = steps  # epoch
-        self.batch_size    = 16
+        self.batch_size    = 64
 
         # CIFAR-10: shape=(32,32,3)
         self.image_height  = 32
@@ -163,10 +163,7 @@ class NNWorker:
 
     def evaluate(self):
         """在测试集上计算准确率"""
-        return self.sess.run(self.accuracy, feed_dict={
-            self.X: self.test_x,
-            self.Y: self.test_y
-        })
+        return self.sess.run(self.accuracy, feed_dict={self.X: self.test_x, self.Y: self.test_y})
 
     def get_model(self):
         """

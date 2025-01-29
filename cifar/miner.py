@@ -115,12 +115,10 @@ def make_base():
     reset()
     dataset = None
     dataset = get_cifar_test_online()
-    worker = NNWorker(
-        dataset["test_images"],
-        dataset["test_labels"],
-        0,
-        "base0"
-    )
+
+    worker = NNWorker(None, None,
+                        dataset['test_images'], dataset['test_labels'],
+                        0, "validation", steps=0)
     worker.build_base()
     model = dict()
     model['model'] = worker.get_model()

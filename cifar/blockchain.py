@@ -130,7 +130,6 @@ def compute_global_model(base_block, updates, lrate, aggregator="FedAvg"):
 
     # 4. 计算新的全局模型精度
     tf.reset_default_graph()
-    dataset = dataext.load_data("data/cifar_test.pkl")
     worker = NNWorker(None, None,
                       dataset['test_images'], dataset['test_labels'],
                       0, "validation", steps=0)

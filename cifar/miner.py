@@ -50,6 +50,22 @@ status = {
 
 STOP_EVENT = Event()
 
+def get_cifar_test_online():
+    """
+    自动从网上下载 CIFAR-10（若本地已缓存，则直接读取），并返回
+    一个字典,如 {'test_images': ..., 'test_labels': ...}
+    """
+    (train_x, train_y), (test_x, test_y) = tf.keras.datasets.cifar10.load_data()
+    # test_x: (10000,32,32,3), test_y: (10000,1)
+    test_x = test_x.astype('float32') / 255.0
+    # One-hot
+    test_y = tf.keras.utils.to_categorical(test_y, 10)
+
+    return {
+        "test_images": test_x,
+        "test_labels": test_y
+    }
+
 
 ############################################################
 #                    工作量证明线程
@@ -98,8 +114,7 @@ def make_base():
     """
     reset()
     dataset = None
-    with open("experiments/federated_20malicious/client_0.pkl", 'rb') as f:
-        dataset = pickle.load(f)
+    dataset = get_cifar_test_online()
     worker = NNWorker(
         dataset["train_images"],
         dataset["train_labels"],

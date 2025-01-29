@@ -15,10 +15,7 @@ AGGREGATORS=("FedAvg" "AccWeight")
 ##############################################
 # 2. 其他参数
 ##############################################
-# 每个区块需要多少个更新才打包
-# centralized时是1，其余是10 (等于客户端数量)
-# 或者你可以直接写死10，也行
-ROUND_UPDATES=10
+
 
 FED_ROUNDS=10
 
@@ -26,7 +23,7 @@ FED_ROUNDS=10
 LOCAL_EPOCH=1
 
 # 等待时间: 用于等矿工挖矿
-SLEEP_TIME=10  # 每轮提交后等待10秒看是否打包完成
+SLEEP_TIME=360  # 每轮提交后等待180秒看是否打包完成
 
 # Python解释器路径
 PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
@@ -64,7 +61,7 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
 
     MINER_PID=$!
     echo "Miner PID=${MINER_PID}"
-    sleep 3  # 稍等矿工就绪
+    sleep 180  # 稍等矿工就绪
 
     # 多轮联邦训练
     echo ">> 准备进行 FED_ROUNDS=${FED_ROUNDS} 轮"

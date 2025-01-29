@@ -75,6 +75,7 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
            -d "./experiments/${EXP_NAME}/client_${i}.pkl" \
            -e ${LOCAL_EPOCH} \
            -gr 1 \
+           -le 5 \
            >> "${BASE_PATH}/output/client_${i}_${EXP_NAME}_${AGG}.txt" 2>&1
       done
 

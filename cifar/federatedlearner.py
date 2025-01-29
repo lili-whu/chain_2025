@@ -163,8 +163,6 @@ class NNWorker:
 
     def evaluate(self):
         """在测试集上计算准确率"""
-        if self.test_x is None or len(self.test_x)==0:
-            return 0.0
         return self.sess.run(self.accuracy, feed_dict={self.X: self.test_x, self.Y: self.test_y})
 
     def get_model(self):

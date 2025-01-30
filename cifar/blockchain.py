@@ -28,7 +28,7 @@ def compute_upd_2(weights, base, updates, lrate):
     n = len(weights)
     for client in weights:
         weights[client] = 1.0 / n
-    app.logging.info(", ".join(str(x) for x in weights.values()))
+    app.logger.info(", ".join(str(x) for x in weights.values()))
     # 基于 base 的 param dict:
     upd = {}
     for k in base.keys():
@@ -53,7 +53,7 @@ def compute_upd_3(weights, base, updates, lrate):
     """
     AccWeight模式聚合
     """
-    app.logging.info(", ".join(str(x) for x in weights.values()))
+    app.logger.info(", ".join(str(x) for x in weights.values()))
     upd = {}
     for k in base.keys():
         if k=="size":
@@ -137,7 +137,7 @@ def compute_global_model(base_block, updates, lrate, aggregator="FedAvg"):
     worker.build(upd)
     accuracy = worker.evaluate()
     worker.close()
-
+    app.logger.info("Agg Finished")
     return accuracy, upd
 
 

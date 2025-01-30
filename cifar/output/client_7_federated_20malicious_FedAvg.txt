@@ -1,150 +1,150 @@
-2025-01-30 01:38:33.399287: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 01:38:44.183892: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+2025-01-30 10:48:56.718151: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 10:49:07.682711: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= c820
-Global model accuracy 0.1
-Epoch 1/5, loss=2.2230, train_acc=0.257
-Epoch 2/5, loss=2.0230, train_acc=0.306
-Epoch 3/5, loss=1.8991, train_acc=0.351
-Epoch 4/5, loss=1.7759, train_acc=0.414
-Epoch 5/5, loss=1.6625, train_acc=0.459
-[c820] local update round0, local_acc=0.405
-2025-01-30 01:48:52.368881: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 01:49:02.989269: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= 8738
+Global model accuracy 0.1032
+Epoch 1/5, loss=2.2625, train_acc=0.185
+Epoch 2/5, loss=2.0547, train_acc=0.273
+Epoch 3/5, loss=1.9844, train_acc=0.308
+Epoch 4/5, loss=1.9644, train_acc=0.298
+Epoch 5/5, loss=1.8949, train_acc=0.362
+[8738] local update round0, local_acc=0.325
+2025-01-30 10:59:16.014484: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 10:59:26.671430: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 269e
-Global model accuracy 0.2408
-Epoch 1/5, loss=1.8507, train_acc=0.436
-Epoch 2/5, loss=1.6419, train_acc=0.464
-Epoch 3/5, loss=1.5383, train_acc=0.467
-Epoch 4/5, loss=1.4991, train_acc=0.504
-Epoch 5/5, loss=1.4278, train_acc=0.509
-[269e] local update round0, local_acc=0.448
-2025-01-30 01:59:10.773194: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 01:59:21.532846: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= e405
+Global model accuracy 0.2282
+Epoch 1/5, loss=1.9712, train_acc=0.358
+Epoch 2/5, loss=1.7882, train_acc=0.427
+Epoch 3/5, loss=1.6293, train_acc=0.440
+Epoch 4/5, loss=1.5355, train_acc=0.491
+Epoch 5/5, loss=1.4413, train_acc=0.504
+[e405] local update round0, local_acc=0.447
+2025-01-30 11:09:37.947772: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 11:09:48.799861: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 77cb
-Global model accuracy 0.466
-Epoch 1/5, loss=1.4730, train_acc=0.530
-Epoch 2/5, loss=1.3460, train_acc=0.532
-Epoch 3/5, loss=1.3048, train_acc=0.557
-Epoch 4/5, loss=1.2645, train_acc=0.592
-Epoch 5/5, loss=1.2275, train_acc=0.610
-[77cb] local update round0, local_acc=0.506
-2025-01-30 02:09:25.561787: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 02:09:35.956099: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= 9122
+Global model accuracy 0.4824
+Epoch 1/5, loss=1.5274, train_acc=0.524
+Epoch 2/5, loss=1.3829, train_acc=0.544
+Epoch 3/5, loss=1.3081, train_acc=0.568
+Epoch 4/5, loss=1.2767, train_acc=0.568
+Epoch 5/5, loss=1.2199, train_acc=0.602
+[9122] local update round0, local_acc=0.509
+2025-01-30 11:19:56.506649: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 11:20:07.102862: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 49cc
-Global model accuracy 0.5196
-Epoch 1/5, loss=1.3230, train_acc=0.576
-Epoch 2/5, loss=1.2113, train_acc=0.603
-Epoch 3/5, loss=1.1561, train_acc=0.619
-Epoch 4/5, loss=1.1143, train_acc=0.662
-Epoch 5/5, loss=1.0694, train_acc=0.651
-[49cc] local update round0, local_acc=0.530
-2025-01-30 02:19:41.671466: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 02:19:52.462914: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= 3705
+Global model accuracy 0.5208
+Epoch 1/5, loss=1.3007, train_acc=0.590
+Epoch 2/5, loss=1.2129, train_acc=0.606
+Epoch 3/5, loss=1.1558, train_acc=0.614
+Epoch 4/5, loss=1.0935, train_acc=0.636
+Epoch 5/5, loss=1.0490, train_acc=0.668
+[3705] local update round0, local_acc=0.540
+2025-01-30 11:30:14.100817: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 11:30:24.895402: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 5d92
-Global model accuracy 0.5342
-Epoch 1/5, loss=1.2133, train_acc=0.618
-Epoch 2/5, loss=1.1076, train_acc=0.617
-Epoch 3/5, loss=1.0634, train_acc=0.657
-Epoch 4/5, loss=1.0020, train_acc=0.678
-Epoch 5/5, loss=0.9448, train_acc=0.697
-[5d92] local update round0, local_acc=0.547
-2025-01-30 02:29:54.699091: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 02:30:05.174001: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= 4c0c
+Global model accuracy 0.5438
+Epoch 1/5, loss=1.2314, train_acc=0.626
+Epoch 2/5, loss=1.0934, train_acc=0.641
+Epoch 3/5, loss=1.0390, train_acc=0.680
+Epoch 4/5, loss=0.9891, train_acc=0.700
+Epoch 5/5, loss=0.9355, train_acc=0.715
+[4c0c] local update round0, local_acc=0.563
+2025-01-30 11:40:35.681737: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 11:40:46.358621: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 55d2
-Global model accuracy 0.5601
-Epoch 1/5, loss=1.1369, train_acc=0.648
-Epoch 2/5, loss=1.0247, train_acc=0.686
-Epoch 3/5, loss=0.9732, train_acc=0.705
-Epoch 4/5, loss=0.9011, train_acc=0.713
-Epoch 5/5, loss=0.8451, train_acc=0.744
-[55d2] local update round0, local_acc=0.576
-2025-01-30 02:40:07.935531: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 02:40:18.390243: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= 2150
+Global model accuracy 0.5626
+Epoch 1/5, loss=1.1287, train_acc=0.664
+Epoch 2/5, loss=0.9942, train_acc=0.658
+Epoch 3/5, loss=0.9444, train_acc=0.726
+Epoch 4/5, loss=0.8714, train_acc=0.726
+Epoch 5/5, loss=0.8277, train_acc=0.738
+[2150] local update round0, local_acc=0.576
+2025-01-30 11:50:57.431764: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 11:51:08.200513: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 95ac
-Global model accuracy 0.5795
-Epoch 1/5, loss=1.0569, train_acc=0.689
-Epoch 2/5, loss=0.9426, train_acc=0.709
-Epoch 3/5, loss=0.8955, train_acc=0.724
-Epoch 4/5, loss=0.8084, train_acc=0.752
-Epoch 5/5, loss=0.7585, train_acc=0.786
-[95ac] local update round0, local_acc=0.593
-2025-01-30 02:50:21.458425: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 02:50:31.909638: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= 046b
+Global model accuracy 0.5908
+Epoch 1/5, loss=1.0450, train_acc=0.702
+Epoch 2/5, loss=0.9178, train_acc=0.730
+Epoch 3/5, loss=0.8349, train_acc=0.742
+Epoch 4/5, loss=0.7802, train_acc=0.780
+Epoch 5/5, loss=0.7408, train_acc=0.787
+[046b] local update round0, local_acc=0.592
+2025-01-30 12:01:15.871251: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 12:01:26.639299: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 7bb2
-Global model accuracy 0.605
-Epoch 1/5, loss=1.0189, train_acc=0.712
-Epoch 2/5, loss=0.8543, train_acc=0.725
-Epoch 3/5, loss=0.7841, train_acc=0.766
-Epoch 4/5, loss=0.7256, train_acc=0.767
-Epoch 5/5, loss=0.6988, train_acc=0.803
-[7bb2] local update round0, local_acc=0.604
-2025-01-30 03:00:34.158884: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 03:00:44.602670: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= a000
+Global model accuracy 0.6174
+Epoch 1/5, loss=0.9852, train_acc=0.725
+Epoch 2/5, loss=0.8431, train_acc=0.754
+Epoch 3/5, loss=0.7724, train_acc=0.753
+Epoch 4/5, loss=0.7203, train_acc=0.794
+Epoch 5/5, loss=0.6728, train_acc=0.812
+[a000] local update round0, local_acc=0.610
+2025-01-30 12:11:31.827585: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 12:11:42.261630: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= a75c
-Global model accuracy 0.6081
-Epoch 1/5, loss=0.9569, train_acc=0.737
-Epoch 2/5, loss=0.8135, train_acc=0.757
-Epoch 3/5, loss=0.7280, train_acc=0.791
-Epoch 4/5, loss=0.6629, train_acc=0.813
-Epoch 5/5, loss=0.6183, train_acc=0.826
-[a75c] local update round0, local_acc=0.604
-2025-01-30 03:10:47.197243: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
-2025-01-30 03:10:57.563441: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+Start working, dev= 856e
+Global model accuracy 0.6268
+Epoch 1/5, loss=0.9645, train_acc=0.725
+Epoch 2/5, loss=0.7897, train_acc=0.770
+Epoch 3/5, loss=0.7138, train_acc=0.796
+Epoch 4/5, loss=0.6534, train_acc=0.809
+Epoch 5/5, loss=0.6142, train_acc=0.812
+[856e] local update round0, local_acc=0.605
+2025-01-30 12:21:50.048070: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-01-30 12:22:00.779082: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
 train_images (2500, 32, 32, 3)
 train_labels (2500, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 76c4
-Global model accuracy 0.6171
-Epoch 1/5, loss=0.9251, train_acc=0.720
-Epoch 2/5, loss=0.7794, train_acc=0.779
-Epoch 3/5, loss=0.6850, train_acc=0.796
-Epoch 4/5, loss=0.6259, train_acc=0.816
-Epoch 5/5, loss=0.5608, train_acc=0.822
-[76c4] local update round0, local_acc=0.600
+Start working, dev= aa42
+Global model accuracy 0.6273
+Epoch 1/5, loss=0.9318, train_acc=0.741
+Epoch 2/5, loss=0.7486, train_acc=0.764
+Epoch 3/5, loss=0.6578, train_acc=0.800
+Epoch 4/5, loss=0.5974, train_acc=0.825
+Epoch 5/5, loss=0.5537, train_acc=0.847
+[aa42] local update round0, local_acc=0.618

@@ -108,14 +108,13 @@ def compute_global_model(base_block, updates, lrate, aggregator="FedAvg"):
         acc_change_i_t = acc_i_t - base_block.accuracy
         # MQI = alpha * Acc + beta * (Acc - Acc_global_prev)
         weight = alpha * acc_i_t + beta * acc_change_i_t
-        weights[client] = weight
         # 避免除0
-        if weights[client] <= 0:
-            weights[client] = 1e-8
+        if weight <= 0:
+            weight = 1e-8
         total_weight += weight
+        weights[client] = weight
         
-    
-    
+
 
     for client in updates.keys():
         weights[client] = weights[client] / total_weight

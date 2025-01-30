@@ -118,8 +118,8 @@ if __name__=="__main__":
     parser.add_argument('-m','--miner',default='127.0.0.1:5000')
     parser.add_argument('-d','--dataset',default='')
     parser.add_argument('-e','--epoch',default='')
-    parser.add_argument('-gr','--global_rounds',default=5,type=int)
-    parser.add_argument('-le','--local_epochs',default=1,type=int)
+    parser.add_argument('-gr','--global_rounds',default=10,type=int) # todo 训练轮次
+    parser.add_argument('-le','--local_epochs',default=1,type=int) # todo 一次即可，每轮联邦学习重新启动
     args = parser.parse_args()
 
     c = Client(args.miner, args.dataset)

@@ -68,16 +68,38 @@ def save_experiment_data(client_datasets, outdir):
 
 if __name__=="__main__":
     train_x, train_y, test_x, test_y = get_cifar10()
-    # 4:4:2:2:1:1:1:1 + 2:2
-    # => 10节点
-    # => 8节点: [10000,10000,5000,5000,2500,2500,2500,2500], 2节点(恶意): [5000,5000]
-    split_sizes = [10000,10000,5000,5000,2500,2500,2500,2500,5000,5000]
-    # 最后俩(8,9)恶意
-    malicious_indices = [8,9]
 
-    clients = split_cifar_iid(train_x, train_y,
-                              test_x, test_y,
-                              split_sizes=split_sizes,
-                              malicious_indices=malicious_indices)
+    # 第一种分割方式：不分割
+    split_sizes = [50000]
+    malicious_indices = []  # 无恶意节点
+    clients = split_cifar_iid(train_x, train_y, test_x, test_y, split_sizes, malicious_indices)
+    save_experiment_data(clients, "experiments/centralized")
+    print("已生成 1 个客户端, 存储在 experiments/centralized 下.")
+
+    # 第二种分割方式：均等分割为10份
+    split_sizes = [5000] * 10
+    malicious_indices = []  # 无恶意节点
+    clients = split_cifar_iid(train_x, train_y, test_x, test_y, split_sizes, malicious_indices)
+    save_experiment_data(clients, "experiments/federated_normal")
+    print("已生成 10 个客户端, 存储在 experiments/federated_normal 下.")
+
+    # 第三种分割方式：均等分割为10份，最后2个为恶意节点
+    split_sizes = [5000] * 10
+    malicious_indices = [8, 9]
+    clients = split_cifar_iid(train_x, train_y, test_x, test_y, split_sizes, malicious_indices)
     save_experiment_data(clients, "experiments/federated_20malicious")
     print("已生成 10 个客户端, 存储在 experiments/federated_20malicious 下.")
+
+    # 第四种分割方式：均等分割为10份，最后5个为恶意节点
+    split_sizes = [5000] * 10
+    malicious_indices = [5, 6, 7, 8, 9]
+    clients = split_cifar_iid(train_x, train_y, test_x, test_y, split_sizes, malicious_indices)
+    save_experiment_data(clients, "experiments/federated_50malicious")
+    print("已生成 10 个客户端, 存储在 experiments/federated_50malicious 下.")
+
+    # 第五种分割方式：4:4:2:2:1:1:1:1:2:2比例，最后2个为恶意节点
+    split_sizes = [10000, 10000, 5000, 5000, 2500, 2500, 2500, 2500, 5000, 5000]
+    malicious_indices = [8, 9]
+    clients = split_cifar_iid(train_x, train_y, test_x, test_y, split_sizes, malicious_indices)
+    save_experiment_data(clients, "experiments/federated_20malicious_v2")
+    print("已生成 10 个客户端, 存储在 experiments/federated_20malicious_v2 下.")

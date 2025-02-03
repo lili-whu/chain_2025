@@ -1,17 +1,12 @@
 #!/usr/bin/env bash
 
 ##############################################
-#    Windows 下避免中文乱码 (可选)
-##############################################
-chcp 65001
-
-##############################################
 # 1. 定义要跑的实验场景 与 聚合方式
 ##############################################
 # 这里只跑 federated_20malicious 和 federated_50malicious
-EXPERIMENTS=("federated_20malicious")
+EXPERIMENTS=("federated_50malicious")
 # 只跑 FedAvg 和 AccWeight
-AGGREGATORS=("FedAvg" "AccWeight")
+AGGREGATORS=("AccWeight" "FedAvg")
 
 ##############################################
 # 2. 其他参数
@@ -26,7 +21,7 @@ FED_ROUNDS=10
 LOCAL_EPOCH=1
 
 # 每轮结束后等待 (秒)
-SLEEP_TIME=360  # 每轮提交后等待360秒看是否打包完成
+SLEEP_TIME=60  # 每轮提交后等待360秒看是否打包完成
 
 # Python解释器
 PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
@@ -71,6 +66,7 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
       # 让10个客户端按顺序各提交一次更新
       for (( i=0; i<${CLIENT_COUNT}; i++ ))
       do
+         echo "---- Client $i training ----"
          "${PYEXE}" client.py \
            -d "./experiments/${EXP_NAME}/client_${i}.pkl" \
            -e ${LOCAL_EPOCH} \

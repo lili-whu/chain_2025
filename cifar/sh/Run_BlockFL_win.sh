@@ -24,10 +24,10 @@ LOCAL_EPOCH=1
 SLEEP_TIME=60  # 每轮提交后等待360秒看是否打包完成
 
 # Python解释器
-PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
+PYEXE="D:/anaconda/envs/test/python.exe"
 
 # 工程 src 目录 (请按实际路径修改)
-BASE_PATH="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\cifar"
+BASE_PATH="D:\BlockchainForFederatedLearning-master\cifar"
 
 ##############################################
 # 3. 清理 output 文件夹 (可选)

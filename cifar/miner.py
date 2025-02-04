@@ -113,7 +113,7 @@ def make_base():
     也可以直接用随机初始化/空模型，这里只是示例
     """
     reset()
-    dataset = None
+
     dataset = get_cifar_test_online()
 
     worker = NNWorker(None, None,

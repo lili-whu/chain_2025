@@ -1,17 +1,13 @@
 #!/usr/bin/env bash
 
-##############################################
-#    Windows 下避免中文乱码 (可选)
-##############################################
-chcp 65001
-
+D:/anaconda/python.exe ./kill.py
 ##############################################
 # 1. 定义要跑的实验场景 与 聚合方式
 ##############################################
 # 这里只跑 federated_20malicious 和 federated_50malicious
-EXPERIMENTS=("federated_20malicious")
+EXPERIMENTS=("federated_20malicious_v2")
 # 只跑 FedAvg 和 AccWeight
-AGGREGATORS=("FedAvg" "AccWeight")
+AGGREGATORS=("AccWeight")
 
 ##############################################
 # 2. 其他参数
@@ -20,28 +16,25 @@ AGGREGATORS=("FedAvg" "AccWeight")
 CLIENT_COUNT=10
 
 # 全局要跑多少轮 (FED_ROUNDS)
-FED_ROUNDS=10
+FED_ROUNDS=5
 
-# 每个客户端本地训练多少 epoch
+# 每个客户端每次启动接受几次联邦学习 应当为1
 LOCAL_EPOCH=1
 
 # 每轮结束后等待 (秒)
-SLEEP_TIME=360  # 每轮提交后等待360秒看是否打包完成
+SLEEP_TIME=240  # 每轮提交后等待50秒看是否打包完成
 
 # Python解释器
 PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
 
 # 工程 src 目录 (请按实际路径修改)
-BASE_PATH="C:\Users\xiaoming\Desktop\BlockchainForFederatedLearning-master\cifar"
+BASE_PATH="D:\BlockchainForFederatedLearning-master\cifar"
 
 ##############################################
 # 3. 清理 output 文件夹 (可选)
 ##############################################
 rm -rf "${BASE_PATH}/output"/*
 
-##############################################
-# 4. 开始循环跑 (2种分布) x (2种聚合) = 4组实验
-##############################################
 for EXP_NAME in "${EXPERIMENTS[@]}"; do
   for AGG in "${AGGREGATORS[@]}"; do
 
@@ -60,8 +53,8 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
       > "${BASE_PATH}/output/miner_${EXP_NAME}_${AGG}.txt" 2>&1 &
 
     MINER_PID=$!
-    echo "Miner PID=${MINER_PID}"
-    sleep 3  # 稍等矿工就绪
+    echo "Miner PID=${MINER_PID} 稍等矿工就绪"
+    sleep ${SLEEP_TIME} # 稍等矿工就绪
 
     # 多轮联邦训练
     echo ">> 准备进行 FED_ROUNDS=${FED_ROUNDS} 轮"
@@ -71,11 +64,12 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
       # 让10个客户端按顺序各提交一次更新
       for (( i=0; i<${CLIENT_COUNT}; i++ ))
       do
+         echo "---- Client $i training ----"
          "${PYEXE}" client.py \
            -d "./experiments/${EXP_NAME}/client_${i}.pkl" \
            -e ${LOCAL_EPOCH} \
            -gr 1 \
-           -le 5 \
+           -le 10 \
            >> "${BASE_PATH}/output/client_${i}_${EXP_NAME}_${AGG}.txt" 2>&1
       done
 
@@ -84,7 +78,7 @@ for EXP_NAME in "${EXPERIMENTS[@]}"; do
       sleep ${SLEEP_TIME}
 
     done
-
+    D:/anaconda/python.exe ./kill.py
     # 结束矿工
     kill -9 ${MINER_PID}
     echo ">> 已结束 Miner，实验: ${EXP_NAME}, 聚合: ${AGG} 完成"

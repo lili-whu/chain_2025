@@ -157,13 +157,30 @@ class NNWorker:
                 avg_loss += loss_val / batch_count
 
             # 每 epoch 打印一次
-            acc_val = self.sess.run(self.accuracy,
-                feed_dict={self.X: self.train_x, self.Y: self.train_y})
+            acc_val = self.evaluate(self.train_x, self.train_y, batch_size=512)
             print(f"Epoch {epoch+1}/{self.num_steps}, loss={avg_loss:.4f}, train_acc={acc_val:.3f}")
 
-    def evaluate(self):
-        """在测试集上计算准确率"""
-        return self.sess.run(self.accuracy, feed_dict={self.X: self.test_x, self.Y: self.test_y})
+    def evaluate(self, data_x=None, data_y=None, batch_size=512):
+        if data_x is None or data_y is None:
+            data_x, data_y = self.test_x, self.test_y
+
+        """分批计算准确率"""
+        total_acc = 0.0
+        num_samples = data_x.shape[0]
+        num_batches = (num_samples + batch_size - 1) // batch_size
+
+        for i in range(num_batches):
+            start = i * batch_size
+            end = start + batch_size
+            batch_x = data_x[start:end]
+            batch_y = data_y[start:end]
+
+            acc = self.sess.run(self.accuracy,
+                                feed_dict={self.X: batch_x, self.Y: batch_y})
+            total_acc += acc * batch_x.shape[0]
+
+        return total_acc / num_samples
+
 
     def get_model(self):
         """
@@ -200,3 +217,49 @@ class NNWorker:
 
     def close(self):
         self.sess.close()
+
+
+def load_and_preprocess_data():
+    # 加载CIFAR-10数据集
+    (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.cifar10.load_data()
+
+    # 归一化像素值到[0,1]
+    train_images = train_images.astype('float32') / 255.0
+    test_images = test_images.astype('float32') / 255.0
+
+    # 将标签转换为one-hot编码
+    train_labels = tf.keras.utils.to_categorical(train_labels, num_classes=10)
+    test_labels = tf.keras.utils.to_categorical(test_labels, num_classes=10)
+
+    return train_images, train_labels, test_images, test_labels
+
+def main():
+    # 加载和预处理数据
+    train_x, train_y, test_x, test_y = load_and_preprocess_data()
+
+    # 初始化神经网络工作节点
+    worker = NNWorker(
+        X=train_x,
+        Y=train_y,
+        tX=test_x,
+        tY=test_y,
+        size=len(train_x),  # 训练集样本数
+        id="cifar_cnn",
+        steps=10  # 设置训练轮数
+    )
+
+    # 构建初始模型（随机初始化参数）
+    worker.build_base()
+
+    # 开始训练
+    worker.train()
+
+    # 在测试集上评估模型
+    test_acc = worker.evaluate(test_x, test_y, batch_size=512)
+    print(f"\n测试集准确率: {test_acc:.4f}")
+
+    # 关闭会话
+    worker.close()
+
+if __name__ == "__main__":
+    main()

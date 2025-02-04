@@ -1,0 +1,134 @@
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 6a52
+Traceback (most recent call last):
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 441, in request
+    self.endheaders()
+  File "D:\anaconda\envs\test\lib\http\client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\anaconda\envs\test\lib\http\client.py", line 1011, in _send_output
+    self.send(msg)
+  File "D:\anaconda\envs\test\lib\http\client.py", line 951, in send
+    self.connect()
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0000020DEFCDE340>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda\envs\test\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020DEFCDE340>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 129, in <module>
+    c.work(device_id, args.global_rounds, args.local_epochs)
+  File "client.py", line 87, in work
+    status = self.get_miner_status()
+  File "client.py", line 37, in get_miner_status
+    r = requests.get(f'http://{self.miner}/status')
+  File "D:\anaconda\envs\test\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020DEFCDE340>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 615e
+Traceback (most recent call last):
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 199, in _new_conn
+    sock = connection.create_connection(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
+    raise err
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
+    response = self._make_request(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 495, in _make_request
+    conn.request(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 441, in request
+    self.endheaders()
+  File "D:\anaconda\envs\test\lib\http\client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "D:\anaconda\envs\test\lib\http\client.py", line 1011, in _send_output
+    self.send(msg)
+  File "D:\anaconda\envs\test\lib\http\client.py", line 951, in send
+    self.connect()
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 279, in connect
+    self.sock = self._new_conn()
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 214, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000219ACF6E370>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\anaconda\envs\test\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
+    retries = retries.increment(
+  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000219ACF6E370>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "client.py", line 129, in <module>
+    c.work(device_id, args.global_rounds, args.local_epochs)
+  File "client.py", line 87, in work
+    status = self.get_miner_status()
+  File "client.py", line 37, in get_miner_status
+    r = requests.get(f'http://{self.miner}/status')
+  File "D:\anaconda\envs\test\lib\site-packages\requests\api.py", line 73, in get
+    return request("get", url, params=params, **kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "D:\anaconda\envs\test\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000219ACF6E370>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))

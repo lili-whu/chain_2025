@@ -1,0 +1,45 @@
+2025-02-04 12:09:32.791982: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+2025-02-04 12:09:32.873369: W tensorflow/core/framework/allocator.cc:113] Allocation of 2621440000 exceeds 10% of system memory.
+base model accuracy: 0.1
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[2025-02-04 12:09:34,948] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2025-02-04 12:10:22,859] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:10:22] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:10:22,861] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:10:22] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:10:22,868] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:10:22] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:11:51,830] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:11:51] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:11:53,532] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:11:53] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:11:53,534] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:11:53] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:11:53,540] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:11:53] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:13:22,718] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:13:22] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:13:24,518] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:13:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:13:24,520] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:13:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:13:24,527] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:13:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:14:13,355] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:14:13] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:14:15,017] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:14:15] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:14:15,019] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:14:15] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:14:15,025] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:14:15] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:00,665] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:00] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:15:02,390] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:02] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:02,392] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:02] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:02,398] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:02] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:26,089] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:15:27,776] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:27] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:27,778] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:27] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:27,785] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:27] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:51,548] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:51] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:15:53,212] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:53] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:53,214] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:53] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:15:53,220] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:15:53] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:16:16,741] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:16] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:16:18,476] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:18] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:16:18,478] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:18] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:16:18,485] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:18] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:16:42,363] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:42] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-04 12:16:44,055] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-04 12:16:44,057] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-04 12:16:44,064] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:16:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-04 12:17:29,112] INFO in _internal: 127.0.0.1 - - [04/Feb/2025 12:17:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -

@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "miner.py", line 365, in <module>
+    base_model = make_base()
+  File "miner.py", line 119, in make_base
+    worker = NNWorker(None, None,
+  File "D:\BlockchainForFederatedLearning-master\cifar\federatedlearner.py", line 27, in __init__
+    self.sess = tf.Session()
+AttributeError: module 'tensorflow' has no attribute 'Session'

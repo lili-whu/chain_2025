@@ -1,0 +1,24 @@
+Traceback (most recent call last):
+  File "client.py", line 5, in <module>
+    from blockchain import *
+  File "D:\BlockchainForFederatedLearning-master\cifar\blockchain.py", line 12, in <module>
+    import tensorflow as tf
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\__init__.py", line 22, in <module>
+    from tensorflow.python import pywrap_tensorflow  # pylint: disable=unused-import
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\__init__.py", line 72, in <module>
+    from tensorflow.python.ops.standard_ops import *
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\ops\standard_ops.py", line 35, in <module>
+    from tensorflow.python.ops import state_grad
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\ops\state_grad.py", line 36, in <module>
+    ops.NotDifferentiable("ScatterAdd")
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\framework\ops.py", line 2445, in NotDifferentiable
+    _gradient_registry.register(None, op_type)
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\site-packages\tensorflow\python\framework\registry.py", line 67, in register
+    stack = traceback.extract_stack()
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\traceback.py", line 211, in extract_stack
+    stack = StackSummary.extract(walk_stack(f), limit=limit)
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\traceback.py", line 360, in extract
+    linecache.checkcache(filename)
+  File "D:\anaconda\envs\BlockchainForFederatedLearning\lib\linecache.py", line 74, in checkcache
+    stat = os.stat(fullname)
+KeyboardInterrupt

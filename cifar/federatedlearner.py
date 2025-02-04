@@ -1,4 +1,3 @@
-# NNWorker.py  (CIFAR + CNN 示例)
 import tensorflow as tf
 import numpy as np
 
@@ -28,7 +27,7 @@ class NNWorker:
 
     def build(self, base):
         """
-        假设 base = { 'conv1_w', 'conv1_b', 'conv2_w', 'conv2_b', 'fc_w', 'fc_b' } ...
+        假设 base = { 'conv1_w', 'conv1_b', 'conv2_w', 'conv2_b', 'conv3_w', 'conv3_b', 'fc_w', 'fc_b' } ...
         可以根据实际网络深度添加更多层
         """
         self.X = tf.placeholder(tf.float32, [None, self.image_height, self.image_width, self.num_channels], name="X")
@@ -38,11 +37,13 @@ class NNWorker:
         self.weights = {
             'conv1_w': tf.Variable(base['c1w'], name="conv1_w"),
             'conv2_w': tf.Variable(base['c2w'], name="conv2_w"),
+            'conv3_w': tf.Variable(base['c3w'], name="conv3_w"),
             'fc_w':    tf.Variable(base['fcw'], name="fc_w")
         }
         self.biases = {
             'conv1_b': tf.Variable(base['c1b'], name="conv1_b"),
             'conv2_b': tf.Variable(base['c2b'], name="conv2_b"),
+            'conv3_b': tf.Variable(base['c3b'], name="conv3_b"),
             'fc_b':    tf.Variable(base['fcb'], name="fc_b")
         }
 
@@ -57,8 +58,13 @@ class NNWorker:
         conv2 = tf.nn.relu(conv2)
         pool2 = tf.nn.max_pool(conv2, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
 
-        # shape变为 [None,8,8,64], 我们假设 conv2_w 输出通道=64
-        flatten = tf.reshape(pool2, [-1, 8*8*64])
+        conv3 = tf.nn.conv2d(pool2, self.weights['conv3_w'], strides=[1,1,1,1], padding='SAME')
+        conv3 = tf.nn.bias_add(conv3, self.biases['conv3_b'])
+        conv3 = tf.nn.relu(conv3)
+        pool3 = tf.nn.max_pool(conv3, ksize=[1,2,2,1], strides=[1,2,2,1], padding='SAME')
+
+        # shape变为 [None,4,4,256], 我们假设 conv3_w 输出通道=256
+        flatten = tf.reshape(pool3, [-1, 4*4*256])
 
         # 全连接
         fc = tf.matmul(flatten, self.weights['fc_w']) + self.biases['fc_b']
@@ -81,19 +87,23 @@ class NNWorker:
         # conv1: kernel shape [3,3,3,64] => out channels=64
         conv1_w = tf.random_normal([3,3,3,64], stddev=0.01)
         conv1_b = tf.random_normal([64], stddev=0.01)
-        conv2_w = tf.random_normal([3,3,64,64], stddev=0.01)
-        conv2_b = tf.random_normal([64], stddev=0.01)
-        fc_w    = tf.random_normal([8*8*64, 10], stddev=0.01)
+        conv2_w = tf.random_normal([3,3,64,128], stddev=0.01)
+        conv2_b = tf.random_normal([128], stddev=0.01)
+        conv3_w = tf.random_normal([3,3,128,256], stddev=0.01)
+        conv3_b = tf.random_normal([256], stddev=0.01)
+        fc_w    = tf.random_normal([4*4*256, 10], stddev=0.01)
         fc_b    = tf.random_normal([10], stddev=0.01)
 
         self.weights = {
             'conv1_w': tf.Variable(conv1_w, name='conv1_w'),
             'conv2_w': tf.Variable(conv2_w, name='conv2_w'),
+            'conv3_w': tf.Variable(conv3_w, name='conv3_w'),
             'fc_w':    tf.Variable(fc_w,    name='fc_w')
         }
         self.biases = {
             'conv1_b': tf.Variable(conv1_b, name='conv1_b'),
             'conv2_b': tf.Variable(conv2_b, name='conv2_b'),
+            'conv3_b': tf.Variable(conv3_b, name='conv3_b'),
             'fc_b':    tf.Variable(fc_b,    name='fc_b')
         }
 
@@ -108,7 +118,12 @@ class NNWorker:
         conv2 = tf.nn.relu(conv2)
         pool2 = tf.nn.max_pool(conv2, [1,2,2,1],[1,2,2,1], padding='SAME')
 
-        flatten = tf.reshape(pool2, [-1, 8*8*64])
+        conv3 = tf.nn.conv2d(pool2, self.weights['conv3_w'], strides=[1,1,1,1], padding='SAME')
+        conv3 = tf.nn.bias_add(conv3, self.biases['conv3_b'])
+        conv3 = tf.nn.relu(conv3)
+        pool3 = tf.nn.max_pool(conv3, [1,2,2,1],[1,2,2,1], padding='SAME')
+
+        flatten = tf.reshape(pool3, [-1, 4*4*256])
         fc = tf.matmul(flatten, self.weights['fc_w']) + self.biases['fc_b']
         self.logits = fc
 
@@ -207,6 +222,10 @@ class NNWorker:
                 var_dict['c2w'] = v.eval(self.sess)
             elif 'conv2_b' in v_name:
                 var_dict['c2b'] = v.eval(self.sess)
+            elif 'conv3_w' in v_name:
+                var_dict['c3w'] = v.eval(self.sess)
+            elif 'conv3_b' in v_name:
+                var_dict['c3b'] = v.eval(self.sess)
             elif 'fc_w' in v_name:
                 var_dict['fcw'] = v.eval(self.sess)
             elif 'fc_b' in v_name:
@@ -217,49 +236,3 @@ class NNWorker:
 
     def close(self):
         self.sess.close()
-
-
-def load_and_preprocess_data():
-    # 加载CIFAR-10数据集
-    (train_images, train_labels), (test_images, test_labels) = tf.keras.datasets.cifar10.load_data()
-
-    # 归一化像素值到[0,1]
-    train_images = train_images.astype('float32') / 255.0
-    test_images = test_images.astype('float32') / 255.0
-
-    # 将标签转换为one-hot编码
-    train_labels = tf.keras.utils.to_categorical(train_labels, num_classes=10)
-    test_labels = tf.keras.utils.to_categorical(test_labels, num_classes=10)
-
-    return train_images, train_labels, test_images, test_labels
-
-def main():
-    # 加载和预处理数据
-    train_x, train_y, test_x, test_y = load_and_preprocess_data()
-
-    # 初始化神经网络工作节点
-    worker = NNWorker(
-        X=train_x,
-        Y=train_y,
-        tX=test_x,
-        tY=test_y,
-        size=len(train_x),  # 训练集样本数
-        id="cifar_cnn",
-        steps=10  # 设置训练轮数
-    )
-
-    # 构建初始模型（随机初始化参数）
-    worker.build_base()
-
-    # 开始训练
-    worker.train()
-
-    # 在测试集上评估模型
-    test_acc = worker.evaluate(test_x, test_y, batch_size=512)
-    print(f"\n测试集准确率: {test_acc:.4f}")
-
-    # 关闭会话
-    worker.close()
-
-if __name__ == "__main__":
-    main()

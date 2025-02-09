@@ -29,7 +29,7 @@ PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
 
 # 工程 src 目录 (请按实际路径修改)
 BASE_PATH="D:\BlockchainForFederatedLearning-master\cifar"
-
+D:/anaconda/python.exe ./kill.py
 ##############################################
 # 3. 清理 output 文件夹 (可选)
 ##############################################

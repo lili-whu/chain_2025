@@ -1,18 +1,13 @@
 #!/usr/bin/env bash
 
-<<<<<<< HEAD:cifar/sh/Run_BlockFL_split_avg.sh
 D:/anaconda/python.exe ./kill.py
-=======
->>>>>>> origin/main:cifar/sh/Run_BlockFL_win.sh
+
 ##############################################
 # 1. 定义要跑的实验场景 与 聚合方式
 ##############################################
 # 这里只跑 federated_20malicious 和 federated_50malicious
-<<<<<<< HEAD:cifar/sh/Run_BlockFL_split_avg.sh
-EXPERIMENTS=("federated_20malicious_v2" "federated_normal" "federated_20malicious" "federated_50malicious")
-=======
-EXPERIMENTS=("federated_50malicious")
->>>>>>> origin/main:cifar/sh/Run_BlockFL_win.sh
+
+EXPERIMENTS=("federated_20malicious_v2" "federated_normal" "federated_20malicious" "federated_50malicious" "centralized")
 # 只跑 FedAvg 和 AccWeight
 AGGREGATORS=("AccWeight" "FedAvg")
 
@@ -26,15 +21,12 @@ CLIENT_COUNT=10
 LOCAL_EPOCH=1
 
 # 每轮结束后等待 (秒)
-<<<<<<< HEAD:cifar/sh/Run_BlockFL_split_avg.sh
 SLEEP_TIME=50  # 每轮提交后等待50秒看是否打包完成
-=======
-SLEEP_TIME=60  # 每轮提交后等待360秒看是否打包完成
->>>>>>> origin/main:cifar/sh/Run_BlockFL_win.sh
+
 
 # Python解释器
-PYEXE="D:/anaconda/envs/test/python.exe"
-
+PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"
+D:/anaconda/python.exe ./kill.py
 # 工程 src 目录 (请按实际路径修改)
 BASE_PATH="D:\BlockchainForFederatedLearning-master\cifar"
 

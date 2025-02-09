@@ -1,0 +1,190 @@
+2025-02-04 21:48:58.367367: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 81a9
+Global model accuracy 0.09999999992847443
+Epoch 1/10, loss=2.1873, train_acc=0.245
+Epoch 2/10, loss=2.0076, train_acc=0.261
+Epoch 3/10, loss=1.8954, train_acc=0.373
+Epoch 4/10, loss=1.7134, train_acc=0.425
+Epoch 5/10, loss=1.6032, train_acc=0.435
+Epoch 6/10, loss=1.5290, train_acc=0.454
+Epoch 7/10, loss=1.4589, train_acc=0.490
+Epoch 8/10, loss=1.4015, train_acc=0.508
+Epoch 9/10, loss=1.3832, train_acc=0.520
+Epoch 10/10, loss=1.3036, train_acc=0.572
+[81a9] local update round0, local_acc=0.481
+2025-02-04 22:03:12.991868: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= c2ac
+Global model accuracy 0.13090000016689302
+Epoch 1/10, loss=1.7868, train_acc=0.445
+Epoch 2/10, loss=1.5313, train_acc=0.464
+Epoch 3/10, loss=1.4281, train_acc=0.506
+Epoch 4/10, loss=1.3363, train_acc=0.569
+Epoch 5/10, loss=1.2708, train_acc=0.579
+Epoch 6/10, loss=1.2045, train_acc=0.609
+Epoch 7/10, loss=1.1288, train_acc=0.639
+Epoch 8/10, loss=1.0620, train_acc=0.676
+Epoch 9/10, loss=1.0034, train_acc=0.679
+Epoch 10/10, loss=0.9198, train_acc=0.720
+[c2ac] local update round0, local_acc=0.544
+2025-02-04 22:17:11.879083: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 8261
+Global model accuracy 0.5604000000953674
+Epoch 1/10, loss=1.2217, train_acc=0.626
+Epoch 2/10, loss=1.0895, train_acc=0.648
+Epoch 3/10, loss=0.9985, train_acc=0.678
+Epoch 4/10, loss=0.9191, train_acc=0.703
+Epoch 5/10, loss=0.8486, train_acc=0.743
+Epoch 6/10, loss=0.7558, train_acc=0.780
+Epoch 7/10, loss=0.6868, train_acc=0.820
+Epoch 8/10, loss=0.6026, train_acc=0.848
+Epoch 9/10, loss=0.5274, train_acc=0.893
+Epoch 10/10, loss=0.4474, train_acc=0.900
+[8261] local update round0, local_acc=0.586
+2025-02-04 22:31:20.166956: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= c4c1
+Global model accuracy 0.6405999996185303
+Epoch 1/10, loss=1.0274, train_acc=0.696
+Epoch 2/10, loss=0.8189, train_acc=0.726
+Epoch 3/10, loss=0.7328, train_acc=0.787
+Epoch 4/10, loss=0.6435, train_acc=0.827
+Epoch 5/10, loss=0.5188, train_acc=0.883
+Epoch 6/10, loss=0.4346, train_acc=0.908
+Epoch 7/10, loss=0.3721, train_acc=0.875
+Epoch 8/10, loss=0.3023, train_acc=0.921
+Epoch 9/10, loss=0.2136, train_acc=0.980
+Epoch 10/10, loss=0.1386, train_acc=0.972
+[c4c1] local update round0, local_acc=0.601
+2025-02-04 22:45:54.685483: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= e21c
+Global model accuracy 0.6744000002861023
+Epoch 1/10, loss=0.9654, train_acc=0.779
+Epoch 2/10, loss=0.6840, train_acc=0.839
+Epoch 3/10, loss=0.5489, train_acc=0.881
+Epoch 4/10, loss=0.4246, train_acc=0.907
+Epoch 5/10, loss=0.3318, train_acc=0.942
+Epoch 6/10, loss=0.2439, train_acc=0.946
+Epoch 7/10, loss=0.1786, train_acc=0.970
+Epoch 8/10, loss=0.1347, train_acc=0.986
+Epoch 9/10, loss=0.0956, train_acc=0.996
+Epoch 10/10, loss=0.0629, train_acc=0.992
+[e21c] local update round0, local_acc=0.621
+2025-02-04 23:00:34.129301: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= de0a
+Global model accuracy 0.6874999995231629
+Epoch 1/10, loss=0.8985, train_acc=0.821
+Epoch 2/10, loss=0.5463, train_acc=0.875
+Epoch 3/10, loss=0.3995, train_acc=0.917
+Epoch 4/10, loss=0.2989, train_acc=0.926
+Epoch 5/10, loss=0.2056, train_acc=0.977
+Epoch 6/10, loss=0.1296, train_acc=0.985
+Epoch 7/10, loss=0.0884, train_acc=0.985
+Epoch 8/10, loss=0.0704, train_acc=0.990
+Epoch 9/10, loss=0.0485, train_acc=0.997
+Epoch 10/10, loss=0.0313, train_acc=1.000
+[de0a] local update round0, local_acc=0.637
+2025-02-04 23:14:47.536639: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= a34b
+Global model accuracy 0.6942999999046325
+Epoch 1/10, loss=0.8753, train_acc=0.812
+Epoch 2/10, loss=0.5168, train_acc=0.892
+Epoch 3/10, loss=0.3279, train_acc=0.933
+Epoch 4/10, loss=0.2062, train_acc=0.974
+Epoch 5/10, loss=0.1341, train_acc=0.977
+Epoch 6/10, loss=0.0837, train_acc=0.993
+Epoch 7/10, loss=0.0555, train_acc=0.998
+Epoch 8/10, loss=0.0327, train_acc=0.999
+Epoch 9/10, loss=0.0192, train_acc=1.000
+Epoch 10/10, loss=0.0102, train_acc=1.000
+[a34b] local update round0, local_acc=0.656
+2025-02-04 23:28:52.204982: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 598a
+Global model accuracy 0.6986999999046326
+Epoch 1/10, loss=0.8392, train_acc=0.860
+Epoch 2/10, loss=0.4079, train_acc=0.931
+Epoch 3/10, loss=0.2490, train_acc=0.974
+Epoch 4/10, loss=0.1603, train_acc=0.965
+Epoch 5/10, loss=0.1215, train_acc=0.991
+Epoch 6/10, loss=0.0783, train_acc=0.995
+Epoch 7/10, loss=0.0419, train_acc=1.000
+Epoch 8/10, loss=0.0219, train_acc=1.000
+Epoch 9/10, loss=0.0147, train_acc=1.000
+Epoch 10/10, loss=0.0075, train_acc=1.000
+[598a] local update round0, local_acc=0.663
+2025-02-04 23:42:58.390752: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 1f2a
+Global model accuracy 0.6996
+Epoch 1/10, loss=0.8066, train_acc=0.875
+Epoch 2/10, loss=0.3655, train_acc=0.937
+Epoch 3/10, loss=0.1981, train_acc=0.971
+Epoch 4/10, loss=0.1307, train_acc=0.992
+Epoch 5/10, loss=0.0689, train_acc=0.999
+Epoch 6/10, loss=0.0344, train_acc=1.000
+Epoch 7/10, loss=0.0204, train_acc=1.000
+Epoch 8/10, loss=0.0112, train_acc=1.000
+Epoch 9/10, loss=0.0076, train_acc=1.000
+Epoch 10/10, loss=0.0056, train_acc=1.000
+[1f2a] local update round0, local_acc=0.667
+2025-02-04 23:57:06.247310: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 1ced
+Global model accuracy 0.6991999998092652
+Epoch 1/10, loss=0.7975, train_acc=0.883
+Epoch 2/10, loss=0.3249, train_acc=0.930
+Epoch 3/10, loss=0.1804, train_acc=0.985
+Epoch 4/10, loss=0.0882, train_acc=0.995
+Epoch 5/10, loss=0.0498, train_acc=0.996
+Epoch 6/10, loss=0.0311, train_acc=1.000
+Epoch 7/10, loss=0.0175, train_acc=1.000
+Epoch 8/10, loss=0.0094, train_acc=1.000
+Epoch 9/10, loss=0.0062, train_acc=1.000
+Epoch 10/10, loss=0.0047, train_acc=1.000
+[1ced] local update round0, local_acc=0.667

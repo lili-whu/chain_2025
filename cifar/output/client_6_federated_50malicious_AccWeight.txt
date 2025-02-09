@@ -1,67 +1,190 @@
+2025-02-05 04:55:15.158722: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
 train_images (5000, 32, 32, 3)
 train_labels (5000, 10)
 test_images (10000, 32, 32, 3)
 test_labels (10000, 10)
 get_dataset_details return
-Start working, dev= 7511
-Traceback (most recent call last):
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 199, in _new_conn
-    sock = connection.create_connection(
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\connection.py", line 85, in create_connection
-    raise err
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\connection.py", line 73, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 789, in urlopen
-    response = self._make_request(
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 495, in _make_request
-    conn.request(
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 441, in request
-    self.endheaders()
-  File "D:\anaconda\envs\test\lib\http\client.py", line 1251, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "D:\anaconda\envs\test\lib\http\client.py", line 1011, in _send_output
-    self.send(msg)
-  File "D:\anaconda\envs\test\lib\http\client.py", line 951, in send
-    self.connect()
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 279, in connect
-    self.sock = self._new_conn()
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connection.py", line 214, in _new_conn
-    raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x00000137921BE340>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "D:\anaconda\envs\test\lib\site-packages\requests\adapters.py", line 667, in send
-    resp = conn.urlopen(
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\connectionpool.py", line 843, in urlopen
-    retries = retries.increment(
-  File "D:\anaconda\envs\test\lib\site-packages\urllib3\util\retry.py", line 519, in increment
-    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
-urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000137921BE340>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "client.py", line 129, in <module>
-    c.work(device_id, args.global_rounds, args.local_epochs)
-  File "client.py", line 87, in work
-    status = self.get_miner_status()
-  File "client.py", line 37, in get_miner_status
-    r = requests.get(f'http://{self.miner}/status')
-  File "D:\anaconda\envs\test\lib\site-packages\requests\api.py", line 73, in get
-    return request("get", url, params=params, **kwargs)
-  File "D:\anaconda\envs\test\lib\site-packages\requests\api.py", line 59, in request
-    return session.request(method=method, url=url, **kwargs)
-  File "D:\anaconda\envs\test\lib\site-packages\requests\sessions.py", line 589, in request
-    resp = self.send(prep, **send_kwargs)
-  File "D:\anaconda\envs\test\lib\site-packages\requests\sessions.py", line 703, in send
-    r = adapter.send(request, **kwargs)
-  File "D:\anaconda\envs\test\lib\site-packages\requests\adapters.py", line 700, in send
-    raise ConnectionError(e, request=request)
-requests.exceptions.ConnectionError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /status (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x00000137921BE340>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+Start working, dev= 190a
+Global model accuracy 0.10000000002384186
+Epoch 1/10, loss=2.3034, train_acc=0.101
+Epoch 2/10, loss=2.3026, train_acc=0.107
+Epoch 3/10, loss=2.3026, train_acc=0.107
+Epoch 4/10, loss=2.3023, train_acc=0.107
+Epoch 5/10, loss=2.3023, train_acc=0.107
+Epoch 6/10, loss=2.3022, train_acc=0.107
+Epoch 7/10, loss=2.3024, train_acc=0.107
+Epoch 8/10, loss=2.3022, train_acc=0.107
+Epoch 9/10, loss=2.3021, train_acc=0.107
+Epoch 10/10, loss=2.3021, train_acc=0.107
+[190a] local update round0, local_acc=0.100
+2025-02-05 05:09:13.492124: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 4afc
+Global model accuracy 0.18710000019073486
+Epoch 1/10, loss=2.3041, train_acc=0.107
+Epoch 2/10, loss=2.3024, train_acc=0.115
+Epoch 3/10, loss=2.3020, train_acc=0.110
+Epoch 4/10, loss=2.3000, train_acc=0.127
+Epoch 5/10, loss=2.2967, train_acc=0.130
+Epoch 6/10, loss=2.2918, train_acc=0.124
+Epoch 7/10, loss=2.2871, train_acc=0.140
+Epoch 8/10, loss=2.2765, train_acc=0.145
+Epoch 9/10, loss=2.2651, train_acc=0.160
+Epoch 10/10, loss=2.2510, train_acc=0.176
+[4afc] local update round0, local_acc=0.099
+2025-02-05 05:23:14.816399: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 7eeb
+Global model accuracy 0.572700000667572
+Epoch 1/10, loss=2.3850, train_acc=0.108
+Epoch 2/10, loss=2.3021, train_acc=0.112
+Epoch 3/10, loss=2.2991, train_acc=0.123
+Epoch 4/10, loss=2.2964, train_acc=0.130
+Epoch 5/10, loss=2.2905, train_acc=0.136
+Epoch 6/10, loss=2.2819, train_acc=0.152
+Epoch 7/10, loss=2.2711, train_acc=0.161
+Epoch 8/10, loss=2.2530, train_acc=0.164
+Epoch 9/10, loss=2.2334, train_acc=0.180
+Epoch 10/10, loss=2.2061, train_acc=0.187
+[7eeb] local update round0, local_acc=0.118
+2025-02-05 05:37:12.364036: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 34c8
+Global model accuracy 0.6352000003814697
+Epoch 1/10, loss=2.6041, train_acc=0.109
+Epoch 2/10, loss=2.3013, train_acc=0.120
+Epoch 3/10, loss=2.2997, train_acc=0.127
+Epoch 4/10, loss=2.2917, train_acc=0.143
+Epoch 5/10, loss=2.2830, train_acc=0.149
+Epoch 6/10, loss=2.2719, train_acc=0.155
+Epoch 7/10, loss=2.2576, train_acc=0.160
+Epoch 8/10, loss=2.2353, train_acc=0.183
+Epoch 9/10, loss=2.2173, train_acc=0.196
+Epoch 10/10, loss=2.1814, train_acc=0.226
+[34c8] local update round0, local_acc=0.131
+2025-02-05 05:51:09.514926: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= eb94
+Global model accuracy 0.6573999995231629
+Epoch 1/10, loss=2.8326, train_acc=0.114
+Epoch 2/10, loss=2.3034, train_acc=0.114
+Epoch 3/10, loss=2.2978, train_acc=0.116
+Epoch 4/10, loss=2.2928, train_acc=0.124
+Epoch 5/10, loss=2.2876, train_acc=0.137
+Epoch 6/10, loss=2.2793, train_acc=0.136
+Epoch 7/10, loss=2.2677, train_acc=0.149
+Epoch 8/10, loss=2.2525, train_acc=0.168
+Epoch 9/10, loss=2.2366, train_acc=0.180
+Epoch 10/10, loss=2.2178, train_acc=0.174
+[eb94] local update round0, local_acc=0.112
+2025-02-05 06:05:07.655736: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= b55a
+Global model accuracy 0.6634
+Epoch 1/10, loss=3.1141, train_acc=0.106
+Epoch 2/10, loss=2.3013, train_acc=0.114
+Epoch 3/10, loss=2.2956, train_acc=0.125
+Epoch 4/10, loss=2.2883, train_acc=0.129
+Epoch 5/10, loss=2.2811, train_acc=0.136
+Epoch 6/10, loss=2.2702, train_acc=0.159
+Epoch 7/10, loss=2.2544, train_acc=0.153
+Epoch 8/10, loss=2.2390, train_acc=0.181
+Epoch 9/10, loss=2.2129, train_acc=0.192
+Epoch 10/10, loss=2.1815, train_acc=0.216
+[b55a] local update round0, local_acc=0.125
+2025-02-05 06:19:05.329992: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 57cc
+Global model accuracy 0.6652000004768371
+Epoch 1/10, loss=3.2715, train_acc=0.108
+Epoch 2/10, loss=2.3032, train_acc=0.113
+Epoch 3/10, loss=2.2970, train_acc=0.121
+Epoch 4/10, loss=2.2916, train_acc=0.121
+Epoch 5/10, loss=2.2846, train_acc=0.136
+Epoch 6/10, loss=2.2745, train_acc=0.130
+Epoch 7/10, loss=2.2637, train_acc=0.155
+Epoch 8/10, loss=2.2502, train_acc=0.163
+Epoch 9/10, loss=2.2356, train_acc=0.176
+Epoch 10/10, loss=2.2141, train_acc=0.183
+[57cc] local update round0, local_acc=0.114
+2025-02-05 06:33:04.334142: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 1123
+Global model accuracy 0.6649999999046325
+Epoch 1/10, loss=3.3398, train_acc=0.111
+Epoch 2/10, loss=2.3019, train_acc=0.119
+Epoch 3/10, loss=2.2949, train_acc=0.127
+Epoch 4/10, loss=2.2875, train_acc=0.139
+Epoch 5/10, loss=2.2787, train_acc=0.140
+Epoch 6/10, loss=2.2694, train_acc=0.145
+Epoch 7/10, loss=2.2557, train_acc=0.160
+Epoch 8/10, loss=2.2441, train_acc=0.169
+Epoch 9/10, loss=2.2180, train_acc=0.180
+Epoch 10/10, loss=2.2006, train_acc=0.190
+[1123] local update round0, local_acc=0.108
+2025-02-05 06:47:02.403755: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 9860
+Global model accuracy 0.6639000000953674
+Epoch 1/10, loss=3.5102, train_acc=0.104
+Epoch 2/10, loss=2.3040, train_acc=0.116
+Epoch 3/10, loss=2.2956, train_acc=0.120
+Epoch 4/10, loss=2.2888, train_acc=0.125
+Epoch 5/10, loss=2.2826, train_acc=0.130
+Epoch 6/10, loss=2.2744, train_acc=0.137
+Epoch 7/10, loss=2.2625, train_acc=0.145
+Epoch 8/10, loss=2.2513, train_acc=0.164
+Epoch 9/10, loss=2.2336, train_acc=0.170
+Epoch 10/10, loss=2.2114, train_acc=0.186
+[9860] local update round0, local_acc=0.119
+2025-02-05 07:01:03.187326: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+train_images (5000, 32, 32, 3)
+train_labels (5000, 10)
+test_images (10000, 32, 32, 3)
+test_labels (10000, 10)
+get_dataset_details return
+Start working, dev= 69c7
+Global model accuracy 0.6663
+Epoch 1/10, loss=3.4922, train_acc=0.104
+Epoch 2/10, loss=2.3026, train_acc=0.117
+Epoch 3/10, loss=2.2947, train_acc=0.120
+Epoch 4/10, loss=2.2870, train_acc=0.129
+Epoch 5/10, loss=2.2777, train_acc=0.137
+Epoch 6/10, loss=2.2693, train_acc=0.142
+Epoch 7/10, loss=2.2586, train_acc=0.154
+Epoch 8/10, loss=2.2456, train_acc=0.164
+Epoch 9/10, loss=2.2278, train_acc=0.172
+Epoch 10/10, loss=2.2097, train_acc=0.193
+[69c7] local update round0, local_acc=0.121

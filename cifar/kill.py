@@ -36,4 +36,6 @@ if __name__ == "__main__":
     kill_process_by_port(port_to_kill)
     kill_process_by_port(port_to_kill)
     kill_process_by_port(port_to_kill)
+    kill_process_by_port(port_to_kill)
+    kill_process_by_port(port_to_kill)
 

@@ -1,8 +1,448 @@
-Traceback (most recent call last):
-  File "miner.py", line 365, in <module>
-    base_model = make_base()
-  File "miner.py", line 119, in make_base
-    worker = NNWorker(None, None,
-  File "D:\BlockchainForFederatedLearning-master\cifar\federatedlearner.py", line 27, in __init__
-    self.sess = tf.Session()
-AttributeError: module 'tensorflow' has no attribute 'Session'
+2025-02-05 04:46:32.438296: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2
+base model accuracy: 0.10000000002384186
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+[2025-02-05 04:46:36,036] INFO in _internal:  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+[2025-02-05 04:47:22,587] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:47:22] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:47:22,589] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:47:22] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:47:22,619] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:47:22] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:48:39,489] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:48:39] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:48:41,409] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:48:41] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:48:41,411] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:48:41] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:48:41,441] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:48:41] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:49:58,338] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:49:58] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:50:00,205] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:50:00] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:50:00,207] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:50:00] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:50:00,237] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:50:00] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:51:17,286] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:51:17] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:51:19,061] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:51:19] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:51:19,063] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:51:19] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:51:19,093] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:51:19] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:52:35,972] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:52:35] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:52:37,895] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:52:37] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:52:37,897] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:52:37] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:52:37,927] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:52:37] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:53:54,884] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:53:54] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:53:56,807] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:53:56] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:53:56,809] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:53:56] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:53:56,841] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:53:56] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:55:13,234] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:55:13] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:55:15,102] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:55:15] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:55:15,104] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:55:15] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:55:15,134] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:55:15] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:56:32,067] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:56:32] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:56:33,922] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:56:33] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:56:33,924] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:56:33] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:56:33,954] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:56:33] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:57:50,514] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:57:50] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:57:52,426] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:57:52] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:57:52,428] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:57:52] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:57:52,458] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:57:52] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 04:59:09,715] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:59:09] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 04:59:11,615] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:59:11] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 04:59:11,617] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:59:11] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 04:59:11,647] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 04:59:11] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:00:28,538] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:00:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:01:03,007] INFO in blockchain: 0.19369501475079418, 0.19613880735468178, 0.1991691105256319, 0.18929618779344887, 0.19726295202751484, 0.004887585494436872, 0.0048875855177426975, 0.004887585500263332, 0.004887585552701436, 0.004887585482783961
+[2025-02-05 05:01:06,305] INFO in blockchain: Agg Finished
+[2025-02-05 05:01:06,560] INFO in miner: 聚合轮次: 2轮
+[2025-02-05 05:01:06,560] INFO in miner: 0.10000000002384186, 0.18710000019073486
+[2025-02-05 05:01:20,440] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:01:20] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:01:20,441] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:01:20] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:01:20,473] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:01:20] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:02:37,521] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:02:37] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:02:39,301] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:02:39] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:02:39,303] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:02:39] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:02:39,333] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:02:39] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:03:56,451] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:03:56] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:03:58,189] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:03:58] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:03:58,191] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:03:58] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:03:58,221] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:03:58] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:05:15,389] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:05:15] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:05:17,247] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:05:17] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:05:17,249] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:05:17] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:05:17,280] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:05:17] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:06:33,557] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:06:33] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:06:35,439] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:06:35] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:06:35,441] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:06:35] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:06:35,470] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:06:35] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:07:52,570] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:07:52] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:07:54,381] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:07:54] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:07:54,383] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:07:54] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:07:54,414] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:07:54] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:09:11,543] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:09:11] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:09:13,436] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:09:13] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:09:13,437] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:09:13] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:09:13,467] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:09:13] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:10:30,476] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:10:30] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:10:32,339] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:10:32] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:10:32,341] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:10:32] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:10:32,371] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:10:32] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:11:49,748] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:11:49] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:11:51,437] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:11:51] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:11:51,439] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:11:51] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:11:51,469] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:11:51] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:13:08,490] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:13:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:13:10,349] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:13:10] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:13:10,351] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:13:10] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:13:10,382] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:13:10] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:14:27,228] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:14:27] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:15:01,461] INFO in blockchain: 0.20236503048884413, 0.19629264150329762, 0.2002343675153401, 0.20140623210631822, 0.19970170175291452, 5.3266571162665855e-09, 5.3266571162665855e-09, 5.3266571162665855e-09, 5.3266571162665855e-09, 5.3266571162665855e-09
+[2025-02-05 05:15:04,691] INFO in blockchain: Agg Finished
+[2025-02-05 05:15:04,959] INFO in miner: 聚合轮次: 3轮
+[2025-02-05 05:15:04,959] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572
+[2025-02-05 05:15:19,005] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:15:19] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:15:19,007] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:15:19] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:15:19,036] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:15:19] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:16:36,677] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:16:36] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:16:38,538] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:16:38] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:16:38,540] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:16:38] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:16:38,570] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:16:38] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:17:55,436] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:17:55] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:17:57,233] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:17:57] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:17:57,235] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:17:57] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:17:57,265] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:17:57] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:19:14,913] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:19:14] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:19:16,630] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:19:16] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:19:16,632] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:19:16] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:19:16,663] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:19:16] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:20:33,879] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:20:33] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:20:35,761] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:20:35] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:20:35,763] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:20:35] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:20:35,793] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:20:35] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:21:53,089] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:21:53] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:21:54,847] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:21:54] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:21:54,848] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:21:54] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:21:54,878] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:21:54] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:23:12,877] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:23:12] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:23:14,760] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:23:14] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:23:14,762] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:23:14] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:23:14,792] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:23:14] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:24:31,654] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:24:31] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:24:33,450] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:24:33] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:24:33,451] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:24:33] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:24:33,482] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:24:33] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:25:50,122] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:25:50] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:25:51,843] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:25:51] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:25:51,845] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:25:51] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:25:51,876] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:25:51] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:27:08,184] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:27:08] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:27:09,921] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:27:09] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:27:09,923] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:27:09] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:27:09,953] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:27:09] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:28:26,720] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:28:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:29:00,816] INFO in blockchain: 0.15907941236158135, 0.2095619602782631, 0.19976240484092986, 0.19976240597372777, 0.23183366806741965, 2.9695615671931973e-08, 2.9695615671931973e-08, 2.9695615671931973e-08, 2.9695615671931973e-08, 2.9695615671931973e-08
+[2025-02-05 05:29:04,002] INFO in blockchain: Agg Finished
+[2025-02-05 05:29:04,266] INFO in miner: 聚合轮次: 4轮
+[2025-02-05 05:29:04,266] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697
+[2025-02-05 05:29:18,521] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:29:18] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:29:18,523] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:29:18] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:29:18,553] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:29:18] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:30:36,010] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:30:36] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:30:37,855] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:30:37] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:30:37,857] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:30:37] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:30:37,888] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:30:37] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:31:55,127] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:31:55] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:31:56,951] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:31:56] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:31:56,953] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:31:56] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:31:56,984] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:31:56] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:33:14,055] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:33:14] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:33:15,812] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:33:15] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:33:15,814] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:33:15] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:33:15,844] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:33:15] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:34:32,921] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:34:32] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:34:34,830] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:34:34] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:34:34,832] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:34:34] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:34:34,862] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:34:34] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:35:51,913] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:35:51] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:35:53,660] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:35:53] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:35:53,662] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:35:53] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:35:53,693] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:35:53] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:37:10,602] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:37:10] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:37:12,306] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:37:12] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:37:12,308] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:37:12] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:37:12,338] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:37:12] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:38:29,211] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:38:29] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:38:30,951] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:38:30] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:38:30,953] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:38:30] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:38:30,982] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:38:30] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:39:48,253] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:39:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:39:49,957] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:39:49] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:39:49,959] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:39:49] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:39:49,989] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:39:49] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:41:06,801] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:41:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:41:08,650] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:41:08] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:41:08,652] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:41:08] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:41:08,683] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:41:08] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:42:25,660] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:42:25] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:42:59,760] INFO in blockchain: 0.1921521461173302, 0.1529131524235046, 0.24565985881158062, 0.20463727070679716, 0.20463727467571388, 5.945301473470987e-08, 5.945301473470987e-08, 5.945301473470987e-08, 5.945301473470987e-08, 5.945301473470987e-08
+[2025-02-05 05:43:03,124] INFO in blockchain: Agg Finished
+[2025-02-05 05:43:03,382] INFO in miner: 聚合轮次: 5轮
+[2025-02-05 05:43:03,383] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697, 0.6573999995231629
+[2025-02-05 05:43:17,438] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:43:17] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:43:17,440] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:43:17] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:43:17,470] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:43:17] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:44:34,359] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:44:34] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:44:36,192] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:44:36] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:44:36,194] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:44:36] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:44:36,224] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:44:36] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:45:52,805] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:45:52] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:45:54,603] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:45:54] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:45:54,606] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:45:54] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:45:54,635] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:45:54] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:47:11,739] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:47:11] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:47:13,623] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:47:13] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:47:13,625] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:47:13] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:47:13,655] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:47:13] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:48:30,280] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:48:30] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:48:32,118] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:48:32] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:48:32,120] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:48:32] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:48:32,149] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:48:32] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:49:48,755] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:49:48] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:49:50,482] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:49:50] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:49:50,484] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:49:50] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:49:50,514] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:49:50] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:51:07,704] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:51:07] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:51:09,457] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:51:09] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:51:09,459] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:51:09] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:51:09,490] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:51:09] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:52:26,725] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:52:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:52:28,596] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:52:28] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:52:28,598] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:52:28] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:52:28,627] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:52:28] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:53:45,699] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:53:45] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:53:47,537] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:53:47] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:53:47,539] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:53:47] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:53:47,569] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:53:47] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:55:04,331] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:55:04] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:55:06,132] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:55:06] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:55:06,134] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:55:06] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:55:06,164] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:55:06] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:56:22,966] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:56:22] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:56:57,037] INFO in blockchain: 0.19030137389701698, 0.19882038048910317, 0.21454777064040684, 0.20864999761505507, 0.1876801497045348, 6.553077667334444e-08, 6.553077667334444e-08, 6.553077667334444e-08, 6.553077667334444e-08, 6.553077667334444e-08
+[2025-02-05 05:57:00,333] INFO in blockchain: Agg Finished
+[2025-02-05 05:57:00,600] INFO in miner: 聚合轮次: 6轮
+[2025-02-05 05:57:00,600] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697, 0.6573999995231629, 0.6634
+[2025-02-05 05:57:14,758] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:57:14] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:57:14,760] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:57:14] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:57:14,790] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:57:14] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:58:31,677] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:58:31] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:58:33,478] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:58:33] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:58:33,480] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:58:33] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:58:33,510] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:58:33] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 05:59:50,300] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:59:50] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 05:59:52,009] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:59:52] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 05:59:52,011] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:59:52] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 05:59:52,041] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 05:59:52] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:01:09,067] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:01:09] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:01:10,851] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:01:10] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:01:10,853] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:01:10] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:01:10,882] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:01:10] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:02:28,434] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:02:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:02:30,215] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:02:30] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:02:30,217] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:02:30] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:02:30,247] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:02:30] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:03:46,773] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:03:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:03:48,537] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:03:48] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:03:48,539] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:03:48] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:03:48,569] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:03:48] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:05:05,741] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:05:05] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:05:07,600] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:05:07] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:05:07,602] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:05:07] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:05:07,631] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:05:07] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:06:24,498] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:06:24] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:06:26,321] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:06:26] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:06:26,323] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:06:26] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:06:26,353] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:06:26] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:07:42,641] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:07:42] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:07:44,549] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:07:44] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:07:44,551] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:07:44] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:07:44,583] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:07:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:09:01,527] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:09:01] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:09:03,327] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:09:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:09:03,329] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:09:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:09:03,359] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:09:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:10:19,975] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:10:19] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:10:53,957] INFO in blockchain: 0.26407428255029836, 0.051901921246539126, 0.31901930441278153, 0.05443784662233801, 0.3105662225139483, 8.453081898833365e-08, 8.453081898833365e-08, 8.453081898833365e-08, 8.453081898833365e-08, 8.453081898833365e-08
+[2025-02-05 06:10:57,269] INFO in blockchain: Agg Finished
+[2025-02-05 06:10:57,541] INFO in miner: 聚合轮次: 7轮
+[2025-02-05 06:10:57,541] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697, 0.6573999995231629, 0.6634, 0.6652000004768371
+[2025-02-05 06:11:11,859] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:11:11] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:11:11,861] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:11:11] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:11:11,893] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:11:11] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:12:28,613] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:12:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:12:30,344] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:12:30] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:12:30,346] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:12:30] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:12:30,376] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:12:30] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:13:47,703] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:13:47] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:13:49,414] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:13:49] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:13:49,416] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:13:49] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:13:49,446] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:13:49] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:15:06,951] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:15:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:15:08,791] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:15:08] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:15:08,793] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:15:08] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:15:08,823] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:15:08] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:16:25,169] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:16:25] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:16:26,990] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:16:26] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:16:26,992] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:16:26] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:16:27,023] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:16:27] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:17:44,292] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:17:44] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:17:46,034] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:17:46] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:17:46,036] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:17:46] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:17:46,066] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:17:46] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:19:03,548] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:19:03] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:19:05,273] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:19:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:19:05,275] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:19:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:19:05,305] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:19:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:20:23,295] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:20:23] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:20:25,044] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:20:25] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:20:25,047] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:20:25] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:20:25,077] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:20:25] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:21:41,539] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:21:41] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:21:43,408] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:21:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:21:43,410] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:21:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:21:43,440] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:21:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:23:00,561] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:23:00] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:23:02,421] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:23:02] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:23:02,423] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:23:02] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:23:02,453] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:23:02] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:24:19,561] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:24:19] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:24:53,350] INFO in blockchain: 0.19787341863452373, 0.18351935532250557, 0.219138695587276, 0.19734178818101572, 0.20212647645869192, 5.3163197451918445e-08, 5.3163197451918445e-08, 5.3163197451918445e-08, 5.3163197451918445e-08, 5.3163197451918445e-08
+[2025-02-05 06:24:56,582] INFO in blockchain: Agg Finished
+[2025-02-05 06:24:56,846] INFO in miner: 聚合轮次: 8轮
+[2025-02-05 06:24:56,846] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697, 0.6573999995231629, 0.6634, 0.6652000004768371, 0.6649999999046325
+[2025-02-05 06:25:11,435] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:25:11] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:25:11,437] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:25:11] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:25:11,467] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:25:11] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:26:28,174] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:26:28] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:26:29,979] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:26:29] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:26:29,981] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:26:29] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:26:30,011] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:26:30] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:27:46,919] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:27:46] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:27:48,663] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:27:48] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:27:48,665] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:27:48] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:27:48,695] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:27:48] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:29:06,196] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:29:06] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:29:08,054] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:29:08] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:29:08,056] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:29:08] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:29:08,086] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:29:08] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:30:25,310] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:30:25] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:30:27,111] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:30:27] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:30:27,113] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:30:27] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:30:27,145] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:30:27] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:31:44,293] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:31:44] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:31:46,037] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:31:46] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:31:46,039] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:31:46] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:31:46,072] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:31:46] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:33:02,400] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:33:02] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:33:04,277] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:33:04] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:33:04,279] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:33:04] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:33:04,310] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:33:04] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:34:21,203] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:34:21] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:34:23,062] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:34:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:34:23,064] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:34:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:34:23,095] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:34:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:35:39,476] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:35:39] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:35:41,332] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:35:41] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:35:41,334] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:35:41] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:35:41,365] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:35:41] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:36:58,068] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:36:58] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:36:59,868] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:36:59] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:36:59,869] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:36:59] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:36:59,900] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:36:59] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:38:17,351] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:38:17] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:38:51,530] INFO in blockchain: 0.2002881347805127, 0.19260321874166828, 0.22046103875265197, 0.1906819928238401, 0.19596537474768658, 4.803072810563275e-08, 4.803072810563275e-08, 4.803072810563275e-08, 4.803072810563275e-08, 4.803072810563275e-08
+[2025-02-05 06:38:54,882] INFO in blockchain: Agg Finished
+[2025-02-05 06:38:55,152] INFO in miner: 聚合轮次: 9轮
+[2025-02-05 06:38:55,152] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697, 0.6573999995231629, 0.6634, 0.6652000004768371, 0.6649999999046325, 0.6639000000953674
+[2025-02-05 06:39:09,185] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:39:09] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:39:09,186] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:39:09] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:39:09,217] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:39:09] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:40:26,229] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:40:26] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:40:27,970] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:40:27] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:40:27,971] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:40:27] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:40:28,002] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:40:28] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:41:45,073] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:41:45] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:41:46,779] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:41:46] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:41:46,781] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:41:46] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:41:46,812] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:41:46] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:43:04,260] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:43:04] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:43:06,065] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:43:06] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:43:06,067] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:43:06] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:43:06,098] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:43:06] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:44:23,177] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:44:23] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:44:24,944] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:44:24] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:44:24,946] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:44:24] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:44:24,977] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:44:24] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:45:42,098] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:45:42] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:45:43,973] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:45:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:45:43,975] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:45:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:45:44,007] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:45:44] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:47:00,505] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:47:00] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:47:02,347] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:47:02] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:47:02,349] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:47:02] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:47:02,379] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:47:02] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:48:19,047] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:48:19] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:48:20,834] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:48:20] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:48:20,836] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:48:20] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:48:20,866] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:48:20] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:49:37,872] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:49:37] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:49:39,621] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:49:39] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:49:39,622] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:49:39] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:49:39,653] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:49:39] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:50:56,674] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:50:56] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:50:58,389] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:50:58] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:50:58,391] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:50:58] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:50:58,421] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:50:58] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:52:15,690] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:52:15] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:52:49,739] INFO in blockchain: 0.1908137797785965, 0.20374577341018732, 0.20017832712576095, 0.20151611863187516, 0.20374577808818747, 4.45930785553286e-08, 4.45930785553286e-08, 4.45930785553286e-08, 4.45930785553286e-08, 4.45930785553286e-08
+[2025-02-05 06:52:53,038] INFO in blockchain: Agg Finished
+[2025-02-05 06:52:53,307] INFO in miner: 聚合轮次: 10轮
+[2025-02-05 06:52:53,307] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697, 0.6573999995231629, 0.6634, 0.6652000004768371, 0.6649999999046325, 0.6639000000953674, 0.6663
+[2025-02-05 06:53:07,594] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:53:07] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:53:07,596] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:53:07] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:53:07,627] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:53:07] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:54:24,730] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:54:24] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:54:26,557] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:54:26] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:54:26,558] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:54:26] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:54:26,588] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:54:26] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:55:44,015] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:55:44] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:55:45,817] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:55:45] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:55:45,819] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:55:45] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:55:45,848] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:55:45] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:57:03,304] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:57:03] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:57:05,172] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:57:05] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:57:05,174] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:57:05] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:57:05,204] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:57:05] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:58:22,087] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:58:22] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:58:23,936] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:58:23] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:58:23,938] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:58:23] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:58:23,967] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:58:23] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 06:59:41,794] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:59:41] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 06:59:43,664] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:59:43] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 06:59:43,665] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:59:43] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 06:59:43,695] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 06:59:43] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 07:01:01,332] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:01:01] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 07:01:03,131] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:01:03] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 07:01:03,134] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:01:03] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 07:01:03,163] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:01:03] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 07:02:19,804] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:02:19] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 07:02:21,551] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:02:21] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 07:02:21,553] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:02:21] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 07:02:21,584] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:02:21] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 07:03:38,607] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:03:38] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 07:03:40,425] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:03:40] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 07:03:40,427] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:03:40] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 07:03:40,456] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:03:40] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 07:04:57,164] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:04:57] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 07:04:58,998] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:04:58] "[37mGET /status HTTP/1.1[0m" 200 -
+[2025-02-05 07:04:59,000] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:04:59] "[37mGET /chain HTTP/1.1[0m" 200 -
+[2025-02-05 07:04:59,031] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:04:59] "[37mPOST /model HTTP/1.1[0m" 200 -
+[2025-02-05 07:06:16,027] INFO in _internal: 127.0.0.1 - - [05/Feb/2025 07:06:16] "[37mPOST /transactions/new HTTP/1.1[0m" 201 -
+[2025-02-05 07:06:50,240] INFO in blockchain: 0.1883746483542607, 0.2013413395953727, 0.2089424965890467, 0.1950815536909584, 0.20625973820680765, 4.471271077292407e-08, 4.471271077292407e-08, 4.471271077292407e-08, 4.471271077292407e-08, 4.471271077292407e-08
+[2025-02-05 07:06:53,486] INFO in blockchain: Agg Finished
+[2025-02-05 07:06:53,749] INFO in miner: 聚合轮次: 11轮
+[2025-02-05 07:06:53,749] INFO in miner: 0.10000000002384186, 0.18710000019073486, 0.572700000667572, 0.6352000003814697, 0.6573999995231629, 0.6634, 0.6652000004768371, 0.6649999999046325, 0.6639000000953674, 0.6663, 0.6650999999046325

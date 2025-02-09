@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "client.py", line 125, in <module>
+    c = Client(args.miner, args.dataset)
+  File "client.py", line 19, in __init__
+    self.dataset = self.load_dataset(dataset_path)
+  File "client.py", line 24, in load_dataset
+    return dataext.load_data(path)
+  File "D:\BlockchainForFederatedLearning-master\cifar\cifar_data_extractor.py", line 51, in load_data
+    with open(name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './experiments/centralized/client_1.pkl'
+Traceback (most recent call last):
+  File "client.py", line 125, in <module>
+    c = Client(args.miner, args.dataset)
+  File "client.py", line 19, in __init__
+    self.dataset = self.load_dataset(dataset_path)
+  File "client.py", line 24, in load_dataset
+    return dataext.load_data(path)
+  File "D:\BlockchainForFederatedLearning-master\cifar\cifar_data_extractor.py", line 51, in load_data
+    with open(name, "rb") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './experiments/centralized/client_1.pkl'

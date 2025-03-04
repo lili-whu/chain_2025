@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
+from pylab import mpl
 
 plt.rcParams.update({
     'font.size': 12,
@@ -8,12 +9,14 @@ plt.rcParams.update({
     'axes.labelsize': 12,
     'xtick.labelsize': 10,
     'ytick.labelsize': 10,
+
     # 'font.family': 'SimSun'  # 更改为中文字体
 })
 
+plt.rcParams["font.sans-serif"] = ["SimHei"]
 # plt.rcParams['font.family'] = ['sans-serif']  
 # plt.rcParams['font.sans-serif'] = ['SimSun']  
-# plt.rcParams['axes.unicode_minus'] = False
+plt.rcParams['axes.unicode_minus'] = False
 sns.set_style("whitegrid")
 
 epochs = np.arange(0, 11)

@@ -15,10 +15,72 @@ import cifar_data_extractor as dataext
 from federatedlearner import NNWorker, reset
 logger = logging.getLogger(__name__)
 accuracy_list = []
-
+epoch = 0
 ##########################################################
 #               聚合函数：只保留2种核心方式
 ##########################################################
+
+reputation = {}  # 存储节点信誉积分
+reputation_history = []  # 存储历史信誉数据
+
+reputation_alpha_0 = {}  # 存储节点信誉积分
+reputation_history_alpha_0 = []  # 存储历史信誉数据
+
+reputation_alpha_0_point_1 = {}  # 存储节点信誉积分
+reputation_history_alpha_0_point_1 = []  # 存储历史信誉数据
+rewards = {}
+
+# 这里的total_weight是平均前的mqi
+def update_reputation(weights, total_weight):
+    """根据公式更新信誉积分"""
+    alpha = calculate_alpha()
+    for client in weights:
+        mqi = weights[client] * total_weight  # 恢复原始MQI
+        prev_rep = reputation.get(client, 1.0)  # 初始值为1.0
+        new_rep = mqi - alpha + 0.9 * prev_rep  # beta=0.9
+        reputation[client] = max(new_rep, 0.0)
+    reputation_history.append(reputation.copy())
+
+def update_reputation_alpha_0(weights, total_weight):
+    """根据公式更新信誉积分"""
+    alpha = calculate_alpha()
+    for client in weights:
+        mqi = weights[client] * total_weight  # 恢复原始MQI
+        prev_rep = reputation_alpha_0.get(client, 1.0)  # 初始值为1.0
+        new_rep = mqi - 0 + 0.9 * prev_rep  # beta=0.9
+        reputation_alpha_0[client] = max(new_rep, 0.0)
+    reputation_history_alpha_0.append(reputation_alpha_0.copy())
+
+
+def update_reputation_alpha_0_point_1(weights, total_weight):
+    """根据公式更新信誉积分"""
+    alpha = calculate_alpha()
+    for client in weights:
+        mqi = weights[client] * total_weight  # 恢复原始MQI
+        prev_rep = reputation_alpha_0_point_1.get(client, 1.0)  # 初始值为1.0
+        new_rep = mqi - 0.1 + 0.9 * prev_rep  # beta=0.9
+        reputation_alpha_0_point_1[client] = max(new_rep, 0.0)
+    reputation_history_alpha_0_point_1.append(reputation_alpha_0_point_1.copy())
+
+def calculate_alpha():
+    """动态alpha计算"""
+    # total_rep = sum(reputation.values())
+    # 这里的total_rep我们希望是一个恒定值，如果到了0我们会将其踢出系统，todo 这一点在文章中也应当有体现
+    total_mqi = sum(w * total_weight for w in weights.values())
+    return (total_mqi + (0.9-1)*total_rep) / len(weights)
+
+def calculate_rewards(weights):
+    """代币奖励计算（带Sigmoid平滑）"""
+    A = 100  # 代币上限
+    k = 0.1  # 增长速率
+
+    for client, weight in weights.items():
+        mqi = weight * total_weight  # 恢复原始MQI
+        raw = mqi * reputation.get(client, 1.0)
+        smoothed = A / (1 + np.exp(-k * raw))
+        rewards[client] += smoothed
+    return
+
 
 def compute_upd_2(weights, base, updates, lrate):
     """
@@ -49,10 +111,11 @@ def compute_upd_2(weights, base, updates, lrate):
 
 
 
-def compute_upd_3(weights, base, updates, lrate):
+def compute_upd_3(weights, base, updates, lrate, total_weight):
     """
     AccWeight模式聚合
     """
+    global epoch
     app.logger.info(", ".join(str(x) for x in weights.values()))
     upd = {}
     for k in base.keys():
@@ -69,6 +132,41 @@ def compute_upd_3(weights, base, updates, lrate):
             upd[k] += weights[client] * model_dict[k]
 
     upd["size"]=0
+    epoch += 1
+    file = r'./result_weight.txt'
+    with open(file, 'a+') as f:
+        f.write("epoch: " + epoch + '\n')
+        f.write("weights: " + weights + '\n')
+        f.write("total_weight" + total_weight + '\n')
+
+    update_reputation(weights, total_weight)
+
+    file = r'./result_reputation.txt'
+    with open(file, 'a+') as f:
+        f.write("epoch: " + epoch)
+        f.write(reputation_history + '\n')
+
+    update_reputation_alpha_0(weights, total_weight)
+
+    file = r'./result_reputation_alpha_0.txt'
+    with open(file, 'a+') as f:
+        f.write("epoch: " + epoch)
+        f.write(reputation_history_alpha_0 + '\n')
+
+    update_reputation_alpha_0_point_1(weights, total_weight)
+
+    file = r'./result_reputation_alpha_0_point_1.txt'
+    with open(file, 'a+') as f:
+        f.write("epoch: " + epoch)
+        f.write(reputation_history_alpha_0_point_1 + '\n')
+
+    calculate_rewards(weights)
+
+    file = r'./result_rewards.txt'
+    with open(file, 'a+') as f:
+        f.write("epoch: " + epoch)
+        f.write(rewards + '\n')
+
     return upd
 
 
@@ -121,7 +219,7 @@ def compute_global_model(base_block, updates, lrate, aggregator="FedAvg"):
 
     # 3. 根据 aggregator 决定采用哪种聚合
     if aggregator == "AccWeight":
-        upd = compute_upd_3(weights, base, updates, lrate)
+        upd = compute_upd_3(weights, base, updates, lrate, total_weight)
     else:
         # 默认为 FedAvg
         upd = compute_upd_2(weights, base, updates, lrate)
@@ -280,7 +378,6 @@ class Blockchain(object):
         self.time_limit = time_limit
         self.aggregator = aggregator  # 新增：决定使用何种聚合方式
         self.accuracy_history = []
-
         if gen:
             genesis, hgenesis, _ = self.make_block(base_model=base_model, previous_hash=1)
             self.store_block(genesis, hgenesis)
@@ -372,6 +469,8 @@ class Blockchain(object):
 
     def proof_of_work(self, stop_event):
         block, hblock, accuracy_history = self.make_block()
+
+
         stopped = False
         while self.valid_proof(str(sorted(hblock.items()))) is False:
             if stop_event.is_set():

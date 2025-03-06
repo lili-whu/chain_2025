@@ -3,6 +3,10 @@ import numpy as np
 import seaborn as sns
 from pylab import mpl
 
+from matplotlib.font_manager import FontManager
+fm = FontManager()
+mat_fonts = set(f.name for f in fm.ttflist)
+print(mat_fonts)
 plt.rcParams.update({
     'font.size': 12,
     'axes.titlesize': 14,
@@ -10,15 +14,15 @@ plt.rcParams.update({
     'xtick.labelsize': 10,
     'ytick.labelsize': 10,
 
-    # 'font.family': 'SimSun'  # 更改为中文字体
+    'font.family': 'SimSun'  # 更改为中文字体
 })
 
-plt.rcParams["font.sans-serif"] = ["SimHei"]
-# plt.rcParams['font.family'] = ['sans-serif']  
-# plt.rcParams['font.sans-serif'] = ['SimSun']  
+plt.rcParams["font.sans-serif"] = ["SimSun"]
+plt.rcParams['font.family'] = ['sans-serif']
+plt.rcParams['font.sans-serif'] = ['SimSun']
 plt.rcParams['axes.unicode_minus'] = False
 sns.set_style("whitegrid")
-
+sns.set_style(rc={'font.sans-serif': "SimSun"})
 epochs = np.arange(0, 11)
 
 # 数据定义（保持原始精度）
@@ -42,8 +46,6 @@ data = {
     "acc_20_uneven": [0.1000,0.1187,0.5676,0.6555,0.6851,0.6916,0.6931,0.6958,0.6977,0.7003,0.7009]
 }
 
-
-
 # ============= 图1：FedAvg对比 =============
 plt.figure(figsize=(8,5))
 plt.plot(epochs, data["central"], 'k--', marker='s', markersize=6, linewidth=2, label='集中学习')
@@ -53,7 +55,7 @@ plt.plot(epochs, data["fed_50"], 'g:', marker='D', markersize=6, linewidth=2, la
 
 plt.title('FedAvg聚合方法在不同恶意节点比例下的性能对比（均等划分）')
 plt.xlabel('训练轮次')
-plt.ylabel('测试准确率')
+plt.ylabel('测试集准确率')
 plt.xticks(epochs)
 plt.ylim(0.0, 0.8)
 plt.legend(loc='lower right', frameon=True)
@@ -64,12 +66,12 @@ plt.show()
 plt.figure(figsize=(8,5))
 plt.plot(epochs, data["central"], 'k--', marker='s', markersize=6, linewidth=2, label='集中学习')
 plt.plot(epochs, data["acc_normal"], 'b-', marker='o', markersize=6, linewidth=2, label='AccWeight（正常节点）')
-plt.plot(epochs, data["acc_20"], 'm-', marker='*', markersize=8, linewidth=2, label='AccWeight（20%恶意节点）')
-plt.plot(epochs, data["acc_50"], 'c-', marker='p', markersize=8, linewidth=2, label='AccWeight（50%恶意节点）')
+plt.plot(epochs, data["acc_20"], 'r-.', marker='^', markersize=6, linewidth=2, label='AccWeight（20%恶意节点）')
+plt.plot(epochs, data["acc_50"],'g:', marker='D', markersize=6, linewidth=2, label='AccWeight（50%恶意节点）')
 
-plt.title('AccWeight聚合方法在恶意攻击下的性能表现（均等划分）')
+plt.title('AccWeight聚合方法在不同恶意节点比例下的性能对比（均等划分）')
 plt.xlabel('训练轮次')
-plt.ylabel('测试准确率')
+plt.ylabel('测试集准确率')
 plt.xticks(epochs)
 plt.ylim(0.0, 0.8)
 plt.legend(loc='lower right', frameon=True)
@@ -78,14 +80,14 @@ plt.show()
 
 # ============= 图3：均等划分对比 =============
 plt.figure(figsize=(8,5))
-plt.plot(epochs, data["fed_20"], 'r-.', marker='^', markersize=6, linewidth=2, label='FedAvg（20%恶意节点）')
-plt.plot(epochs, data["acc_20"], 'm-', marker='*', markersize=8, linewidth=2, label='AccWeight（20%恶意节点）')
-plt.plot(epochs, data["fed_50"], 'g:', marker='D', markersize=6, linewidth=2, label='FedAvg（50%恶意节点）')
-plt.plot(epochs, data["acc_50"], 'c-', marker='p', markersize=8, linewidth=2, label='AccWeight（50%恶意节点）')
+plt.plot(epochs, data["fed_20"], 'k--', marker='s', markersize=6, linewidth=2, label='FedAvg（20%恶意节点）')
+plt.plot(epochs, data["acc_20"],  'b-', marker='o', markersize=6, linewidth=2,  label='AccWeight（20%恶意节点）')
+plt.plot(epochs, data["fed_50"],'r-.', marker='^', markersize=6, linewidth=2, label='FedAvg（50%恶意节点）')
+plt.plot(epochs, data["acc_50"], 'g:', marker='D', markersize=6, linewidth=2, label='AccWeight（50%恶意节点）')
 
-plt.title('均等划分下恶意节点对模型性能的影响对比')
+plt.title('两种聚合方法在恶意节点影响下的模型性能对比（均等划分）')
 plt.xlabel('训练轮次')
-plt.ylabel('测试准确率')
+plt.ylabel('测试集准确率')
 plt.xticks(epochs)
 plt.ylim(0.0, 0.8)
 plt.legend(loc='lower right', frameon=True)
@@ -94,12 +96,12 @@ plt.show()
 
 # ============= 图4：非均等划分对比 =============
 plt.figure(figsize=(8,5))
-plt.plot(epochs, data["fed_20_uneven"], 'r-.', marker='^', markersize=6, linewidth=2, label='FedAvg（20%恶意节点）')
-plt.plot(epochs, data["acc_20_uneven"], 'm-', marker='*', markersize=8, linewidth=2, label='AccWeight（20%恶意节点）')
+plt.plot(epochs, data["fed_20_uneven"], 'k--', marker='s', markersize=6, linewidth=2,  label='FedAvg（20%恶意节点）')
+plt.plot(epochs, data["acc_20_uneven"], 'b-', marker='o', markersize=6, linewidth=2,  label='AccWeight（20%恶意节点）')
 
-plt.title('非均等划分下恶意节点对模型性能的影响')
+plt.title('两种聚合方法在恶意节点影响下的模型性能对比（非均等划分）')
 plt.xlabel('训练轮次')
-plt.ylabel('测试准确率')
+plt.ylabel('测试集准确率')
 plt.xticks(epochs)
 plt.ylim(0.0, 0.75)
 plt.legend(loc='lower right', frameon=True)

@@ -22,7 +22,7 @@ FED_ROUNDS=5
 LOCAL_EPOCH=1
 
 # 每轮结束后等待 (秒)
-SLEEP_TIME=240  # 每轮提交后等待50秒看是否打包完成
+SLEEP_TIME=50  # 每轮提交后等待50秒看是否打包完成
 
 # Python解释器
 PYEXE="D:/anaconda/envs/BlockchainForFederatedLearning/python.exe"

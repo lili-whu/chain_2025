@@ -79,7 +79,7 @@ history = defaultdict(lambda: {
 })
 
 # 参数设置
-beta = 0.98    # 信誉衰减因子
+beta = 0.99    # 信誉衰减因子
 # A = 10       # Sigmoid参数
 # k = 0.5       # Sigmoid参数
 
